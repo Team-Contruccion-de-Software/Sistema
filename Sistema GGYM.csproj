@@ -115,16 +115,19 @@
     <Content Include="Source\images\portrait-young-afro-american-sports-man-looks-away_171337-8255.jpg" />
     <Content Include="Source\js\accessibility.js" />
     <Content Include="Source\js\bootstrap.js" />
-    <Content Include="Source\js\ini.js" />
     <Content Include="Source\js\jquery.js" />
-    <Content Include="Source\js\jquery.validate.min.js" />
-    <Content Include="Source\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="Source\js\nicepage.js" />
+    <Content Include="Source\Login\ini.js" />
+    <Content Include="Source\Login\jquery.form.js" />
+    <Content Include="Source\Login\jquery.validate.min.js" />
+    <Content Include="Source\Login\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Source\css\Login\Login.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filters\AdminFilters.cs" />
     <Compile Include="Global.asax.cs">
@@ -140,6 +143,8 @@
     <None Include="packages.config" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Login\FormRegistro.cshtml" />
+    <Content Include="Views\Login\FormLogin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
