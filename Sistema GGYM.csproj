@@ -97,15 +97,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Source\css\About.css" />
-    <Content Include="Source\css\Blog-Template.css" />
     <Content Include="Source\css\bootstrap-grid.css" />
     <Content Include="Source\css\bootstrap-reboot.css" />
     <Content Include="Source\css\bootstrap.css" />
     <Content Include="Source\css\Casa.css" />
-    <Content Include="Source\css\Contact.css" />
     <Content Include="Source\css\nicepage.css" />
-    <Content Include="Source\css\Post-Template.css" />
     <Content Include="Source\images\1.jpeg" />
     <Content Include="Source\images\2.jpeg" />
     <Content Include="Source\images\3.jpeg" />
