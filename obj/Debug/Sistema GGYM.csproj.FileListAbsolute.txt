@@ -232,3 +232,7 @@ D:\95. Proyecto Contruccion\Sistema\obj\Debug\Sistema GGYM.csproj.CoreCompileInp
 D:\95. Proyecto Contruccion\Sistema\obj\Debug\Sistema GGYM.csproj.CopyComplete
 D:\95. Proyecto Contruccion\Sistema\obj\Debug\Sistema GGYM.dll
 D:\95. Proyecto Contruccion\Sistema\obj\Debug\Sistema GGYM.pdb
+D:\95. Proyecto Contruccion\Sistema\bin\EntityFramework.dll
+D:\95. Proyecto Contruccion\Sistema\bin\EntityFramework.SqlServer.dll
+D:\95. Proyecto Contruccion\Sistema\bin\EntityFramework.xml
+D:\95. Proyecto Contruccion\Sistema\bin\EntityFramework.SqlServer.xml

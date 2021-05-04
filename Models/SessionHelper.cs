@@ -35,7 +35,7 @@ namespace Sistema_GGYM.Models
         }
 
 
-        public static void AddUserToSession(string id)
+        public static void AddUserToSession(int id)
         {
             bool persist = true;
             var cookie = FormsAuthentication.GetAuthCookie("usuario", persist);
@@ -45,7 +45,7 @@ namespace Sistema_GGYM.Models
 
             var ticket = FormsAuthentication.Decrypt(cookie.Value);
             var newTicket = new FormsAuthenticationTicket(ticket.Version, ticket.Name, ticket.IssueDate,
-                                                          ticket.Expiration, ticket.IsPersistent, id);
+                                                          ticket.Expiration, ticket.IsPersistent, id.ToString());
 
             cookie.Value = FormsAuthentication.Encrypt(newTicket);
             HttpContext.Current.Response.Cookies.Add(cookie);

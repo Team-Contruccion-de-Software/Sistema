@@ -40,7 +40,7 @@ namespace Sistema_GGYM.Filters
                 {
                     filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new
                     {
-                        controller = "Home",
+                        controller = "Default",
                         action = "Index"
                     }));
                 }
