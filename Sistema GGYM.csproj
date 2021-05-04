@@ -89,15 +89,37 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Source\css\About.css" />
+    <Content Include="Source\css\Blog-Template.css" />
     <Content Include="Source\css\bootstrap-grid.css" />
     <Content Include="Source\css\bootstrap-reboot.css" />
     <Content Include="Source\css\bootstrap.css" />
+    <Content Include="Source\css\Casa.css" />
+    <Content Include="Source\css\Contact.css" />
+    <Content Include="Source\css\nicepage.css" />
+    <Content Include="Source\css\Post-Template.css" />
+    <Content Include="Source\images\1.jpeg" />
+    <Content Include="Source\images\2.jpeg" />
+    <Content Include="Source\images\3.jpeg" />
+    <Content Include="Source\images\athletic-boxer-punching-with-determination-precaution_158595-4826.jpg" />
+    <Content Include="Source\images\bvn.jpg" />
+    <Content Include="Source\images\dsa-min.jpg" />
+    <Content Include="Source\images\erttt.jpg" />
+    <Content Include="Source\images\fddddd-min.jpg" />
+    <Content Include="Source\images\fdgg-min.jpg" />
+    <Content Include="Source\images\fxgtfh.jpg" />
+    <Content Include="Source\images\gff.jpg" />
+    <Content Include="Source\images\gfggg-min1.jpg" />
+    <Content Include="Source\images\ggymlogo.png" />
+    <Content Include="Source\images\muscular-guy-with-dumbbell_144627-27153.jpg" />
+    <Content Include="Source\images\portrait-young-afro-american-sports-man-looks-away_171337-8255.jpg" />
     <Content Include="Source\js\accessibility.js" />
     <Content Include="Source\js\bootstrap.js" />
     <Content Include="Source\js\ini.js" />
     <Content Include="Source\js\jquery.js" />
     <Content Include="Source\js\jquery.validate.min.js" />
     <Content Include="Source\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Source\js\nicepage.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
