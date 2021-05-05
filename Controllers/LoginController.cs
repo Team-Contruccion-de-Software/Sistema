@@ -16,26 +16,29 @@ namespace Sistema_GGYM.Controllers
         private TIPO_USUARIO tipo_usuario = new TIPO_USUARIO();
 
         [NoLogin]
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         public ActionResult FormLogin()
         {
             return View();
         }
 
-        public ActionResult FormRegistro()
-        {
-            return View();
-        }
-
-        public JsonResult IniciarSesion(string Email, string Contraseña)
+        public ActionResult IniciarSesion(string Email, string Contraseña)
         {
             var rm = usuario.ValidarLogin(Email, Contraseña);
 
-            if (rm.response)
+            if (rm.response == true)
             {
-                rm.href = Url.Content("/Default/Index");
-            }
-
-            return Json(rm);
+                return View("../Default/Index");
+            } 
+            
+            else
+            {
+                return View("Index");
+            }            
         }
     }
 }

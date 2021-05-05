@@ -15,7 +15,6 @@ namespace Sistema_GGYM.Models
         {
             return HttpContext.Current.User.Identity.IsAuthenticated;
         }
-
         public static void DestroyUserSession()
         {
             FormsAuthentication.SignOut();
@@ -35,7 +34,7 @@ namespace Sistema_GGYM.Models
         }
 
 
-        public static void AddUserToSession(int id)
+        public static void AddUserToSession(string id)
         {
             bool persist = true;
             var cookie = FormsAuthentication.GetAuthCookie("usuario", persist);
@@ -45,7 +44,7 @@ namespace Sistema_GGYM.Models
 
             var ticket = FormsAuthentication.Decrypt(cookie.Value);
             var newTicket = new FormsAuthenticationTicket(ticket.Version, ticket.Name, ticket.IssueDate,
-                                                          ticket.Expiration, ticket.IsPersistent, id.ToString());
+                                                          ticket.Expiration, ticket.IsPersistent, id);
 
             cookie.Value = FormsAuthentication.Encrypt(newTicket);
             HttpContext.Current.Response.Cookies.Add(cookie);
