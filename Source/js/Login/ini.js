@@ -66,10 +66,13 @@ $(document).ready(function () {
                     if (r.message.length > 0) {
                         var css = "";
                         if (r.response) css = "alert-success";
-                        else css = "alert-danger";
+                        else {
+                            $(document).ready(function () {
+                                $('.toast').toast('show');
+                            });
+                        };                        
+                        
 
-                        var message = '<div class="alert ' + css + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + r.message + '</div>';
-                        form.prepend(message);
                     }
                 }
 

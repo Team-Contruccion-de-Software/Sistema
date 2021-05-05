@@ -26,13 +26,18 @@ namespace Sistema_GGYM.Controllers
             return View();
         }
 
+        public ActionResult FormRegistro()
+        {
+            return RedirectToAction("Index", "Login");
+        }
+
         public ActionResult Validar(string Email, string Contraseña)
         {
             var rm = usuario.ValidarLogin(Email, Contraseña);
 
             if (rm.response)
             {
-                rm.href = Url.Content("/Default");
+                rm.href = Url.Content("/Usuario");
             }
 
             return Json(rm);

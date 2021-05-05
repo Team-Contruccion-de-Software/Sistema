@@ -89,7 +89,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
                     if (usuario != null)
                     {
                         SessionHelper.AddUserToSession(usuario.ID_USUARIO.ToString());
-                        rm.SetResponse(true, "Credenciales correctas");
+                        rm.SetResponse(true);
                     }
                     else
                     {
