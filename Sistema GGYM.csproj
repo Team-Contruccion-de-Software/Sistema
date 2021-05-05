@@ -1562,10 +1562,8 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
-    <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Usuario\Calendario.cshtml" />
     <Content Include="Source\User\css\bootstrap-theme.css.map" />
     <Content Include="Source\User\css\bootstrap-theme.min.css.map" />
     <Content Include="Source\User\css\bootstrap.css.map" />
@@ -1737,6 +1735,9 @@
     <Content Include="Source\User\plugins\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Source\User\plugins\toastr\toastr.js.map" />
     <Content Include="Views\Login\FormRegistro.cshtml" />
+    <Content Include="Views\Shared\LayoutUsuario.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Calendario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

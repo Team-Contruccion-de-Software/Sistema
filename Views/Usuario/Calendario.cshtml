@@ -1,309 +1,121 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "Calendario";
+    Layout = "~/Views/Shared/LayoutUsuario.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="content">
+    <div class="container">
 
-    <link rel="shortcut icon" href="~/Source/User/images/favicon.ico">
+        <div class="row">
+            <div class="col-lg-12">
 
-    <title>Tu Calendario</title>
-    <link rel="shortcut icon" href="~/Source/images/ggymlogo.png">
-
-    <!--calendar css-->
-    <link href="~/Source/User/plugins/fullcalendar/dist/fullcalendar.css" rel="stylesheet" />
-
-    <!-- App css -->
-    <link href="~/Source/User/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Source/User/css/core.css" rel="stylesheet" type="text/css" />
-    <link href="~/Source/User/css/components.css" rel="stylesheet" type="text/css" />
-    <link href="~/Source/User/css/icons.css" rel="stylesheet" type="text/css" />
-    <link href="~/Source/User/css/pages.css" rel="stylesheet" type="text/css" />
-    <link href="~/Source/User/css/menu.css" rel="stylesheet" type="text/css" />
-    <link href="~/Source/User/css/responsive.css" rel="stylesheet" type="text/css" />
-
-
-    <script src="~/Source/User/js/modernizr.min.js"></script>
-
-</head>
-
-
-<body class="fixed-left">
-
-    <!-- Begin page -->
-    <div id="wrapper">
-
-        <!-- Top Bar Start -->
-        <div class="topbar">
-
-            <!-- LOGO -->
-            <div class="topbar-left">
-                <a href="index.html" class="logo"><span>GG<span>YM</span></span><i class="zmdi zmdi-layers"></i></a>
-            </div>
-
-            <!-- Button mobile view to collapse sidebar menu -->
-            <div class="navbar navbar-default" role="navigation">
-                <div class="container">
-
-                    <!-- Page title -->
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
-                            <button class="button-menu-mobile open-left">
-                                <i class="zmdi zmdi-menu"></i>
-                            </button>
-                        </li>
-                        <li>
-                            <h4 class="page-title">Crea rutinas de entrenamiento y demás eventos.</h4>
-                        </li>
-                    </ul>
-
-                    <!-- Right(Notification and Searchbox -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <!-- Notification -->
-                            <div class="notification-box">
-                                <ul class="list-inline m-b-0">
-                                    <li>
-                                        <a href="javascript:void(0);" class="right-bar-toggle">
-                                            <i class="zmdi zmdi-T`H`E`M`E`L`O`C`K`.`C`O`M`-none"></i>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="widget">
+                            <div class="widget-body">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <a href="#" data-toggle="modal" data-target="#add-category" class="btn btn-lg btn-success btn-block waves-effect waves-light">
+                                            <i class="fa fa-plus"></i> Crear nueva
                                         </a>
-                                        <div class="noti-dot">
-                                            <span class="dot"></span>
-                                            <span class="pulse"></span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- End Notification bar -->
-                        </li>
-                        <li class="hidden-xs">
-                            <form role="search" class="app-search">
-                                <input type="text" placeholder="Buscar..."
-                                       class="form-control">
-                                <a href=""><i class="fa fa-search"></i></a>
-                            </form>
-                        </li>
-                    </ul>
-
-                </div><!-- end container -->
-            </div><!-- end navbar -->
-        </div>
-        <!-- Top Bar End -->
-        <!-- ========== Left Sidebar Start ========== -->
-        <div class="left side-menu">
-            <div class="sidebar-inner slimscrollleft">
-
-                <!-- User -->
-                <div class="user-box">
-                    <div class="user-img">
-                        <img src="~/Source/User/images/users/user-icon.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
-                        <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
-                    </div>
-                    <h5><a href="#">Paolo Lizárraga</a> </h5>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#">
-                                <i class="zmdi zmdi-settings"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="text-custom">
-                                <i class="zmdi zmdi-power"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- End User -->
-                <!--- Sidemenu -->
-                <div id="sidebar-menu">
-                    <ul>
-                        <li class="text-muted menu-title">Navegación</li>
-
-                        <li>
-                            <a href="~/Usuario/Index" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Inicio </span> </a>
-                        </li>
-
-                        <li>
-                            <a href="~/Usuario/Calendario" class="waves-effect active"><i class="zmdi zmdi-calendar"></i><span> Calendario </span></a>
-                        </li>
-
-
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
-                <!-- Sidebar -->
-                <div class="clearfix"></div>
-
-            </div>
-
-        </div>
-        <!-- Left Sidebar End -->
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
-        <div class="content-page">
-            <!-- Start content -->
-            <div class="content">
-                <div class="container">
-
-                    <div class="row">
-                        <div class="col-lg-12">
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="widget">
-                                        <div class="widget-body">
-                                            <div class="row">
-                                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                                    <a href="#" data-toggle="modal" data-target="#add-category" class="btn btn-lg btn-success btn-block waves-effect waves-light">
-                                                        <i class="fa fa-plus"></i> Crear nueva
-                                                    </a>
-                                                    <div id="external-events" class="m-t-20">
-                                                        <br>
-                                                        <p>Agarra y suelta tu evento o clickea en el calendario</p>
-                                                        <div class="external-event bg-primary" data-class="bg-primary">
-                                                            <i class="fa fa-move"></i>Rutina de piernas
-                                                        </div>
-                                                        <div class="external-event bg-pink" data-class="bg-pink">
-                                                            <i class="fa fa-move"></i>Almuerzo
-                                                        </div>
-                                                        <div class="external-event bg-warning" data-class="bg-warning">
-                                                            <i class="fa fa-move"></i>Cena
-                                                        </div>
-                                                        <div class="external-event bg-purple" data-class="bg-purple">
-                                                            <i class="fa fa-move"></i>Desayuno
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- checkbox -->
-                                                    <div class="checkbox m-t-40">
-                                                        <input id="drop-remove" type="checkbox">
-                                                        <label for="drop-remove">
-                                                            Quitar luego de soltar
-                                                        </label>
-                                                    </div>
-
-                                                </div>
+                                        <div id="external-events" class="m-t-20">
+                                            <br>
+                                            <p>Agarra y suelta tu evento o clickea en el calendario</p>
+                                            <div class="external-event bg-primary" data-class="bg-primary">
+                                                <i class="fa fa-move"></i>Rutina de piernas
+                                            </div>
+                                            <div class="external-event bg-pink" data-class="bg-pink">
+                                                <i class="fa fa-move"></i>Almuerzo
+                                            </div>
+                                            <div class="external-event bg-warning" data-class="bg-warning">
+                                                <i class="fa fa-move"></i>Cena
+                                            </div>
+                                            <div class="external-event bg-purple" data-class="bg-purple">
+                                                <i class="fa fa-move"></i>Desayuno
                                             </div>
                                         </div>
-                                    </div>
-                                </div> <!-- end col-->
-                                <div class="col-md-9">
-                                    <div class="card-box">
-                                        <div id="calendar"></div>
-                                    </div>
-                                </div> <!-- end col -->
-                            </div>  <!-- end row -->
-                            <!-- BEGIN MODAL -->
-                            <div class="modal fade none-border" id="event-modal">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title"><strong>Agregar nuevo evento</strong></h4>
-                                        </div>
-                                        <div class="modal-body"></div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-success save-event waves-effect waves-light">Crear evento</button>
-                                            <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Borrar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <!-- Modal Add Category -->
-                            <div class="modal fade none-border" id="add-category">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title"><strong>Agrega una categoría </strong></h4>
+                                        <!-- checkbox -->
+                                        <div class="checkbox m-t-40">
+                                            <input id="drop-remove" type="checkbox">
+                                            <label for="drop-remove">
+                                                Quitar luego de soltar
+                                            </label>
                                         </div>
-                                        <div class="modal-body">
-                                            <form role="form">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label class="control-label">Nombre de la categoría</label>
-                                                        <input class="form-control form-white" placeholder="Ingresa el nombre" type="text" name="category-name" />
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label class="control-label">Elegir color de la categoría</label>
-                                                        <select class="form-control form-white" data-placeholder="Elige un color..." name="category-color">
-                                                            <option value="success">Success</option>
-                                                            <option value="danger">Danger</option>
-                                                            <option value="info">Info</option>
-                                                            <option value="pink">Pink</option>
-                                                            <option value="primary">Primary</option>
-                                                            <option value="warning">Warning</option>
-                                                            <option value="inverse">Inverse</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Guardar</button>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                            <!-- END MODAL -->
                         </div>
-                        <!-- end col-12 -->
-                    </div> <!-- end row -->
+                    </div> <!-- end col-->
+                    <div class="col-md-9">
+                        <div class="card-box">
+                            <div id="calendar"></div>
+                        </div>
+                    </div> <!-- end col -->
+                </div>  <!-- end row -->
+                <!-- BEGIN MODAL -->
+                <div class="modal fade none-border" id="event-modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title"><strong>Agregar nuevo evento</strong></h4>
+                            </div>
+                            <div class="modal-body"></div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-success save-event waves-effect waves-light">Crear evento</button>
+                                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Borrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Add Category -->
+                <div class="modal fade none-border" id="add-category">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title"><strong>Agrega una categoría </strong></h4>
+                            </div>
+                            <div class="modal-body">
+                                <form role="form">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="control-label">Nombre de la categoría</label>
+                                            <input class="form-control form-white" placeholder="Ingresa el nombre" type="text" name="category-name" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Elegir color de la categoría</label>
+                                            <select class="form-control form-white" data-placeholder="Elige un color..." name="category-color">
+                                                <option value="success">Success</option>
+                                                <option value="danger">Danger</option>
+                                                <option value="info">Info</option>
+                                                <option value="pink">Pink</option>
+                                                <option value="primary">Primary</option>
+                                                <option value="warning">Warning</option>
+                                                <option value="inverse">Inverse</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END MODAL -->
+            </div>
+            <!-- end col-12 -->
+        </div> <!-- end row -->
 
 
-                </div> <!-- container -->
+    </div> <!-- container -->
 
-            </div> <!-- content -->
-
-            <footer class="footer">
-                2021 © Bumer Solutions.
-            </footer>
-
-        </div>
-
-        <!-- ============================================================== -->
-        <!-- End Right content here -->
-    </div>
-    <!-- END wrapper -->
-
-
-
-    <script>
-            var resizefunc = [];
-    </script>
-
-    <!-- jQuery  -->
-    <script src="~/Source/User/js/jquery.min.js"></script>
-    <script src="~/Source/User/js/bootstrap.min.js"></script>
-    <script src="~/Source/User/js/detect.js"></script>
-    <script src="~/Source/User/js/fastclick.js"></script>
-    <script src="~/Source/User/js/jquery.slimscroll.js"></script>
-    <script src="~/Source/User/js/jquery.blockUI.js"></script>
-    <script src="~/Source/User/js/waves.js"></script>
-    <script src="~/Source/User/js/jquery.nicescroll.js"></script>
-    <script src="~/Source/User/js/jquery.scrollTo.min.js"></script>
-
-    <!-- App js -->
-    <script src="~/Source/User/js/jquery.core.js"></script>
-    <script src="~/Source/User/js/jquery.app.js"></script>
-
-    <!-- Jquery-Ui -->
-    <script src="~/Source/User/plugins/jquery-ui/jquery-ui.min.js"></script>
-
-    <!-- BEGIN PAGE SCRIPTS -->
-    <script src="~/Source/User/plugins/moment/moment.js"></script>
-    <script src='~/Source/User/plugins/fullcalendar/dist/fullcalendar.min.js'></script>
-    <script src="~/Source/User/pages/jquery.fullcalendar.js"></script>
-
-</body>
-</html>
-
+</div> <!-- content -->

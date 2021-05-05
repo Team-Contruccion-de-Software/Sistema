@@ -13,7 +13,6 @@ namespace Sistema_GGYM.Controllers
     public class LoginController : Controller
     {
         private USUARIO usuario = new USUARIO();
-        private TIPO_USUARIO tipo_usuario = new TIPO_USUARIO();
 
         [NoLogin]
         public ActionResult Index()
@@ -28,7 +27,7 @@ namespace Sistema_GGYM.Controllers
 
         public ActionResult FormRegistro()
         {
-            return RedirectToAction("Index", "Login");
+            return Redirect("~/Login");
         }
 
         public ActionResult Validar(string Email, string Contraseña)
@@ -39,8 +38,13 @@ namespace Sistema_GGYM.Controllers
             {
                 rm.href = Url.Content("/Usuario");
             }
-
             return Json(rm);
+        }
+
+        public ActionResult Logout()
+        {
+            SessionHelper.DestroyUserSession();
+            return Redirect("~/Login");
         }
     }
 }
