@@ -236,3 +236,36 @@ D:\95. Proyecto Contruccion\Sistema\bin\EntityFramework.dll
 D:\95. Proyecto Contruccion\Sistema\bin\EntityFramework.SqlServer.dll
 D:\95. Proyecto Contruccion\Sistema\bin\EntityFramework.xml
 D:\95. Proyecto Contruccion\Sistema\bin\EntityFramework.SqlServer.xml
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\Sistema GGYM.dll.config
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\Sistema GGYM.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\Sistema GGYM.pdb
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\EntityFramework.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\EntityFramework.SqlServer.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\Microsoft.Web.Infrastructure.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\System.Web.Helpers.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\System.Web.Mvc.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\System.Web.Razor.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\System.Web.Webpages.Deployment.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\System.Web.Webpages.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\System.Web.Webpages.Razor.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\EntityFramework.xml
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\EntityFramework.SqlServer.xml
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\System.Web.Razor.xml
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\System.Web.Webpages.xml
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\System.Web.Webpages.Deployment.xml
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\System.Web.Webpages.Razor.xml
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\System.Web.Helpers.xml
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\System.Web.Mvc.xml
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\es\System.Web.Razor.resources.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\es\System.Web.Webpages.resources.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\es\System.Web.Webpages.Deployment.resources.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\es\System.Web.Webpages.Razor.resources.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\es\System.Web.Helpers.resources.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\bin\es\System.Web.Mvc.resources.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\obj\Debug\Sistema GGYM.csprojAssemblyReference.cache
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\obj\Debug\Sistema GGYM.csproj.CoreCompileInputs.cache
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\obj\Debug\Sistema GGYM.csproj.CopyComplete
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\obj\Debug\Sistema GGYM.dll
+D:\GGYM Proyecto Versiones\ggym v 1.0\Sistema\obj\Debug\Sistema GGYM.pdb

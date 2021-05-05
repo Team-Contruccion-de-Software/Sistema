@@ -13,5 +13,10 @@ namespace Sistema_GGYM.Controllers
         {
             return View();
         }
+
+        public ActionResult Calendario()
+        {
+            return View();
+        }
     }
 }
