@@ -8,6 +8,7 @@ $(document).ready(function () {
         if ($(this).data('ajax') != true) return;
 
         var form = $(this).closest("form");
+
         var buttons = $("button", form);
         var button = $(this);
         var url = form.attr('action');
