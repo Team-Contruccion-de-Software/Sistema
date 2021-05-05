@@ -7,13 +7,15 @@
 
 <html>
 <head>
-    <link href="~/Source/css/bootstrap.css" rel="stylesheet" />
-    <link href="~/Source/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="~/Source/Login/jquery-3.5.1.min.js"></script>
+    <!--Jquery-->
+    <script src="~/Source/js/Login/jquery-3.5.1.min.js"></script>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--CSS bootstrap-->
+    <link href="~/Source/css/Login/bootstrap.min.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    <!--Estilos Personales-->
     <link rel="stylesheet" href="~/Source/css/Login/Login.css">
     <link rel="shortcut icon" href="~/Source/images/ggymlogo.png">
 
@@ -21,33 +23,43 @@
 
 </head>
 <body>
+
     <div class="vid-container">
 
         <img src="~/Source/images/dsa-min.jpg" class="bgvid" height="100%" />
 
+
         <div class="inner-container">
             <img src="~/Source/images/dsa-min.jpg" class="bgvid inner" height="100%" />
 
-            <div class="box">
+            @using (Html.BeginForm("Validar", "Login", FormMethod.Post))
+            {
+                <div class="box">
 
-                @using (Html.BeginForm("IniciarSesion", "Login", FormMethod.Post))
-                {
                     <h1>Login</h1>
+
                     <input type="text" name="Email" placeholder="Email" />
+
                     <input type="text" name="Contraseña" placeholder="Contraseña" />
-                    <button>Iniciar Sesion</button>
+
+                    <button data-ajax="true" type="submit">
+                        Iniciar Sesion
+                    </button>
+
                     <p>No eres miembro? <span><a>Registrarse</a></span></p>
-                }
-            </div>
+
+                </div>
+            }
         </div>
+
     </div>
 
 
     <!--ResponseModel-->
+    <script src="~/Source/js/Login/ini.js"></script>
+    <script src="~/Source/js/Login/jquery.form.js"></script>
+    <script src="~/Source/js/Login/jquery.validate.min.js"></script>
+    <script src="~/Source/js/Login/jquery.validate.unobtrusive.min.js"></script>
 
-    <script src="~/Source/js/jquery.validate.min.js"></script>
-    <script src="~/Source/Login/jquery.validate.min.js"></script>
-
-    <script src="~/Source/js/bootstrap.min.js"></script>
 </body>
 </html>

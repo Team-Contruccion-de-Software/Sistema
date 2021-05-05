@@ -26,19 +26,16 @@ namespace Sistema_GGYM.Controllers
             return View();
         }
 
-        public ActionResult IniciarSesion(string Email, string Contraseña)
+        public ActionResult Validar(string Email, string Contraseña)
         {
             var rm = usuario.ValidarLogin(Email, Contraseña);
 
-            if (rm.response == true)
+            if (rm.response)
             {
-                return View("../Default/Index");
-            } 
-            
-            else
-            {
-                return View("Index");
-            }            
+                rm.href = Url.Content("/Default");
+            }
+
+            return Json(rm);
         }
     }
 }
