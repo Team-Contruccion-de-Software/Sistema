@@ -1,4 +1,4 @@
-# ![app icon](https://drive.google.com/file/d/1JUfEmHla1FGloRDrblHsJ2grP2yYC3Ad/view?usp=sharing)Sistema GGYM
+# ![app icon](Source/images/iconggym.png)Sistema GGYM
 
 ![Logo de la Empresa](https://elblogdeboomer.files.wordpress.com/2018/10/logo2.png?w=50)
 
