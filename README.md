@@ -1,7 +1,6 @@
-# Trabajo Final - Construccion de Software
-Integrantes created by GitHub Classroom
+# ![app icon](https://drive.google.com/file/d/1JUfEmHla1FGloRDrblHsJ2grP2yYC3Ad/view?usp=sharing)Sistema GGYM
 
-![Logo de la Empresa](https://elblogdeboomer.files.wordpress.com/2018/10/logo2.png?w=272)
+![Logo de la Empresa](https://elblogdeboomer.files.wordpress.com/2018/10/logo2.png?w=50)
 
 <ul>
   <li style="color:blue;">Paolo Lizarraga</li>
