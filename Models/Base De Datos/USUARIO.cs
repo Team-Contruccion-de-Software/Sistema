@@ -4,6 +4,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
     using System.Linq;
 
@@ -103,6 +104,33 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             }
 
             return rm;
+        }
+
+        public void RegistarCliente()
+        {
+            DateTime now = DateTime.Now;
+            this.ID_TIPOUSUARIO = 1;
+
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    if (this.ID_USUARIO > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        this.FECHA_CREACION = Convert.ToDateTime(now.ToString("yyyy/MM/dd hh:mm:ss"));
+                        db.Entry(this).State = EntityState.Added;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
     }
 }

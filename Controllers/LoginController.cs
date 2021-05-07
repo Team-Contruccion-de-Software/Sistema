@@ -47,5 +47,17 @@ namespace Sistema_GGYM.Controllers
             return Redirect("~/Login");
         }
 
+        public ActionResult Registrar(USUARIO usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                usuario.RegistarCliente();
+                return Redirect("~/Usuario");
+            }
+            else
+            {
+                return View("~/Views/Login/Registro.cshtml", usuario);
+            }
+        }
     }
 }
