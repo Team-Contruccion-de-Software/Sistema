@@ -1,18 +1,80 @@
-﻿
+﻿@model Sistema_GGYM.Models.Base_De_Datos.USUARIO
 @{
     Layout = null;
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <title>Registro</title>
+
     <link rel="shortcut icon" href="~/Source/images/ggymlogo.png">
-    <title>Registrar Usuario</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="~/Source/css/Login/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="~/Source/css/Login/LoginForm.css" rel="stylesheet" />
+
 </head>
 <body>
-    <div> 
-    </div>
+    <section class="contact-box">
+        <div class="row no-gutters bg-dark" style="border-radius: 20px;">
+            <div class="col-xl-5 col-lg-12 register-bg">
+                <div class="position-absolute testiomonial p-4">
+                    <h3 class="font-weight-bold text-light">Sistema GGYM.</h3>
+                    <p class="lead text-light" style="text-align: justify;">En GGYM estamos comprometidos a ayudarlo a superar sus objetivos de cuidado personal y entrenamiento, con planes alimenticios y rutinas de ejercicios adecuados para ti.</p>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-12 d-flex">
+                <div class="container align-self-center p-6">
+                    <h1 class="font-weight-bold mb-3">Crear una nueva cuenta</h1>
+                    <p class="text-muted mb-5">Ingresa la siguiente información para registrarte.</p>
+
+
+                    <!--formulario-->
+                    @using (Html.BeginForm("Registrar", "Login", FormMethod.Post, new { id = "frm-usuario", enctype = "multipart/form-data" }))
+                    {
+                        <div class="form-row mb-2">
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">Nombre <span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(x => x.NOMBRE, new { @class = "form-control", placeholder = "Ingresa tu nombre" })
+                                @Html.ValidationMessageFor(x => x.NOMBRE, null, new { @class = "badge badge-danger" })
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">Apellido <span class="text-danger">*</span></label>
+                                @Html.TextBoxFor(x => x.APELLIDO, new { @class = "form-control", placeholder = "Ingresa tu apellido" })
+                                @Html.ValidationMessageFor(x => x.APELLIDO, null, new { @class = "badge badge-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">Correo electrónico <span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(x => x.EMAIL, new { @class = "form-control", placeholder = "Ingresa tu correo electrónico" })
+                            @Html.ValidationMessageFor(x => x.EMAIL, null, new { @class = "badge badge-danger" })
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">Contraseña <span class="text-danger">*</span></label>
+                            @Html.TextBoxFor(x => x.PASSWORD, new { @class = "form-control", placeholder = "Ingresa una contraseña", type = "password" })
+                            @Html.ValidationMessageFor(x => x.PASSWORD, null, new { @class = "badge badge-danger" })
+                        </div>
+
+                        <br />
+                        <button data-ajax="true" class="btn btn-primary width-100">Regístrarse</button>
+                        <a href="~/Login/Index" style="margin-left: 20px;">Iniciar Sesion</a>
+                    }
+
+
+                    <small class="d-inline-block text-muted mt-5">Todos los derechos reservados | 2021 © Bumer Solutions.</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/Source/js/Login/jquery.js"></script>
+    <script src="~/Source/js/Login/bootstrap.min.js"></script>
 </body>
 </html>

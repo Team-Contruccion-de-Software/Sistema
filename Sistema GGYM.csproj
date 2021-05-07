@@ -104,6 +104,7 @@
     <Content Include="Source\css\Login\bootstrap-reboot.min.css" />
     <Content Include="Source\css\Login\bootstrap.css" />
     <Content Include="Source\css\Login\bootstrap.min.css" />
+    <Content Include="Source\css\Login\LoginForm.css" />
     <Content Include="Source\css\nicepage.css" />
     <Content Include="Source\images\1.jpeg" />
     <Content Include="Source\images\2.jpeg" />

@@ -27,7 +27,7 @@ namespace Sistema_GGYM.Controllers
 
         public ActionResult FormRegistro()
         {
-            return Redirect("~/Login");
+            return View();
         }
 
         public ActionResult Validar(string Email, string Contraseña)
@@ -46,5 +46,6 @@ namespace Sistema_GGYM.Controllers
             SessionHelper.DestroyUserSession();
             return Redirect("~/Login");
         }
+
     }
 }
