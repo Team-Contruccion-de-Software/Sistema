@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+
 }
 
 <!-- Start content -->
@@ -14,20 +15,67 @@
             <!--TEST DE FICHAS DE LOS USARIOS-->
             @foreach (var usuario in Model)
             {
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-box widget-user">
-                        <div>
-                            <img src="~/Source/User/images/users/user-icon.jpg" class="img-responsive img-circle" alt="user">
-                            <div class="wid-u-info">
-                                <h4 class="m-t-0 m-b-5 font-600">@usuario.NOMBRE @usuario.APELLIDO</h4>
-                                <p class="text-muted m-b-5 font-13">@usuario.EMAIL</p>
-                                <small class="text-warning"><b>@usuario.TIPO_USUARIO.DESCRIPCION</b></small>
+                if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 3 || usuario.TIPO_USUARIO.IDTIPOUSUARIO == 4)
+                {
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card-box widget-user">
+                            <div>
+                                @if (usuario.NOMBRE.Contains("Bayron"))
+                                {
+                                    <img src="~/Source/images/Fotos/Bayron.jpg" class="img-responsive img-circle" alt="user">
+                                }
+                                else if (usuario.NOMBRE.Contains("Paolo"))
+                                {
+                                    <img src="~/Source/images/Fotos/paolo.jpg" class="img-responsive img-circle" alt="user">
+                                }
+                                else if (usuario.NOMBRE.Contains("Daniel"))
+                                {
+                                    <img src="~/Source/images/Fotos/danielo.jpg" class="img-responsive img-circle" alt="user">
+                                }
+                                else if (usuario.NOMBRE.Contains("Alvaro"))
+                                {
+                                    <img src="~/Source/images/Fotos/alvaro.jpg" class="img-responsive img-circle" alt="user">
+                                }
+                                else if (usuario.NOMBRE.Contains("Piero"))
+                                {
+                                    <img src="~/Source/images/Fotos/piero.jpg" class="img-responsive img-circle" alt="user">
+                                }
+                                else if (usuario.NOMBRE.Contains("CAMILA"))
+                                {
+                                    <img src="~/Source/images/Fotos/camila.jpg" class="img-responsive img-circle" alt="user">
+                                }
+                                else
+                                {
+                                    <img src="~/Source/User/images/users/user-icon.jpg" class="img-responsive img-circle" alt="user">
+                                }
+
+                                <div class="wid-u-info">
+                                    <h4 class="m-t-0 m-b-5 font-600">@usuario.NOMBRE @usuario.APELLIDO</h4>
+                                    <p class="text-muted m-b-5 font-13">@usuario.EMAIL</p>
+
+                                    @if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 1)
+                                    {
+                                        <small class="text-danger"><b>@usuario.TIPO_USUARIO.DESCRIPCION</b></small>
+                                    }
+                                    else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 2)
+                                    {
+                                        <small class="text-warning"><b>@usuario.TIPO_USUARIO.DESCRIPCION</b></small>
+                                    }
+                                    else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 3)
+                                    {
+                                        <small class="text-success"><b>@usuario.TIPO_USUARIO.DESCRIPCION</b></small>
+                                    }
+                                    else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 4)
+                                    {
+                                        <small class="text-primary"><b>@usuario.TIPO_USUARIO.DESCRIPCION</b></small>
+                                    }
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                }
             }
-
 
         </div>
         <!-- end row -->

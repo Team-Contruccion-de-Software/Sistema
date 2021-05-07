@@ -104,18 +104,40 @@
                 <!-- User -->
                 <div class="user-box">
                     <div class="user-img">
-                        <img src="~/Source/User/images/users/user-icon.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+
+                        @if (usuario.NOMBRE.Contains("Bayron"))
+                        {
+                            <img src="~/Source/User/images/users/user-icon.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                        }
+                        else if (usuario.NOMBRE.Contains("Paolo"))
+                        {
+                            <img src="~/Source/images/Fotos/paolo.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                        }
+                        else if (usuario.NOMBRE.Contains("Daniel"))
+                        {
+                            <img src="~/Source/images/Fotos/danielo.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                        }
+                        else if (usuario.NOMBRE.Contains("Alvaro"))
+                        {
+                            <img src="~/Source/images/Fotos/alvaro.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                        }
+                        else
+                        {
+                            <img src="~/Source/User/images/users/user-icon.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                        }
                         <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
+
                     </div>
                     <h5><a href="#">@usuario.NOMBRE @usuario.APELLIDO</a> </h5>
+                    <small class="text-success"><b>@usuario.TIPO_USUARIO.DESCRIPCION</b></small>
                     <ul class="list-inline">
-
                         <li>
                             <a href="~/Login/Logout" class="text-custom">
                                 <i class="zmdi zmdi-power"></i>
                             </a>
                         </li>
                     </ul>
+
                 </div>
                 <!-- End User -->
                 <!--- Sidemenu -->

@@ -115,6 +115,12 @@
     <Content Include="Source\images\erttt.jpg" />
     <Content Include="Source\images\fddddd-min.jpg" />
     <Content Include="Source\images\fdgg-min.jpg" />
+    <Content Include="Source\images\Fotos\alvaro.jpg" />
+    <Content Include="Source\images\Fotos\Bayron.jpg" />
+    <Content Include="Source\images\Fotos\camila.jpg" />
+    <Content Include="Source\images\Fotos\danielo.jpg" />
+    <Content Include="Source\images\Fotos\paolo.jpg" />
+    <Content Include="Source\images\Fotos\piero.jpg" />
     <Content Include="Source\images\fxgtfh.jpg" />
     <Content Include="Source\images\gff.jpg" />
     <Content Include="Source\images\gfggg-min1.jpg" />
