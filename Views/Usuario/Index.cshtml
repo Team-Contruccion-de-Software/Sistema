@@ -1,66 +1,34 @@
-﻿
+﻿@model List<Sistema_GGYM.Models.Base_De_Datos.USUARIO>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LayoutUsuario.cshtml";
 }
-
 
 <!-- Start content -->
 <div class="content">
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="card-box widget-user">
-                    <div>
-                        <img src="~/Source/User/images/users/user-icon.jpg" class="img-responsive img-circle" alt="user">
-                        <div class="wid-u-info">
-                            <h4 class="m-t-0 m-b-5 font-600">Daniel Loja</h4>
-                            <p class="text-muted m-b-5 font-13">danlojama@upt.pe</p>
-                            <small class="text-warning"><b>Administrador</b></small>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- end col -->
 
-            <div class="col-lg-3 col-md-6">
-                <div class="card-box widget-user">
-                    <div>
-                        <img src="~/Source/User/images/users/user-icon.jpg" class="img-responsive img-circle" alt="user">
-                        <div class="wid-u-info">
-                            <h4 class="m-t-0 m-b-5 font-600">Bayron Sanchez</h4>
-                            <p class="text-muted m-b-5 font-13">rudecode@gmail.com</p>
-                            <small class="text-custom"><b>Usuario</b></small>
+            <!--TEST DE FICHAS DE LOS USARIOS-->
+            @foreach (var usuario in Model)
+            {
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-box widget-user">
+                        <div>
+                            <img src="~/Source/User/images/users/user-icon.jpg" class="img-responsive img-circle" alt="user">
+                            <div class="wid-u-info">
+                                <h4 class="m-t-0 m-b-5 font-600">@usuario.NOMBRE @usuario.APELLIDO</h4>
+                                <p class="text-muted m-b-5 font-13">@usuario.EMAIL</p>
+                                <small class="text-warning"><b>@usuario.TIPO_USUARIO.DESCRIPCION</b></small>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div><!-- end col -->
+            }
 
-            <div class="col-lg-3 col-md-6">
-                <div class="card-box widget-user">
-                    <div>
-                        <img src="~/Source/User/images/users/user-icon.jpg" class="img-responsive img-circle" alt="user">
-                        <div class="wid-u-info">
-                            <h4 class="m-t-0 m-b-5 font-600">Alvaro Gallegos</h4>
-                            <p class="text-muted m-b-5 font-13">alvgallegos@upt.pe</p>
-                            <small class="text-success"><b>Usuario</b></small>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- end col -->
 
-            <div class="col-lg-3 col-md-6">
-                <div class="card-box widget-user">
-                    <div>
-                        <img src="~/Source/User/images/users/user-icon.jpg" class="img-responsive img-circle" alt="user">
-                        <div class="wid-u-info">
-                            <h4 class="m-t-0 m-b-5 font-600">Anthony Belizario</h4>
-                            <p class="text-muted m-b-5 font-13">anthonybeli1999@gmail.com</p>
-                            <small class="text-info"><b>Usuario</b></small>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- end col -->
         </div>
         <!-- end row -->
 

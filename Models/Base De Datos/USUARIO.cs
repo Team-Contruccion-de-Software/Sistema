@@ -60,8 +60,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             {
                 using (var db = new ModeloGGYM())
                 {
-                    usuarios = db.USUARIO.Include("TIPO_USUARIO")
-                        .ToList();
+                    usuarios = db.USUARIO.Include("TIPO_USUARIO").ToList();
                 }
             }
             catch (Exception e)
@@ -106,6 +105,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             return rm;
         }
 
+
         public void RegistarCliente()
         {
             DateTime now = DateTime.Now;
@@ -132,5 +132,29 @@ namespace Sistema_GGYM.Models.Base_De_Datos
                 throw;
             }
         }
+
+
+        public USUARIO ObtenerUsuario(int id)
+        {
+            var usuario = new USUARIO();
+
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    usuario = db.USUARIO.Include("TIPO_USUARIO")
+                        .Where(x => x.ID_USUARIO == id)
+                        .SingleOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return usuario;
+        }
+
+
     }
 }

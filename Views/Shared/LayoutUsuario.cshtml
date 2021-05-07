@@ -1,6 +1,7 @@
 ﻿
 @{
     Layout = null;
+    Sistema_GGYM.Models.Base_De_Datos.USUARIO usuario = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
 }
 
 <!DOCTYPE html>
@@ -106,13 +107,8 @@
                         <img src="~/Source/User/images/users/user-icon.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                         <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
                     </div>
-                    <h5><a href="#">Paolo Lizárraga</a> </h5>
+                    <h5><a href="#">@usuario.NOMBRE @usuario.APELLIDO</a> </h5>
                     <ul class="list-inline">
-                        <li>
-                            <a href="#">
-                                <i class="zmdi zmdi-settings"></i>
-                            </a>
-                        </li>
 
                         <li>
                             <a href="~/Login/Logout" class="text-custom">
