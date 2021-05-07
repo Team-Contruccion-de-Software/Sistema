@@ -12,7 +12,7 @@ namespace Sistema_GGYM.Controllers
 {
     public class LoginController : Controller
     {
-        private USUARIO usuario = new USUARIO();
+        private USUARIO usuario = new USUARIO();       
 
         [NoLogin]
         public ActionResult Index()
