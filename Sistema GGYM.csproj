@@ -106,6 +106,7 @@
     <Content Include="Source\css\Login\bootstrap.min.css" />
     <Content Include="Source\css\Login\LoginForm.css" />
     <Content Include="Source\css\nicepage.css" />
+    <Content Include="Source\css\Videollamada\video.css" />
     <Content Include="Source\images\1.jpeg" />
     <Content Include="Source\images\2.jpeg" />
     <Content Include="Source\images\3.jpeg" />
@@ -139,6 +140,8 @@
     <Content Include="Source\js\Login\jquery.js" />
     <Content Include="Source\js\Login\jquery.validate.min.js" />
     <Content Include="Source\js\Login\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Source\js\Videollamada\receiver.js" />
+    <Content Include="Source\js\Videollamada\sender.js" />
     <Content Include="Source\User\css\bootstrap-theme.css" />
     <Content Include="Source\User\css\bootstrap-theme.min.css" />
     <Content Include="Source\User\css\bootstrap.css" />
@@ -1745,6 +1748,7 @@
     <Content Include="Views\Shared\LayoutUsuario.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Calendario.cshtml" />
+    <Content Include="Views\Usuario\Videollamada.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
