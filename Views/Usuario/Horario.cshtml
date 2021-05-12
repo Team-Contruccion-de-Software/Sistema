@@ -98,10 +98,10 @@
                                                 <div class="col-md-12">
 
                                                     <p>Hora</p>
-                                                    <p>@dato.HORA_INICIO - @dato.HORA_FIN</p>
+                                                    <p>@dato.HORA_INICIO.ToString().Substring(0,5) - @dato.HORA_FIN.ToString().Substring(0, 5)</p>
 
                                                     <p>Fecha inicio y fin</p>
-                                                    <p>@dato.FECHA_INICIO - @dato.FECHA_FIN</p>
+                                                    <p>@dato.FECHA_INICIO.ToString("dd/MM/yyyy") - @dato.FECHA_FIN.ToString("dd/MM/yyyy")</p>
 
                                                 </div>
                                             </div>

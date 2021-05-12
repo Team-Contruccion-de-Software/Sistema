@@ -24,7 +24,7 @@
                         {
                             <div class="col-lg-4">
                                 <div class="portlet">
-                                    <div class="portlet-heading portlet-default">
+                                    <div class="portlet-heading bg-custom">
                                         <h3 class="portlet-title">
                                             Horario @hora.ID_HORARIO
                                         </h3>
@@ -46,8 +46,8 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <label>Duracion: @hora.HORA_INICIO - @hora.HORA_FIN</label>
-                                        <label>Fecha: del @hora.FECHA_INICIO al @hora.FECHA_FIN</label>
+                                        <label>Duracion: @hora.HORA_INICIO.ToString().Substring(0, 5) - @hora.HORA_FIN.ToString().Substring(0, 5)</label>
+                                        <label>Fecha: del @hora.FECHA_INICIO.ToString("dd/MM/yyyy") al @hora.FECHA_FIN.ToString("dd/MM/yyyy")</label>
                                     </div>
                                 </div>
                             </div>
