@@ -12,11 +12,16 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         {
         }
 
+        public virtual DbSet<HORARIO> HORARIO { get; set; }
         public virtual DbSet<TIPO_USUARIO> TIPO_USUARIO { get; set; }
         public virtual DbSet<USUARIO> USUARIO { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<HORARIO>()
+                .Property(e => e.DESCRIPCION)
+                .IsUnicode(false);
+
             modelBuilder.Entity<TIPO_USUARIO>()
                 .Property(e => e.DESCRIPCION)
                 .IsUnicode(false);

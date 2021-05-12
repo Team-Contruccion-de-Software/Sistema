@@ -49,8 +49,11 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
         public int ID_TIPOUSUARIO { get; set; }
 
-        public virtual TIPO_USUARIO TIPO_USUARIO { get; set; }
+        public int? ID_HORARIO { get; set; }
 
+        public virtual HORARIO HORARIO { get; set; }
+
+        public virtual TIPO_USUARIO TIPO_USUARIO { get; set; }
 
         public List<USUARIO> ListarTodo()
         {
@@ -154,7 +157,5 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
             return usuario;
         }
-
-
     }
 }
