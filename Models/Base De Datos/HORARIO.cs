@@ -10,12 +10,6 @@ namespace Sistema_GGYM.Models.Base_De_Datos
     [Table("HORARIO")]
     public partial class HORARIO
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HORARIO()
-        {
-            USUARIO = new HashSet<USUARIO>();
-        }
-
         [Key]
         public int ID_HORARIO { get; set; }
 
@@ -33,8 +27,9 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         [Column(TypeName = "date")]
         public DateTime FECHA_FIN { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<USUARIO> USUARIO { get; set; }
+        public int? ID_USUARIO { get; set; }
+
+        public virtual USUARIO USUARIO { get; set; }
 
         public List<HORARIO> ListarTodo()
         {
