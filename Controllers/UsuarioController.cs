@@ -15,6 +15,7 @@ namespace Sistema_GGYM.Controllers
         USUARIO usuario = new USUARIO();
         TIPO_USUARIO tipo_usuario = new TIPO_USUARIO();
         HORARIO horario = new HORARIO();
+        REGISTRO registro = new REGISTRO();
 
         // GET: Usuario
         public ActionResult Index()
@@ -29,6 +30,7 @@ namespace Sistema_GGYM.Controllers
 
         public ActionResult Horario()
         {
+            ViewBag.registro = registro.ListarTodo();
             ViewBag.horario = horario.ListarTodo();
             return View(usuario.ListarTodo());
         }

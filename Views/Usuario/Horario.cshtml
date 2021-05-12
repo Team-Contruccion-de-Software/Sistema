@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/LayoutUsuario.cshtml";
 
     List<Sistema_GGYM.Models.Base_De_Datos.HORARIO> horarios = ViewBag.horario;
+    List<Sistema_GGYM.Models.Base_De_Datos.REGISTRO> registro = ViewBag.registro;
 }
 
 <!--LISTA DE HORARIOS-->
@@ -51,21 +52,25 @@
 
                         <!--LISTA DE ENTRENADORES-->
 
-                        @foreach (var usuario in Model)
+                        @foreach (var user in Model)
                         {
-                            if (usuario.ID_TIPOUSUARIO == 3)
+                            foreach (var item in registro)
                             {
-                                <li class="list-group-item">
-                                    <a href="#" class="user-list-item">
-                                        <div class="avatar">
-                                            <img src="~/Source/User/images/users/avatar-2.jpg" alt="">
-                                        </div>
-                                        <div class="user-desc">
-                                            <span class="name">@usuario.NOMBRE</span>
-                                            <span class="desc">@usuario.TIPO_USUARIO.DESCRIPCION</span>
-                                        </div>
-                                    </a>
-                                </li>
+                                if (user.ID_USUARIO == item.ID_USUARIO)
+                                {
+                                    <li class="list-group-item">
+                                        <a href="~/Usuario/Videollamada/@(item.HORARIO.ID_HORARIO)" class="user-list-item">
+                                            <div class="avatar">
+                                                <img src="~/Source/images/ggymlogo.png" alt="">
+                                            </div>
+                                            <div class="user-desc">
+                                                <span class="name">Entrenamiento @item.HORARIO.ID_HORARIO</span>
+                                                <span class="desc">@item.HORARIO.DESCRIPCION</span>
+                                                <span class="desc">@item.HORARIO.HORA_INICIO.ToString().Substring(0, 5) - @item.HORARIO.HORA_FIN.ToString().Substring(0, 5)</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                }
                             }
                         }
                     </ul>
