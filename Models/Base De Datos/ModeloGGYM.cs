@@ -13,6 +13,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         }
 
         public virtual DbSet<HORARIO> HORARIO { get; set; }
+        public virtual DbSet<REGISTRO> REGISTRO { get; set; }
         public virtual DbSet<TIPO_USUARIO> TIPO_USUARIO { get; set; }
         public virtual DbSet<USUARIO> USUARIO { get; set; }
 
