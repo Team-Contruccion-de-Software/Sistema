@@ -13,21 +13,39 @@
         <div class="row">
 
             <div class="col-lg-4 col-md-6">
-                <div class="card-box">
-                    <div class="dropdown pull-right">
-                        <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                            <i class="zmdi zmdi-more-vert"></i>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </div>
+                <div class="card-box">                    
 
                     <h4 class="header-title m-t-0 m-b-30">Entrenadores</h4>
+
+                    <ul class="list-group m-b-0 user-list">
+
+                        <!--LISTA DE ENTRENADORES-->
+
+                        @foreach (var usuario in Model)
+                        {
+                            if (usuario.ID_TIPOUSUARIO == 3)
+                            {
+                                <li class="list-group-item">
+                                    <a href="#" class="user-list-item">
+                                        <div class="avatar">
+                                            <img src="~/Source/User/images/users/avatar-2.jpg" alt="">
+                                        </div>
+                                        <div class="user-desc">
+                                            <span class="name">@usuario.NOMBRE</span>
+                                            <span class="desc">@usuario.TIPO_USUARIO.DESCRIPCION</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+
+                </div>
+
+
+                <div class="card-box">                    
+
+                    <h4 class="header-title m-t-0 m-b-30">Videollamadas</h4>
 
                     <ul class="list-group m-b-0 user-list">
 
