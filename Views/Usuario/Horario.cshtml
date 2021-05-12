@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "Horario";
+    Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+}
+
+<!--LISTA DE HORARIOS-->
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card-box">
+                    <div class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+                            <i class="zmdi zmdi-more-vert"></i>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+                    <h4 class="header-title m-t-0 m-b-30">Team Members</h4>
+
+                    <ul class="list-group m-b-0 user-list">
+
+                        <!--LISTA DE ENTRENADORES-->
+                        <li class="list-group-item">
+                            <a href="#" class="user-list-item">
+                                <div class="avatar">
+                                    <img src="~/Source/User/images/users/avatar-2.jpg" alt="">
+                                </div>
+                                <div class="user-desc">
+                                    <span class="name">@usuario.NOMBRE</span>
+                                    <span class="desc">@usuario.TIPO_USUARIO.DESCRIPCION</span>
+                                </div>
+                            </a>
+                        </li>    
+                        
+                    </ul>
+
+                </div>
+            </div>
+            
+
+            <!--Se listaran los horarios por descripcion, encargado y hora de inicio y fin-->
+            <div class="col-lg-8 col-md-6">
+                <div class="panel panel-color panel-tabs panel-success">
+
+                    <div class="panel-heading">
+                        <ul class="nav nav-pills pull-right">
+                            <li class="active">
+                                <a href="#navpills-1" data-toggle="tab" aria-expanded="true">Descripcion</a>
+                            </li>
+                            <li class="">
+                                <a href="#navpills-2" data-toggle="tab" aria-expanded="false">Horario</a>
+                            </li>
+                        </ul>
+                        <h3 class="panel-title">Panel with tabs</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div id="navpills-1" class="tab-pane fade in active">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life
+                                            accusamus terry richardson ad squid. 3 wolf moon officia
+                                            aute, non cupidatat skateboard dolor brunch. Food truck
+                                            quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                            sunt aliqua put a bird on it squid single-origin coffee
+                                            nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                            helvetica, craft beer labore wes anderson cred nesciunt
+                                            sapiente ea proident.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="navpills-2" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            Anim pariatur cliche reprehenderit, enim eiusmod high life
+                                            accusamus terry richardson ad squid. 3 wolf moon officia
+                                            aute, non cupidatat skateboard dolor brunch. Food truck
+                                            quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                            sunt aliqua put a bird on it squid single-origin coffee
+                                            nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                            helvetica, craft beer labore wes anderson cred nesciunt
+                                            sapiente ea proident.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end col -->
+
+        </div>
+    </div>
+</div>

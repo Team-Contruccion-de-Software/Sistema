@@ -154,6 +154,27 @@
                             <a href="~/Usuario/Calendario" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Calendario </span></a>
                         </li>
 
+                        @if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 3)
+                        {
+                            <li>
+                                <a href="~/Usuario/Horarios" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Horarios </span></a>
+                            </li>
+                        }
+                        else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 2)
+                        {
+                            <li>
+                                <a href="~/Usuario/UserHorario" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Horarios </span></a>
+                            </li>
+                        }
+
+                        <li>
+                            <a href="~/Usuario/Recomendaciones" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Recomendaciones </span></a>
+                        </li>
+
+                        <li>
+                            <a href="~/Usuario/Seguimiento" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Seguimiento </span></a>
+                        </li>
+
 
                     </ul>
                     <div class="clearfix"></div>

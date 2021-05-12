@@ -25,6 +25,11 @@ namespace Sistema_GGYM.Controllers
             return View();
         }
 
+        public ActionResult Horario()
+        {
+            return View();
+        }
+
         public ActionResult Videollamada()
         {
             return View();

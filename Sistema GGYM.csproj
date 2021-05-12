@@ -1749,6 +1749,7 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Calendario.cshtml" />
     <Content Include="Views\Usuario\Videollamada.cshtml" />
+    <Content Include="Views\Usuario\Horario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
