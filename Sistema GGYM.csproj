@@ -1561,6 +1561,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Base De Datos\HORARIO.cs" />
     <Compile Include="Models\Base De Datos\ModeloGGYM.cs" />
     <Compile Include="Models\Base De Datos\TIPO_USUARIO.cs" />
     <Compile Include="Models\Base De Datos\USUARIO.cs" />

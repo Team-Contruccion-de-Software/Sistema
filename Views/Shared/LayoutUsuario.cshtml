@@ -62,7 +62,7 @@
                             </button>
                         </li>
                         <li>
-                            <h4 class="page-title">Inicio</h4>
+                            <h4 class="page-title">Sistema</h4>
                         </li>
                     </ul>
 
@@ -157,13 +157,13 @@
                         @if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 3)
                         {
                             <li>
-                                <a href="~/Usuario/Horarios" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Horarios </span></a>
+                                <a href="~/Usuario/CrearHorarios" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Horarios </span></a>
                             </li>
                         }
                         else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 2)
                         {
                             <li>
-                                <a href="~/Usuario/UserHorario" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Horarios </span></a>
+                                <a href="~/Usuario/Horario" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Horarios </span></a>
                             </li>
                         }
 

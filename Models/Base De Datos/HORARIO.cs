@@ -5,6 +5,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("HORARIO")]
     public partial class HORARIO
@@ -34,5 +35,24 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<USUARIO> USUARIO { get; set; }
+
+        public List<HORARIO> ListarTodo()
+        {
+            var horario = new List<HORARIO>();
+
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    horario = db.HORARIO.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return horario;
+        }
     }
 }

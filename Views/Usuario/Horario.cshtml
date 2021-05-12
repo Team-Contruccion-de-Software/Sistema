@@ -1,7 +1,9 @@
-﻿
+﻿@model List<Sistema_GGYM.Models.Base_De_Datos.USUARIO>
 @{
     ViewBag.Title = "Horario";
     Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+
+    List<Sistema_GGYM.Models.Base_De_Datos.HORARIO> horarios = ViewBag.horario;
 }
 
 <!--LISTA DE HORARIOS-->
@@ -25,81 +27,94 @@
                         </ul>
                     </div>
 
-                    <h4 class="header-title m-t-0 m-b-30">Team Members</h4>
+                    <h4 class="header-title m-t-0 m-b-30">Entrenadores</h4>
 
                     <ul class="list-group m-b-0 user-list">
 
                         <!--LISTA DE ENTRENADORES-->
-                        <li class="list-group-item">
-                            <a href="#" class="user-list-item">
-                                <div class="avatar">
-                                    <img src="~/Source/User/images/users/avatar-2.jpg" alt="">
-                                </div>
-                                <div class="user-desc">
-                                    <span class="name">@usuario.NOMBRE</span>
-                                    <span class="desc">@usuario.TIPO_USUARIO.DESCRIPCION</span>
-                                </div>
-                            </a>
-                        </li>    
-                        
+
+                        @foreach (var usuario in Model)
+                        {
+                            if (usuario.ID_TIPOUSUARIO == 3)
+                            {
+                                <li class="list-group-item">
+                                    <a href="#" class="user-list-item">
+                                        <div class="avatar">
+                                            <img src="~/Source/User/images/users/avatar-2.jpg" alt="">
+                                        </div>
+                                        <div class="user-desc">
+                                            <span class="name">@usuario.NOMBRE</span>
+                                            <span class="desc">@usuario.TIPO_USUARIO.DESCRIPCION</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            }
+                        }
                     </ul>
 
                 </div>
             </div>
-            
+
 
             <!--Se listaran los horarios por descripcion, encargado y hora de inicio y fin-->
             <div class="col-lg-8 col-md-6">
-                <div class="panel panel-color panel-tabs panel-success">
+                @foreach (var usuario in Model)
+                {
+                    foreach (var dato in horarios)
+                    {
+                        if (usuario.ID_HORARIO == dato.ID_HORARIO && usuario.ID_TIPOUSUARIO == 3)
+                        {
+                            <div class="panel panel-color panel-tabs panel-collapse panel-custom">
 
-                    <div class="panel-heading">
-                        <ul class="nav nav-pills pull-right">
-                            <li class="active">
-                                <a href="#navpills-1" data-toggle="tab" aria-expanded="true">Descripcion</a>
-                            </li>
-                            <li class="">
-                                <a href="#navpills-2" data-toggle="tab" aria-expanded="false">Horario</a>
-                            </li>
-                        </ul>
-                        <h3 class="panel-title">Panel with tabs</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="tab-content">
-                            <div id="navpills-1" class="tab-pane fade in active">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p>
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life
-                                            accusamus terry richardson ad squid. 3 wolf moon officia
-                                            aute, non cupidatat skateboard dolor brunch. Food truck
-                                            quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                                            sunt aliqua put a bird on it squid single-origin coffee
-                                            nulla assumenda shoreditch et. Nihil anim keffiyeh
-                                            helvetica, craft beer labore wes anderson cred nesciunt
-                                            sapiente ea proident.
-                                        </p>
+                                <div class="panel-heading">
+                                    <ul class="nav nav-pills pull-right">
+                                        <li class="active">
+                                            <a href="#navpills-1" data-toggle="tab" aria-expanded="true">Descripcion</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="#navpills-2" data-toggle="tab" aria-expanded="false">Horario</a>
+                                        </li>
+                                    </ul>
+                                    <!--Abrir modal de rellenar campos faltante-->
+
+                                    <h3 class="panel-title">
+                                        <a href="#" class="btn btn-default waves-effect m-b-5"> <i class="fa zmdi zmdi-plus-circle-o m-r-5"></i> <span>Agregar</span></a>
+                                        Horario @dato.ID_HORARIO por @usuario.NOMBRE @usuario.APELLIDO
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div id="navpills-1" class="tab-pane fade in active">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>
+                                                        @dato.DESCRIPCION
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="navpills-2" class="tab-pane fade">
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <p>Hora</p>
+                                                    <p>@dato.HORA_INICIO - @dato.HORA_FIN</p>
+
+                                                    <p>Fecha inicio y fin</p>
+                                                    <p>@dato.FECHA_INICIO - @dato.FECHA_FIN</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="navpills-2" class="tab-pane fade">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p>
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life
-                                            accusamus terry richardson ad squid. 3 wolf moon officia
-                                            aute, non cupidatat skateboard dolor brunch. Food truck
-                                            quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                                            sunt aliqua put a bird on it squid single-origin coffee
-                                            nulla assumenda shoreditch et. Nihil anim keffiyeh
-                                            helvetica, craft beer labore wes anderson cred nesciunt
-                                            sapiente ea proident.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        }
+
+                    }
+                }
+
+
             </div><!-- end col -->
 
         </div>

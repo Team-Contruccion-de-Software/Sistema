@@ -13,6 +13,7 @@ namespace Sistema_GGYM.Controllers
     {
         USUARIO usuario = new USUARIO();
         TIPO_USUARIO tipo_usuario = new TIPO_USUARIO();
+        HORARIO horario = new HORARIO();
 
         // GET: Usuario
         public ActionResult Index()
@@ -27,7 +28,8 @@ namespace Sistema_GGYM.Controllers
 
         public ActionResult Horario()
         {
-            return View();
+            ViewBag.horario = horario.ListarTodo();
+            return View(usuario.ListarTodo());
         }
 
         public ActionResult Videollamada()
