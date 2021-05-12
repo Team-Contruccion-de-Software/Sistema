@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using static Sistema_GGYM.Filters.AdminFilters;
 using Sistema_GGYM.Models.Base_De_Datos;
+using Sistema_GGYM.Models;
 
 namespace Sistema_GGYM.Controllers
 {
@@ -27,6 +28,12 @@ namespace Sistema_GGYM.Controllers
         }
 
         public ActionResult Horario()
+        {
+            ViewBag.horario = horario.ListarTodo();
+            return View(usuario.ListarTodo());
+        }
+
+        public ActionResult CoachHorario()
         {
             ViewBag.horario = horario.ListarTodo();
             return View(usuario.ListarTodo());
