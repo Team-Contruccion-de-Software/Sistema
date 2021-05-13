@@ -10,9 +10,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="~/Source/User/images/favicon.ico">
 
-    <title>Pagina principal</title>
+    <title id="Titulo">Pagina principal</title>
 
     <!--calendar css-->
     <link href="~/Source/User/plugins/fullcalendar/dist/fullcalendar.css" rel="stylesheet" />
@@ -39,10 +38,8 @@
 
 <body class="fixed-left">
 
-    <!-- Begin page -->
     <div id="wrapper">
 
-        <!-- Top Bar Start -->
         <div class="topbar">
 
             <!-- LOGO -->
@@ -50,11 +47,9 @@
                 <a href="index.html" class="logo"><span>GG<span>YM</span></span><i class="zmdi zmdi-layers"></i></a>
             </div>
 
-            <!-- Button mobile view to collapse sidebar menu -->
             <div class="navbar navbar-default" role="navigation">
                 <div class="container">
 
-                    <!-- Page title -->
                     <ul class="nav navbar-nav navbar-left">
                         <li>
                             <button class="button-menu-mobile open-left">
@@ -66,10 +61,9 @@
                         </li>
                     </ul>
 
-                    <!-- Right(Notification and Searchbox -->
+
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <!-- Notification -->
                             <div class="notification-box">
                                 <ul class="list-inline m-b-0">
                                     <li>
@@ -83,7 +77,6 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!-- End Notification bar -->
                         </li>
                         <li class="hidden-xs">
                             <form role="search" class="app-search">
@@ -94,44 +87,31 @@
                         </li>
                     </ul>
 
-                </div><!-- end container -->
-            </div><!-- end navbar -->
+                </div>
+            </div>
         </div>
-        <!-- Top Bar End -->
-        <!-- ========== Left Sidebar Start ========== -->
+
         <div class="left side-menu">
             <div class="sidebar-inner slimscrollleft">
 
-                <!-- User -->
+                <!-- Barra lateral del usuario -->
                 <div class="user-box">
                     <div class="user-img">
 
-                        @if (usuario.NOMBRE.Contains("Bayron"))
-                        {
-                            <img src="~/Source/images/Fotos/Bayron.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
-                        }
-                        else if (usuario.NOMBRE.Contains("Paolo"))
-                        {
-                            <img src="~/Source/images/Fotos/paolo.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
-                        }
-                        else if (usuario.NOMBRE.Contains("Daniel"))
-                        {
-                            <img src="~/Source/images/Fotos/danielo.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
-                        }
-                        else if (usuario.NOMBRE.Contains("Alvaro"))
-                        {
-                            <img src="~/Source/images/Fotos/alvaro.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
-                        }
-                        else
-                        {
-                            <img src="~/Source/User/images/users/user-icon.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
-                        }
+                        <img id="ImagenPefil" src="" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+
                         <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
 
                     </div>
-                    <h5><a href="#">@usuario.NOMBRE @usuario.APELLIDO</a> </h5>
+                    <h5><a id="usuario" href="#">@usuario.NOMBRE @usuario.APELLIDO</a> </h5>
                     <small class="text-success"><b>@usuario.TIPO_USUARIO.DESCRIPCION</b></small>
                     <ul class="list-inline">
+                        <li>
+                            <a href="~/Default" class="text-custom">
+                                <i class="fa fa-home fa-fw"></i>
+                            </a>
+                        </li>
+
                         <li>
                             <a href="~/Login/Logout" class="text-custom">
                                 <i class="zmdi zmdi-power"></i>
@@ -147,34 +127,33 @@
                         <li class="text-muted menu-title">Navegación</li>
 
                         <li>
-                            <a href="~/Usuario/Index" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Inicio </span> </a>
-                        </li>
-
-                        <li>
-                            <a href="~/Usuario/Calendario" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Calendario </span></a>
+                            <a href="~/Usuario/Index" id="Indice1" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Inicio </span> </a>
                         </li>
 
                         @if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 3)
                         {
                             <li>
-                                <a href="~/Usuario/CoachHorario" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Horarios </span></a>
+                                <a href="~/Usuario/CoachHorario" id="Indice3" class="waves-effect"><i class="ti ti-alarm-clock"></i><span> Horarios </span></a>
                             </li>
                         }
                         else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 2)
                         {
                             <li>
-                                <a href="~/Usuario/Horario" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Horarios </span></a>
+                                <a href="~/Usuario/Horario" id="Indice4" class="waves-effect"><i class="ti ti-alarm-clock"></i><span> Horarios </span></a>
                             </li>
                         }
 
                         <li>
-                            <a href="~/Usuario/Recomendaciones" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Recomendaciones </span></a>
+                            <a href="~/Usuario" id="Indice5" class="waves-effect"><i class="ti ti-help-alt"></i><span> Recomendaciones </span></a>
                         </li>
 
                         <li>
-                            <a href="~/Usuario/Seguimiento" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Seguimiento </span></a>
+                            <a href="~/Usuario" id="Indice6" class="waves-effect"><i class="zmdi zmdi-trending-up"></i><span> Seguimiento </span></a>
                         </li>
 
+                        <li>
+                            <a href="~/Usuario/Calendario" id="Indice2" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Calendario </span></a>
+                        </li>
 
                     </ul>
                     <div class="clearfix"></div>
@@ -237,6 +216,12 @@
     <script src="~/Source/User/plugins/moment/moment.js"></script>
     <script src='~/Source/User/plugins/fullcalendar/dist/fullcalendar.min.js'></script>
     <script src="~/Source/User/pages/jquery.fullcalendar.js"></script>
+
+    <!--Efecto de seleccion-->
+    <script src="~/Source/js/Indices.js"></script>
+
+    <!--Lectura imagenes de perfil-->
+    <script src="~/Source/js/ImagenDePerfil.js"></script>
 
 </body>
 </html>
