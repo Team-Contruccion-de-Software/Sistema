@@ -142,6 +142,7 @@
     <Content Include="Source\js\Login\jquery.js" />
     <Content Include="Source\js\Login\jquery.validate.min.js" />
     <Content Include="Source\js\Login\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Source\js\VerificarHorario.js" />
     <Content Include="Source\js\Videollamada\receiver.js" />
     <Content Include="Source\js\Videollamada\sender.js" />
     <Content Include="Source\User\css\bootstrap-theme.css" />

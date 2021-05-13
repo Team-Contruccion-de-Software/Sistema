@@ -5,6 +5,8 @@
     List<Sistema_GGYM.Models.Base_De_Datos.HORARIO> horarios = ViewBag.horario;
     Sistema_GGYM.Models.Base_De_Datos.USUARIO usercookie = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
     int i = 0;
+    string inicio = "";
+    string fin = "";
 }
 
 <!--LISTA DE HORARIOS DEL COACH-->
@@ -44,12 +46,28 @@
                                             <p style="text-align: justify">
                                                 @hora.DESCRIPCION
                                             </p>
-
                                         </div>
                                     </div>
                                     <div class="panel-footer">
-                                        <label>Duracion: @hora.HORA_INICIO.ToString().Substring(0, 5) - @hora.HORA_FIN.ToString().Substring(0, 5)</label>
-                                        <label>Fecha: del @hora.FECHA_INICIO.ToString("dd/MM/yyyy") al @hora.FECHA_FIN.ToString("dd/MM/yyyy")</label>
+                                        <div class="row">
+                                            <div class="col-md-8">
+
+                                                <label>Duracion:</label> @hora.HORA_INICIO.ToString().Substring(0, 5) - @hora.HORA_FIN.ToString().Substring(0, 5)<br />
+                                                <label>Fecha:</label> del @hora.FECHA_INICIO.ToString("dd/MM/yyyy") al @hora.FECHA_FIN.ToString("dd/MM/yyyy")
+                                            </div>
+
+                                            @{ 
+                                                inicio = hora.HORA_INICIO.ToString().Substring(0, 5).Replace(":", "");
+                                                fin = hora.HORA_FIN.ToString().Substring(0, 5).Replace(":", "");
+                                            }
+
+                                            <!--desplegar modal para verificar la fecha-->
+
+                                            <div class="col-md-4" style="height: max-content" align="right">
+                                                <a onclick="validarhora(@inicio, @fin)"
+                                                   class="btn btn-custom waves-effect m-b-5"> <i class="ti ti-arrow-circle-right m-r-5"></i> <span>Iniciar</span></a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -66,3 +84,6 @@
 
 <!--Lectura imagenes de perfil-->
 <script src="~/Source/js/ImagenDePerfil.js"></script>
+
+<!--Verificador de horarios-->
+<script src="~/Source/js/VerificarHorario.js"></script>
