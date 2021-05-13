@@ -5,6 +5,7 @@
 
     List<Sistema_GGYM.Models.Base_De_Datos.HORARIO> horarios = ViewBag.horario;
     List<Sistema_GGYM.Models.Base_De_Datos.REGISTRO> registro = ViewBag.registro;
+    int i = 0;
 }
 
 <!--LISTA DE HORARIOS-->
@@ -85,6 +86,7 @@
                 {
                     foreach (var dato in horarios)
                     {
+                        i = i + 2;
                         if (usuario.ID_USUARIO == dato.ID_USUARIO && usuario.ID_TIPOUSUARIO == 3)
                         {
                             <div class="panel panel-color panel-tabs panel-collapse panel-custom">
@@ -92,10 +94,10 @@
                                 <div class="panel-heading">
                                     <ul class="nav nav-pills pull-right">
                                         <li class="active">
-                                            <a href="#navpills-1" data-toggle="tab" aria-expanded="true">Descripcion</a>
+                                            <a href="#navpills-@(i)" data-toggle="tab" aria-expanded="true">Descripcion</a>
                                         </li>
                                         <li class="">
-                                            <a href="#navpills-2" data-toggle="tab" aria-expanded="false">Horario</a>
+                                            <a href="#navpills-@(i+1)" data-toggle="tab" aria-expanded="false">Horario</a>
                                         </li>
                                     </ul>
                                     <!--Abrir modal de rellenar campos faltante-->
@@ -107,7 +109,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="tab-content">
-                                        <div id="navpills-1" class="tab-pane fade in active">
+                                        <div id="navpills-@(i)" class="tab-pane fade in active">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p>
@@ -116,7 +118,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="navpills-2" class="tab-pane fade">
+                                        <div id="navpills-@(i+1)" class="tab-pane fade">
                                             <div class="row">
                                                 <div class="col-md-12">
 
