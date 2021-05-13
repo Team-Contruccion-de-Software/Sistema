@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Videollamada";
     Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+    Sistema_GGYM.Models.Base_De_Datos.USUARIO usuario = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
 }
 
 <link href="~/Source/css/Videollamada/video.css" rel="stylesheet" />
@@ -9,46 +10,87 @@
 <div class="content">
     <div class="container">
 
-        <div class="row" style="height: 500px;">
 
-            <div class="col-lg-12" style="height: 500px;">
-                <div>
-                    <div class="col-lg-4 col-md-6">
-                        <input class="form-control" placeholder="Ingresar el nombre..." type="text" id="username-input" />
+        <!--LOGICA DE LA VIDEOLLAMADA-->
+        <!--LOGICA USUARIO PREMIUM-->
+        @if (usuario.ID_TIPOUSUARIO == 2)
+        {
+            <div class="row" style="height: 500px;">
+
+                <div class="col-lg-12" style="height: 500px;">
+                    <div>
+                        <div class="col-lg-4 col-md-6">
+                            <input class="form-control" placeholder="Ingresar el nombre..." type="text" id="username-input" />
+                        </div>
+
+                        <div class="col-lg-8 col-md-6">
+                            <button class="btn btn-success" onclick="joinCall()">Ingresar a la llamada</button>
+                        </div>
                     </div>
 
-                    <div class="col-lg-8 col-md-6">
-                        <button class="btn btn-success" onclick="joinCall()">Ingresar a la llamada</button>
+                    <div id="video-call-div">
+
+
+                        <video muted id="local-video" autoplay></video>
+
+
+                        <video id="remote-video" autoplay></video>
+
+
+                        <div class="call-action-div">
+                            <button onclick="muteAudio()">Silenciar</button>
+                            <button onclick="muteVideo()">Apagar camara</button>
+                        </div>
                     </div>
+
                 </div>
-
-                <div id="video-call-div">
-
-
-                    <video muted id="local-video" autoplay></video>
-
-
-                    <video id="remote-video" autoplay></video>
-
-
-                    <div class="call-action-div">
-                        <button onclick="muteVideo()">Silenciar</button>
-                        <button onclick="muteAudio()">Apagar camara</button>
-                    </div>
-                </div>
-
             </div>
-        </div>
+
+            <script src="~/Source/js/Videollamada/receiver.js"></script>
+        }
+
+        <!--LOGICA ENTRENADOR-->
+        @if (usuario.ID_TIPOUSUARIO == 3)
+        {
+            <div class="row" style="height: 500px;">
+
+                <div class="col-lg-12" style="height: 500px;">
+                    <div>
+                        <div class="col-lg-4 col-md-12">
+                            <input class="form-control" placeholder="Ingresar el nombre..." type="text" id="username-input" />
+                        </div>
+                        <br /><br /><br />
+                        <div class="col-lg-12 col-md-12">
+                            <button class="btn btn-primary" onclick="sendUsername()">Enviar identificador</button>
+                            <button class="btn btn-success" onclick="startCall()">Iniciar videollamada</button>
+                        </div>
+                    </div>
+
+                    <div id="video-call-div">
+
+
+                        <video muted id="local-video" autoplay></video>
+
+
+                        <video id="remote-video" autoplay></video>
+
+
+                        <div class="call-action-div">
+                            <button onclick="muteAudio()">Silenciar</button>
+                            <button onclick="muteVideo()">Apagar camara</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <script src="~/Source/js/Videollamada/sender.js"></script>
+        }
+
     </div>
 </div>
-
-<script src="~/Source/js/Videollamada/receiver.js"></script>
-
 <!--Efecto de seleccion-->
 <script src="~/Source/js/Indices.js"></script>
 
-<!--Lectura imagenes de perfil-->
+<!--Lectura imagenes de perfil y logica de generacion del identificador de la llamada-->
 <script src="~/Source/js/ImagenDePerfil.js"></script>
-
-<!--Generar sha1 para el indice unico-->
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>

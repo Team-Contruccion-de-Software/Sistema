@@ -29,13 +29,29 @@ if (usuario.includes("Paolo")) {
 
 if (nombrehtml.includes("Videollamada")) {
 
-    var identificadorUnico = eliminarTildes(usuario);
+    //definimos string
+    idllamada = idllamada.toString();
+
+    //eliminamos las tildes si es que hubiera
+    var identificadorUnico = eliminarTildes(idllamada).toString();
+
+    //tamaño del string para cortar
+    var tamaño = contarletras(identificadorUnico)
+
+    //iniciamos variables que usaremos para almacenar el id de la llamada y nombre
+    var idunico = identificadorUnico.substring(0, 1);
+    var nombrellamda = identificadorUnico.substring(1, parseInt(tamaño));    
+
     var nombrellamada = document.getElementById("username-input");
-    nombrellamada.value = "GGYM" + identificadorUnico + idllamada + "GGYM";
+    nombrellamada.value = "GGYM" + nombrellamda + idunico + "GGYM";
 }
 
 function eliminarTildes(cadena) {
     cadena = cadena.replace(" ", "").toLowerCase();
     const acentos = { 'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u', 'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U' };
     return cadena.split('').map(letra => acentos[letra] || letra).join('').toString();
+}
+
+function contarletras(str) {
+    return str.replace(/\s/g, '').length;
 }

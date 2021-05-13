@@ -77,7 +77,7 @@ function startCall() {
 
         createAndSendOffer()
     }, (error) => {
-        console.log(error)
+        alert(error)
     })
 }
 
@@ -90,7 +90,7 @@ function createAndSendOffer() {
 
         peerConn.setLocalDescription(offer)
     }, (error) => {
-        console.log(error)
+        alert(error)
     })
 }
 

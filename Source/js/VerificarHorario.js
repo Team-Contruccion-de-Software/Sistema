@@ -1,11 +1,12 @@
-﻿var horainicio;
+﻿var usuario = document.getElementById("usuario").innerText;
+var horainicio;
 var horafin;
 
 var horaentera;
 var horainicioentera;
 var horafinentera;
 
-function validarhora(inicio, fin) {
+function validarhora(inicio, fin, id) {
 
     var fecha = new Date();
     var hora = fecha.getHours() + ':' + fecha.getMinutes();
@@ -22,11 +23,13 @@ function validarhora(inicio, fin) {
 
     if (horainicioentera > horaentera || horafinentera < horaentera ) {
         alert("Aun no empieza");
+        location.href = "/Usuario/Videollamada/" + id + usuario.replace(" ", "");
     }
 
     if (horainicioentera < horaentera && horafinentera > horaentera) {       
         alert("empezo");
-         //MOSTRAR MODAL DE CONFIRMACION
+        //MOSTRAR MODAL DE CONFIRMACION
+        
     }
 
 }

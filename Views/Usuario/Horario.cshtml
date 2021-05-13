@@ -51,7 +51,7 @@
 
                     <ul class="list-group m-b-0 user-list">
 
-                        <!--LISTA DE ENTRENADORES-->
+                        <!--LISTA DE HORARIOS REGISTRADOS-->
 
                         @foreach (var user in Model)
                         {
@@ -59,13 +59,24 @@
                             {
                                 if (user.ID_USUARIO == item.ID_USUARIO)
                                 {
+                                    string entrenadorn = "";
+
+                                    <!--Extraccion del entrenador-->
+                                    foreach (var entrenador in Model)
+                                    {
+                                        if (item.HORARIO.ID_USUARIO == entrenador.ID_USUARIO)
+                                        {
+                                            entrenadorn = entrenador.NOMBRE + entrenador.APELLIDO;
+                                        }
+                                    }
+
                                     <li class="list-group-item">
-                                        <a href="~/Usuario/Videollamada/@(item.HORARIO.ID_HORARIO)" class="user-list-item">
+                                        <a href="~/Usuario/Videollamada/@item.ID_HORARIO@(entrenadorn)" class="user-list-item">
                                             <div class="avatar">
                                                 <img src="~/Source/images/ggymlogo.png" alt="">
                                             </div>
                                             <div class="user-desc">
-                                                <span class="name">Entrenamiento @item.HORARIO.ID_HORARIO</span>
+                                                <span class="name">Entrenamiento @item.ID_HORARIO</span>
                                                 <span class="desc">@item.HORARIO.DESCRIPCION</span>
                                                 <span class="desc">@item.HORARIO.HORA_INICIO.ToString().Substring(0, 5) - @item.HORARIO.HORA_FIN.ToString().Substring(0, 5)</span>
                                             </div>

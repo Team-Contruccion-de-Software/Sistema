@@ -23,7 +23,7 @@ function createAndSendAnswer () {
             answer: answer
         })
     }, error => {
-        console.log(error)
+            alert(error)
     })
 }
 
@@ -42,7 +42,7 @@ function joinCall() {
     username = document.getElementById("username-input").value
 
     document.getElementById("video-call-div")
-    .style.display = "inline"
+        .style.display = "inline"
 
     navigator.getUserMedia({
         video: {
@@ -90,7 +90,7 @@ function joinCall() {
         })
 
     }, (error) => {
-        console.log(error)
+        alert(error)
     })
 }
 
