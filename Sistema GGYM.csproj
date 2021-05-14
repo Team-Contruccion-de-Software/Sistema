@@ -111,6 +111,7 @@
     <Content Include="Source\images\2.jpeg" />
     <Content Include="Source\images\3.jpeg" />
     <Content Include="Source\images\athletic-boxer-punching-with-determination-precaution_158595-4826.jpg" />
+    <Content Include="Source\images\banner.jpg" />
     <Content Include="Source\images\bvn.jpg" />
     <Content Include="Source\images\dsa-min.jpg" />
     <Content Include="Source\images\erttt.jpg" />
@@ -142,9 +143,11 @@
     <Content Include="Source\js\Login\jquery.js" />
     <Content Include="Source\js\Login\jquery.validate.min.js" />
     <Content Include="Source\js\Login\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Source\js\Recomendacion.js" />
     <Content Include="Source\js\VerificarHorario.js" />
     <Content Include="Source\js\Videollamada\receiver.js" />
     <Content Include="Source\js\Videollamada\sender.js" />
+    <Content Include="Source\recomendaciones\r1_video.mp4" />
     <Content Include="Source\User\css\bootstrap-theme.css" />
     <Content Include="Source\User\css\bootstrap-theme.min.css" />
     <Content Include="Source\User\css\bootstrap.css" />
