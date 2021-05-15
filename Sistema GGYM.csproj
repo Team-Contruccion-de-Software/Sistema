@@ -114,6 +114,15 @@
     <Content Include="Source\images\banner.jpg" />
     <Content Include="Source\images\bvn.jpg" />
     <Content Include="Source\images\dsa-min.jpg" />
+    <Content Include="Source\images\Ejercicios\ejercicio1.gif" />
+    <Content Include="Source\images\Ejercicios\ejercicio2.gif" />
+    <Content Include="Source\images\Ejercicios\ejercicio3.gif" />
+    <Content Include="Source\images\Ejercicios\ejercicio4.gif" />
+    <Content Include="Source\images\Ejercicios\ejercicio5.gif" />
+    <Content Include="Source\images\Ejercicios\ejercicio6.gif" />
+    <Content Include="Source\images\Ejercicios\ejercicio7.gif" />
+    <Content Include="Source\images\Ejercicios\ejercicio8.gif" />
+    <Content Include="Source\images\Ejercicios\ejercicio9.gif" />
     <Content Include="Source\images\erttt.jpg" />
     <Content Include="Source\images\fddddd-min.jpg" />
     <Content Include="Source\images\fdgg-min.jpg" />
@@ -129,6 +138,8 @@
     <Content Include="Source\images\ggymlogo.png" />
     <Content Include="Source\images\muscular-guy-with-dumbbell_144627-27153.jpg" />
     <Content Include="Source\images\portrait-young-afro-american-sports-man-looks-away_171337-8255.jpg" />
+    <Content Include="Source\images\VideoEjercicios\Video1.mp4" />
+    <Content Include="Source\js\Ejercicios.js" />
     <Content Include="Source\js\ImagenDePerfil.js" />
     <Content Include="Source\js\Indices.js" />
     <Content Include="Source\js\Login\ini.js" />
@@ -143,10 +154,10 @@
     <Content Include="Source\js\Login\jquery.js" />
     <Content Include="Source\js\Login\jquery.validate.min.js" />
     <Content Include="Source\js\Login\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Source\js\Recomendacion.js" />
     <Content Include="Source\js\VerificarHorario.js" />
     <Content Include="Source\js\Videollamada\receiver.js" />
     <Content Include="Source\js\Videollamada\sender.js" />
+    <Content Include="Source\js\Videos.js" />
     <Content Include="Source\recomendaciones\r1_video.mp4" />
     <Content Include="Source\User\css\bootstrap-theme.css" />
     <Content Include="Source\User\css\bootstrap-theme.min.css" />
@@ -319,6 +330,14 @@
     <Content Include="Source\User\plugins\fullcalendar\dist\lang\vi.js" />
     <Content Include="Source\User\plugins\fullcalendar\dist\lang\zh-cn.js" />
     <Content Include="Source\User\plugins\fullcalendar\dist\lang\zh-tw.js" />
+    <Content Include="Source\User\plugins\isotope\dist\isotope.pkgd.js" />
+    <Content Include="Source\User\plugins\isotope\dist\isotope.pkgd.min.js" />
+    <Content Include="Source\User\plugins\isotope\js\isotope.js" />
+    <Content Include="Source\User\plugins\isotope\js\item.js" />
+    <Content Include="Source\User\plugins\isotope\js\layout-mode.js" />
+    <Content Include="Source\User\plugins\isotope\js\layout-modes\fit-rows.js" />
+    <Content Include="Source\User\plugins\isotope\js\layout-modes\masonry.js" />
+    <Content Include="Source\User\plugins\isotope\js\layout-modes\vertical.js" />
     <Content Include="Source\User\plugins\jquery-circliful\css\jquery.circliful.css" />
     <Content Include="Source\User\plugins\jquery-circliful\js\jquery.circliful.js" />
     <Content Include="Source\User\plugins\jquery-circliful\js\jquery.circliful.min.js" />
@@ -673,6 +692,18 @@
     <Content Include="Source\User\plugins\jquery.steps\demo\index.html" />
     <Content Include="Source\User\plugins\jquery.steps\demo\tabs.html" />
     <Content Include="Source\User\plugins\jquery.steps\demo\vertical.html" />
+    <Content Include="Source\User\plugins\magnific-popup\dist\jquery.magnific-popup.js" />
+    <Content Include="Source\User\plugins\magnific-popup\dist\jquery.magnific-popup.min.js" />
+    <Content Include="Source\User\plugins\magnific-popup\dist\magnific-popup.css" />
+    <Content Include="Source\User\plugins\magnific-popup\src\js\ajax.js" />
+    <Content Include="Source\User\plugins\magnific-popup\src\js\core.js" />
+    <Content Include="Source\User\plugins\magnific-popup\src\js\fastclick.js" />
+    <Content Include="Source\User\plugins\magnific-popup\src\js\gallery.js" />
+    <Content Include="Source\User\plugins\magnific-popup\src\js\iframe.js" />
+    <Content Include="Source\User\plugins\magnific-popup\src\js\image.js" />
+    <Content Include="Source\User\plugins\magnific-popup\src\js\inline.js" />
+    <Content Include="Source\User\plugins\magnific-popup\src\js\retina.js" />
+    <Content Include="Source\User\plugins\magnific-popup\src\js\zoom.js" />
     <Content Include="Source\User\plugins\moment\min\locales.js" />
     <Content Include="Source\User\plugins\moment\min\locales.min.js" />
     <Content Include="Source\User\plugins\moment\min\moment-with-locales.js" />
@@ -862,6 +893,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\DietasController.cs" />
+    <Compile Include="Controllers\EjercicioController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filters\AdminFilters.cs" />
@@ -910,6 +943,10 @@
     <Content Include="Views\Usuario\CoachHorario.cshtml" />
     <Content Include="Views\Usuario\EjerciciosRutinas.cshtml" />
     <Content Include="Views\Usuario\RecetasDietas.cshtml" />
+    <Content Include="Views\Ejercicio\Ejercicio.cshtml" />
+    <Content Include="Views\Dietas\Dieta.cshtml" />
+    <Content Include="Source\User\plugins\magnific-popup\src\css\main.scss" />
+    <Content Include="Source\User\plugins\magnific-popup\src\css\_settings.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

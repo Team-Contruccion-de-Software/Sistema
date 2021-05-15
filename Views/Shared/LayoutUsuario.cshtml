@@ -29,6 +29,9 @@
     <link href="~/Source/User/css/menu.css" rel="stylesheet" type="text/css" />
     <link href="~/Source/User/css/responsive.css" rel="stylesheet" type="text/css" />
 
+    <!--venobox lightbox-->
+    <link rel="stylesheet" href="~/Source/User/plugins/magnific-popup/dist/magnific-popup.css" />
+
 
     <script src="~/Source/User/js/modernizr.min.js"></script>
     <link rel="shortcut icon" href="~/Source/images/ggymlogo.png">
@@ -146,36 +149,36 @@
                         @if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 3)
                         {
                             <li>
-                                <a href="~/Usuario/CoachHorario" id="Indice3" class="waves-effect"><i class="ti ti-alarm-clock"></i><span> Horarios </span></a>
+                                <a href="~/Usuario/CoachHorario" id="Indice2" class="waves-effect"><i class="ti ti-alarm-clock"></i><span> Horarios </span></a>
                             </li>
                         }
                         else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 2)
                         {
                             <li>
-                                <a href="~/Usuario/Horario" id="Indice4" class="waves-effect"><i class="ti ti-alarm-clock"></i><span> Horarios </span></a>
+                                <a href="~/Usuario/Horario" id="Indice3" class="waves-effect"><i class="ti ti-alarm-clock"></i><span> Horarios </span></a>
                             </li>
 
                             <li>
-                                <a href="~/Usuario/Calendario" id="Indice2" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Calendario </span></a>
+                                <a href="~/Usuario/Calendario" id="Indice4" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Calendario </span></a>
                             </li>
 
                             <li>
-                                <a href="~/Usuario" id="Indice6" class="waves-effect"><i class="zmdi zmdi-trending-up"></i><span> Seguimiento </span></a>
+                                <a href="~/Usuario" id="Indice5" class="waves-effect"><i class="zmdi zmdi-trending-up"></i><span> Seguimiento </span></a>
                             </li>
                         }
 
                         <li>
-                            <a href="~/Usuario" id="Indice5" class="waves-effect"><i class="fa fa-heartbeat"></i><span> Ejercicios rutinas </span></a>
+                            <a href="~/Ejercicio/Ejercicio" id="Indice6" class="waves-effect"><i class="fa fa-heartbeat"></i><span> Ejercicios rutinas </span></a>
                         </li>
 
                         <li>
-                            <a href="~/Usuario" id="Indice7" class="waves-effect"><i class="fa fa-leaf"></i><span> Recetas dietas </span></a>
+                            <a href="~/Dietas/Dieta" id="Indice7" class="waves-effect"><i class="fa fa-leaf"></i><span> Recetas dietas </span></a>
                         </li>
 
                         @if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 1)
                         {
                             <li>
-                                <a href="~/Usuario" id="Indice8" class="waves-effect"><i class="ti ti-crown"></i><span> Membresía </span></a>
+                                <a href="~/Usuario" id="Indice8" class="text-warning waves-effect"><i class="ti ti-crown"></i><span> Membresía </span></a>
                             </li>
                         }
 
@@ -222,12 +225,11 @@
     <script src="~/Source/User/js/jquery.scrollTo.min.js"></script>
     <script src="~/Source/User/plugins/jquery-knob/jquery.knob.js"></script>
 
-    <!--Morris Chart-->
-    <script src="~/Source/User/plugins/morris/morris.min.js"></script>
-    <script src="~/Source/User/plugins/raphael/raphael-min.js"></script>
+    <!-- isotope filter plugin -->
+    <script type="text/javascript" src="~/Source/User/plugins/isotope/dist/isotope.pkgd.min.js"></script>
 
-    <!-- Dashboard init -->
-    <script src="~/Source/User/pages/jquery.dashboard.js"></script>
+    <!-- Popup en los ejercicios -->
+    <script type="text/javascript" src="~/Source/User/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
 
     <!-- App js -->
     <script src="~/Source/User/js/jquery.core.js"></script>
@@ -241,11 +243,9 @@
     <script src='~/Source/User/plugins/fullcalendar/dist/fullcalendar.min.js'></script>
     <script src="~/Source/User/pages/jquery.fullcalendar.js"></script>
 
-    <!--Efecto de seleccion-->
-    <script src="~/Source/js/Indices.js"></script>
+    
 
-    <!--Lectura imagenes de perfil-->
-    <script src="~/Source/js/ImagenDePerfil.js"></script>
+
 
 </body>
 </html>

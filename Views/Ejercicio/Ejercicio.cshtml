@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "Ejercicio";
+    Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+}
+
+<div class="content">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="panel-group" id="accordion" role="tablist"
+                     aria-multiselectable="true">
+
+                    <!--Lista desplegable de rutinas-->
+
+                    <div class="panel panel-default bx-shadow-none">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse"
+                                   data-parent="#accordion" href="#collapseOne"
+                                   aria-expanded="false" aria-controls="collapseOne">
+                                    Rutinas Recomendadas
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse"
+                             role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+
+                                <div class="row port m-b-20">
+                                    <div id="galeria1" class="portfolioContainer">
+
+                                        <!--Lista de imagenes generadas con js-->
+                                        <!--Cargar ejercicios-->
+                                        <script src="~/Source/js/Ejercicios.js"></script>
+                                        <!--Fin de la lista-->
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Lista desplegable de videos recomendados de los entrenadores-->
+
+                    <div class="panel panel-default bx-shadow-none">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse"
+                                   data-parent="#accordion" href="#collapseTwo"
+                                   aria-expanded="false" aria-controls="collapseTwo">
+                                    Videos recomendados
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse"
+                             role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+
+                                <div class="row port m-b-20">
+                                    <div id="galeria2" class="portfolioContainer">
+
+                                        <!--Lista de videos generadas con js-->
+                                        <!--Cargar videos de los entrenadores-->
+                                        <script src="~/Source/js/Videos.js"></script>
+                                        <!--Fin de la lista-->
+
+                                    </div>
+                                </div>                              
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Lista desplegable de otras cosas-->
+
+                    <div class="panel panel-default bx-shadow-none">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse"
+                                   data-parent="#accordion" href="#collapseThree"
+                                   aria-expanded="false" aria-controls="collapseThree">
+                                    Otras cosas
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse"
+                             role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life
+                                accusamus terry richardson ad squid. 3 wolf moon officia
+                                aute, non cupidatat skateboard dolor brunch. Food truck
+                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                sunt aliqua put a bird on it squid single-origin coffee
+                                nulla assumenda shoreditch et. Nihil anim keffiyeh
+                                helvetica, craft beer labore wes anderson cred nesciunt
+                                sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                                Leggings occaecat craft beer farm-to-table, raw denim
+                                aesthetic synth nesciunt you probably haven't heard of them
+                                accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div><!-- end col -->
+        </div>
+    </div>
+</div>
+
+<!--Jquery-->
+<script src="~/Source/User/js/jquery.min.js"></script>
+
+<!--Efecto carrusel-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.image-popup').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            mainClass: 'mfp-fade',
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0, 1]
+            }
+        });
+    });
+</script>
+
+<!--Efecto de seleccion-->
+<script src="~/Source/js/Indices.js"></script>
+
+<!--Lectura imagenes de perfil-->
+<script src="~/Source/js/ImagenDePerfil.js"></script>
