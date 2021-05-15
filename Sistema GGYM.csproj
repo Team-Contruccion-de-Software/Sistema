@@ -275,6 +275,7 @@
     <Content Include="Source\User\pages\jquery.ui-sliders.js" />
     <Content Include="Source\User\pages\jquery.xeditable.js" />
     <Content Include="Source\User\pages\jvectormap.init.js" />
+    <Content Include="Source\User\plugins\count-down\jquery.lwtCountdown-1.0.js" />
     <Content Include="Source\User\plugins\fullcalendar\dist\fullcalendar.css" />
     <Content Include="Source\User\plugins\fullcalendar\dist\fullcalendar.js" />
     <Content Include="Source\User\plugins\fullcalendar\dist\fullcalendar.min.css" />
@@ -896,6 +897,7 @@
     <Compile Include="Controllers\DietasController.cs" />
     <Compile Include="Controllers\EjercicioController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SeguimientoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filters\AdminFilters.cs" />
     <Compile Include="Global.asax.cs">
@@ -947,6 +949,7 @@
     <Content Include="Views\Dietas\Dieta.cshtml" />
     <Content Include="Source\User\plugins\magnific-popup\src\css\main.scss" />
     <Content Include="Source\User\plugins\magnific-popup\src\css\_settings.scss" />
+    <Content Include="Views\Seguimiento\Seguimiento.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
