@@ -908,6 +908,8 @@
     <Content Include="Views\Usuario\Videollamada.cshtml" />
     <Content Include="Views\Usuario\Horario.cshtml" />
     <Content Include="Views\Usuario\CoachHorario.cshtml" />
+    <Content Include="Views\Usuario\EjerciciosRutinas.cshtml" />
+    <Content Include="Views\Usuario\RecetasDietas.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

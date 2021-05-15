@@ -104,7 +104,20 @@
 
                     </div>
                     <h5><a id="usuario" href="#">@usuario.NOMBRE @usuario.APELLIDO</a> </h5>
-                    <small class="text-success"><b>@usuario.TIPO_USUARIO.DESCRIPCION</b></small>
+                    @if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 1)
+                    {
+                        <small class="text-primary"><b>@usuario.TIPO_USUARIO.DESCRIPCION </b><i class="ti ti-user"></i></small>
+                    }
+                    else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 2)
+                    {
+                        <small class="text-success"><b>@usuario.TIPO_USUARIO.DESCRIPCION </b><i class="ti ti-crown"></i></small>
+                    }
+                    else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 3)
+                    {
+                        <small class="text-warning"><b>@usuario.TIPO_USUARIO.DESCRIPCION </b><i class="ti ti-basketball"></i></small>
+                    }
+
+
                     <ul class="list-inline">
                         <li>
                             <a href="~/Default" class="text-custom">
@@ -141,19 +154,30 @@
                             <li>
                                 <a href="~/Usuario/Horario" id="Indice4" class="waves-effect"><i class="ti ti-alarm-clock"></i><span> Horarios </span></a>
                             </li>
+
+                            <li>
+                                <a href="~/Usuario/Calendario" id="Indice2" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Calendario </span></a>
+                            </li>
+
+                            <li>
+                                <a href="~/Usuario" id="Indice6" class="waves-effect"><i class="zmdi zmdi-trending-up"></i><span> Seguimiento </span></a>
+                            </li>
                         }
 
                         <li>
-                            <a href="~/Usuario" id="Indice5" class="waves-effect"><i class="ti ti-help-alt"></i><span> Recomendaciones </span></a>
+                            <a href="~/Usuario" id="Indice5" class="waves-effect"><i class="fa fa-heartbeat"></i><span> Ejercicios rutinas </span></a>
                         </li>
 
                         <li>
-                            <a href="~/Usuario" id="Indice6" class="waves-effect"><i class="zmdi zmdi-trending-up"></i><span> Seguimiento </span></a>
+                            <a href="~/Usuario" id="Indice7" class="waves-effect"><i class="fa fa-leaf"></i><span> Recetas dietas </span></a>
                         </li>
 
-                        <li>
-                            <a href="~/Usuario/Calendario" id="Indice2" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Calendario </span></a>
-                        </li>
+                        @if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 1)
+                        {
+                            <li>
+                                <a href="~/Usuario" id="Indice8" class="waves-effect"><i class="ti ti-crown"></i><span> Membresía </span></a>
+                            </li>
+                        }
 
                     </ul>
                     <div class="clearfix"></div>
