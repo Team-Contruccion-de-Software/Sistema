@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Ejercicio";
     Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+    Sistema_GGYM.Models.Base_De_Datos.USUARIO usuario = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
 }
 
 <div class="content">
@@ -44,35 +45,69 @@
                         </div>
                     </div>
 
-                    <!--Lista desplegable de videos recomendados de los entrenadores-->
-
                     <div class="panel panel-default bx-shadow-none">
-                        <div class="panel-heading" role="tab" id="headingTwo">
+                        <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse"
-                                   data-parent="#accordion" href="#collapseTwo"
-                                   aria-expanded="false" aria-controls="collapseTwo">
-                                    Videos recomendados
+                                   data-parent="#accordion" href="#collapseOne"
+                                   aria-expanded="false" aria-controls="collapseOne">
+                                    Dietas recomendadas
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseTwo" class="panel-collapse collapse"
-                             role="tabpanel" aria-labelledby="headingTwo">
+                        <div id="collapseOne" class="panel-collapse collapse"
+                             role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
 
                                 <div class="row port m-b-20">
-                                    <div id="galeria2" class="portfolioContainer">
+                                    <div id="galeria1" class="portfolioContainer">
 
-                                        <!--Lista de videos generadas con js-->
-                                        <!--Cargar videos de los entrenadores-->
-                                        <script src="~/Source/js/Videos.js"></script>
+                                        <!--Lista de imagenes generadas con js-->
+                                        <!--Cargar ejercicios-->
+                                        <script src="~/Source/js/Dietas.js"></script>
                                         <!--Fin de la lista-->
 
                                     </div>
-                                </div>                              
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
+
+                    <!--Lista desplegable de videos recomendados de los entrenadores-->
+
+                    @if (usuario.ID_TIPOUSUARIO == 2)
+                    {
+                        <div class="panel panel-default bx-shadow-none">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                       data-parent="#accordion" href="#collapseTwo"
+                                       aria-expanded="false" aria-controls="collapseTwo">
+                                        Videos recomendados
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse"
+                                 role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+
+                                    <div class="row port m-b-20">
+                                        <div id="galeria2" class="portfolioContainer">
+
+                                            <!--Lista de videos generadas con js-->
+                                            <!--Cargar videos de los entrenadores-->
+                                            <script src="~/Source/js/Videos.js"></script>
+                                            <!--Fin de la lista-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
 
                     <!--Lista desplegable de otras cosas-->
 

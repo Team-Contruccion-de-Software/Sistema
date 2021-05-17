@@ -45,15 +45,5 @@ namespace Sistema_GGYM.Controllers
         {
             return View();
         }
-
-        public ActionResult EjerciciosRutinas()
-        {
-            return View();
-        }
-
-        public ActionResult RecetasDietas()
-        {
-            return View();
-        }
     }
 }
