@@ -16,6 +16,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         {
             HORARIO = new HashSet<HORARIO>();
             REGISTRO = new HashSet<REGISTRO>();
+            REPORTES = new HashSet<REPORTES>();
         }
 
         [Key]
@@ -56,11 +57,18 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
         public int ID_TIPOUSUARIO { get; set; }
 
+        public int? ID_MEMBRESIA { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HORARIO> HORARIO { get; set; }
 
+        public virtual MEMBRESIA MEMBRESIA { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REGISTRO> REGISTRO { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<REPORTES> REPORTES { get; set; }
 
         public virtual TIPO_USUARIO TIPO_USUARIO { get; set; }
 

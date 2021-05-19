@@ -904,9 +904,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Base De Datos\CATEGORIA_PRODUCTO.cs" />
     <Compile Include="Models\Base De Datos\HORARIO.cs" />
+    <Compile Include="Models\Base De Datos\MEMBRESIA.cs" />
     <Compile Include="Models\Base De Datos\ModeloGGYM.cs" />
+    <Compile Include="Models\Base De Datos\PRODUCTO.cs" />
     <Compile Include="Models\Base De Datos\REGISTRO.cs" />
+    <Compile Include="Models\Base De Datos\REPORTES.cs" />
     <Compile Include="Models\Base De Datos\TIPO_USUARIO.cs" />
     <Compile Include="Models\Base De Datos\USUARIO.cs" />
     <Compile Include="Models\HashHelper.cs" />

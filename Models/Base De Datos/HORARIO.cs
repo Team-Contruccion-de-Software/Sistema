@@ -14,6 +14,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         public HORARIO()
         {
             REGISTRO = new HashSet<REGISTRO>();
+            REPORTES = new HashSet<REPORTES>();
         }
 
         [Key]
@@ -39,6 +40,9 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REGISTRO> REGISTRO { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<REPORTES> REPORTES { get; set; }
 
         public List<HORARIO> ListarTodo()
         {
