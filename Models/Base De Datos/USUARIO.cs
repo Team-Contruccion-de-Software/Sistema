@@ -52,7 +52,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         public string EMAIL { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(80)]
         public string PASSWORD { get; set; }
 
         public int ID_TIPOUSUARIO { get; set; }
@@ -95,6 +95,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         public ResponseModel ValidarLogin(string Usuario, string Contraseña)
         {
             var rm = new ResponseModel();
+            Contraseña = HashHelper.SHA1(Contraseña);
 
             try
             {
@@ -127,10 +128,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
 
         public void RegistarCliente()
-        {
-            DateTime now = DateTime.Now;
-            this.ID_TIPOUSUARIO = 1;
-
+        {              
             try
             {
                 using (var db = new ModeloGGYM())
@@ -141,6 +139,9 @@ namespace Sistema_GGYM.Models.Base_De_Datos
                     }
                     else
                     {
+                        DateTime now = DateTime.Now;
+                        this.PASSWORD = HashHelper.SHA1(this.PASSWORD);
+                        this.ID_TIPOUSUARIO = 1;
                         this.FECHA_CREACION = Convert.ToDateTime(now.ToString("yyyy/MM/dd hh:mm:ss"));
                         db.Entry(this).State = EntityState.Added;
                     }

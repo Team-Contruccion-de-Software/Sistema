@@ -140,6 +140,7 @@
     <Content Include="Source\images\portrait-young-afro-american-sports-man-looks-away_171337-8255.jpg" />
     <Content Include="Source\images\VideoEjercicios\Video1.mp4" />
     <Content Include="Source\js\Dietas.js" />
+    <Content Include="Source\js\EditarUsuario.js" />
     <Content Include="Source\js\Ejercicios.js" />
     <Content Include="Source\js\ImagenDePerfil.js" />
     <Content Include="Source\js\Indices.js" />

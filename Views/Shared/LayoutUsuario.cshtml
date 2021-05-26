@@ -106,7 +106,15 @@
                         <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
 
                     </div>
-                    <h5><a id="usuario" href="#">@usuario.NOMBRE @usuario.APELLIDO</a> </h5>
+
+                    <h5>
+                        <a id="usuario" href="#" data-toggle="modal" data-target="#con-close-modal" onclick="editar(@usuario.ID_USUARIO)">
+                            @usuario.NOMBRE @usuario.APELLIDO
+                        </a>
+                    </h5>
+
+
+
                     @if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 1)
                     {
                         <small class="text-primary"><b>@usuario.TIPO_USUARIO.DESCRIPCION </b><i class="ti ti-user"></i></small>
@@ -245,6 +253,96 @@
 
     <!-- Count down js -->
     <script src="~/Source/User/plugins/count-down/jquery.lwtCountdown-1.0.js"></script>
+
+    <!-- Editar usuario -->
+    <script src="~/Source/js/EditarUsuario.js"></script>
+
+
+
+
+    <!-- Modal para editar el usuario -->
+
+    <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Datos de usuario</h4>
+                </div>
+
+                @using (Html.BeginForm("Guardar", "Usuario", FormMethod.Post, new { id = "frm-usuario" }))
+                {
+                    @Html.HiddenFor(x => usuario.ID_USUARIO)
+
+                    @Html.HiddenFor(x => usuario.FECHA_CREACION)
+                    @Html.HiddenFor(x => usuario.TELEFONO)
+                    @Html.HiddenFor(x => usuario.EDAD)
+                    @Html.HiddenFor(x => usuario.EMAIL)
+                    @Html.HiddenFor(x => usuario.ID_TIPOUSUARIO)
+                    @Html.HiddenFor(x => usuario.ID_MEMBRESIA)
+
+                    //Tengo que validarlo al guardarlo
+                    @Html.HiddenFor(x => usuario.PASSWORD)
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.Label("Nombres", new { @class = "control-label" })
+                                    @Html.TextBoxFor(x => usuario.NOMBRE, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => usuario.NOMBRE, null, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.Label("Apellidos", new { @class = "control-label" })
+                                    @Html.TextBoxFor(x => usuario.APELLIDO, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => usuario.APELLIDO, null, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @Html.Label("Direccion", new { @class = "control-label" })
+                                    @Html.TextBoxFor(x => usuario.DIRECCION, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => usuario.DIRECCION, null, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.Label("Peso", new { @class = "control-label" })
+                                    @Html.TextBoxFor(x => usuario.PESO, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => usuario.PESO, null, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.Label("Estatura", new { @class = "control-label" })
+                                    @Html.TextBoxFor(x => usuario.ESTATURA, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => usuario.ESTATURA, null, new { @class = "label label-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.Label("Tipo", new { @class = "control-label" })
+                                    <input type="text" class="form-control" value="@usuario.TIPO_USUARIO.DESCRIPCION" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-info waves-effect waves-light">Guardar Cambios</button>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div><!-- /.modal -->
 
 </body>
 </html>

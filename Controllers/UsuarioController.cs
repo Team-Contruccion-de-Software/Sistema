@@ -45,5 +45,18 @@ namespace Sistema_GGYM.Controllers
         {
             return View();
         }
+
+        public ActionResult Guardar(USUARIO usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                usuario.RegistarCliente();
+                return Redirect("~/Usuario");
+            }
+            else
+            {
+                return View("~/Usuario");
+            }
+        }
     }
 }
