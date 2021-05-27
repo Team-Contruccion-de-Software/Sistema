@@ -112,51 +112,71 @@
                             i = i + 2;
                             if (usuario.ID_USUARIO == dato.ID_USUARIO && usuario.ID_TIPOUSUARIO == 3)
                             {
-                                <div class="panel panel-color panel-tabs panel-collapse panel-custom">
+                                using (Html.BeginForm("GuardarHorario", "Usuario", FormMethod.Post, new { id = "frm-horario" }))
+                                {
+                                    //Extraccion del id del registro
+                                    foreach (var reg in registro)
+                                    {
+                                        if (reg.ID_HORARIO == dato.ID_HORARIO && reg.ID_USUARIO == iduser.ID_USUARIO)
+                                        {
+                                            <input type="text" name="idregistro" value="@reg.ID_REGISTRO" hidden />
+                                            break;
+                                        }
+                                        else if (reg.ID_HORARIO != dato.ID_HORARIO && reg.ID_USUARIO != iduser.ID_USUARIO)
+                                        {
+                                            <input type="text" name="idregistro" value="0" hidden />
+                                        }
+                                    }
 
-                                    <div class="panel-heading">
-                                        <ul class="nav nav-pills pull-right">
-                                            <li class="active">
-                                                <a href="#navpills-@(i)" data-toggle="tab" aria-expanded="true">Descripcion</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="#navpills-@(i+1)" data-toggle="tab" aria-expanded="false">Horario</a>
-                                            </li>
-                                        </ul>
-                                        <!--Abrir modal de rellenar campos faltante-->
+                                    <input type="text" name="iduser" value="@iduser.ID_USUARIO" hidden />
+                                    <input type="text" name="idhorario" value="@dato.ID_HORARIO" hidden />
 
-                                        <h3 class="panel-title">
-                                            <a href="#" class="btn btn-default waves-effect m-b-5"> <i class="fa zmdi zmdi-plus-circle-o m-r-5"></i> <span>Agregar</span></a>
-                                            Horario @dato.ID_HORARIO por @usuario.NOMBRE @usuario.APELLIDO
-                                        </h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="tab-content">
-                                            <div id="navpills-@(i)" class="tab-pane fade in active">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <p>
-                                                            @dato.DESCRIPCION
-                                                        </p>
+                                    <div class="panel panel-color panel-tabs panel-collapse panel-custom">
+
+                                        <div class="panel-heading">
+                                            <ul class="nav nav-pills pull-right">
+                                                <li class="active">
+                                                    <a href="#navpills-@(i)" data-toggle="tab" aria-expanded="true">Descripcion</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="#navpills-@(i+1)" data-toggle="tab" aria-expanded="false">Horario</a>
+                                                </li>
+                                            </ul>
+                                            <!--Abrir modal de rellenar campos faltante-->
+
+                                            <h3 class="panel-title">
+                                                <button type="submit" class="btn btn-default waves-effect m-b-5"> <i class="fa zmdi zmdi-plus-circle-o m-r-5"></i> <span>Agregar</span></button>
+                                                Horario @dato.ID_HORARIO por @usuario.NOMBRE @usuario.APELLIDO
+                                            </h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="tab-content">
+                                                <div id="navpills-@(i)" class="tab-pane fade in active">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <p>
+                                                                @dato.DESCRIPCION
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div id="navpills-@(i+1)" class="tab-pane fade">
-                                                <div class="row">
-                                                    <div class="col-md-12">
+                                                <div id="navpills-@(i+1)" class="tab-pane fade">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
 
-                                                        <p>Hora</p>
-                                                        <p>@dato.HORA_INICIO.ToString().Substring(0, 5) - @dato.HORA_FIN.ToString().Substring(0, 5)</p>
+                                                            <p>Hora</p>
+                                                            <p>@dato.HORA_INICIO.ToString().Substring(0, 5) - @dato.HORA_FIN.ToString().Substring(0, 5)</p>
 
-                                                        <p>Fecha inicio y fin</p>
-                                                        <p>@dato.FECHA_INICIO.ToString("dd/MM/yyyy") - @dato.FECHA_FIN.ToString("dd/MM/yyyy")</p>
+                                                            <p>Fecha inicio y fin</p>
+                                                            <p>@dato.FECHA_INICIO.ToString("dd/MM/yyyy") - @dato.FECHA_FIN.ToString("dd/MM/yyyy")</p>
 
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                }
                             }
                         }
                     }

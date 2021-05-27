@@ -23,11 +23,14 @@ namespace Sistema_GGYM.Controllers
             return View(usuario.ListarTodo());
         }
 
+        /********METODOS PARA EL CALENDARIO*******/
         public ActionResult Calendario()
         {
             return View();
         }
 
+
+        /********METODOS PARA LOS HORARIOS DEL USUARIO*******/
         public ActionResult Horario()
         {
             ViewBag.registro = registro.ListarTodo();
@@ -35,17 +38,35 @@ namespace Sistema_GGYM.Controllers
             return View(usuario.ListarTodo());
         }
 
+        public ActionResult GuardarHorario(int idregistro, int iduser, int idhorario)
+        {
+            if (idregistro >= 0 && iduser > 0 && idhorario > 0)
+            {
+                registro.RegistarHorario(idregistro, iduser, idhorario);
+                return Redirect("~/Usuario/Horario");
+            }
+            else
+            {
+                return View("/Usuario/Horario");
+            }
+        }
+
+
+
+        /********METODOS PARA LOS HORARIOS DEL COACH*******/
         public ActionResult CoachHorario()
         {
             ViewBag.horario = horario.ListarTodo();
             return View(usuario.ListarTodo());
         }
 
+        /********METODOS PARA LAS VIDEOLLAMADAS*******/
         public ActionResult Videollamada()
         {
             return View();
         }
 
+        /********METODOS PARA LOS USUARIOS AL EDITAR SUS DATOS*******/
         public ActionResult Guardar(USUARIO usuario)
         {
             if (ModelState.IsValid)

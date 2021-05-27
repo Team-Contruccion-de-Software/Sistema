@@ -53,7 +53,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             {
                 using (var db = new ModeloGGYM())
                 {
-                    horario = db.HORARIO.ToList();
+                    horario = db.HORARIO.Include("REGISTRO").ToList();
                 }
             }
             catch (Exception e)

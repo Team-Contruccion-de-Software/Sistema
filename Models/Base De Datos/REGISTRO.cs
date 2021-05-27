@@ -4,6 +4,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
     using System.Linq;
 
@@ -41,6 +42,36 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             }
 
             return registro;
+        }
+
+
+        public void RegistarHorario(int idregistro, int iduser, int idhorario)
+        {
+            DateTime now = DateTime.Now;
+            this.FECHA_CREACION = Convert.ToDateTime(now.ToString("yyyy/MM/dd hh:mm:ss"));
+            this.ID_USUARIO = iduser;
+            this.ID_HORARIO = idhorario;
+            this.ID_REGISTRO = idregistro;
+
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    if (this.ID_REGISTRO > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {                        
+                        db.Entry(this).State = EntityState.Added;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
     }
 }
