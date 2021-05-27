@@ -44,6 +44,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REPORTES> REPORTES { get; set; }
 
+
         public List<HORARIO> ListarTodo()
         {
             var horario = new List<HORARIO>();

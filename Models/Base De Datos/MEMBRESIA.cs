@@ -23,9 +23,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         [StringLength(80)]
         public string DESCRIPCION { get; set; }
 
-        public DateTime? FECHA_INICIO { get; set; }
-
-        public DateTime? FECHA_FINALIZACION { get; set; }
+        public int? DURACION { get; set; }
 
         [StringLength(10)]
         public string COSTO { get; set; }

@@ -6,6 +6,10 @@
     List<Sistema_GGYM.Models.Base_De_Datos.HORARIO> horarios = ViewBag.horario;
     List<Sistema_GGYM.Models.Base_De_Datos.REGISTRO> registro = ViewBag.registro;
     int i = 0;
+
+
+    //OBTENCION DEL ID DEL USUARIO
+    Sistema_GGYM.Models.Base_De_Datos.USUARIO iduser = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
 }
 
 <!--LISTA DE HORARIOS-->
@@ -55,34 +59,39 @@
 
                         @foreach (var user in Model)
                         {
-                            foreach (var item in registro)
+                            if (user.ID_USUARIO == iduser.ID_USUARIO)
                             {
-                                if (user.ID_USUARIO == item.ID_USUARIO)
+
+                                foreach (var item in registro)
                                 {
-                                    string entrenadorn = "";
-
-                                    <!--Extraccion del entrenador-->
-                                    foreach (var entrenador in Model)
+                                    if (user.ID_USUARIO == item.ID_USUARIO)
                                     {
-                                        if (item.HORARIO.ID_USUARIO == entrenador.ID_USUARIO)
-                                        {
-                                            entrenadorn = entrenador.NOMBRE + entrenador.APELLIDO;
-                                        }
-                                    }
+                                        string entrenadorn = "";
 
-                                    <li class="list-group-item">
-                                        <a href="~/Usuario/Videollamada/@item.ID_HORARIO@(entrenadorn)" class="user-list-item">
-                                            <div class="avatar">
-                                                <img src="~/Source/images/ggymlogo.png" alt="">
-                                            </div>
-                                            <div class="user-desc">
-                                                <span class="name">Entrenamiento @item.ID_HORARIO</span>
-                                                <span class="desc">@item.HORARIO.DESCRIPCION</span>
-                                                <span class="desc">@item.HORARIO.HORA_INICIO.ToString().Substring(0, 5) - @item.HORARIO.HORA_FIN.ToString().Substring(0, 5)</span>
-                                            </div>
-                                        </a>
-                                    </li>
+                                        <!--Extraccion del entrenador-->
+                                        foreach (var entrenador in Model)
+                                        {
+                                            if (item.HORARIO.ID_USUARIO == entrenador.ID_USUARIO)
+                                            {
+                                                entrenadorn = entrenador.NOMBRE + entrenador.APELLIDO;
+                                            }
+                                        }
+
+                                        <li class="list-group-item">
+                                            <a href="~/Usuario/Videollamada/@item.ID_HORARIO@(entrenadorn)" class="user-list-item">
+                                                <div class="avatar">
+                                                    <img src="~/Source/images/ggymlogo.png" alt="">
+                                                </div>
+                                                <div class="user-desc">
+                                                    <span class="name">Entrenamiento @item.ID_HORARIO</span>
+                                                    <span class="desc">@item.HORARIO.DESCRIPCION</span>
+                                                    <span class="desc">@item.HORARIO.HORA_INICIO.ToString().Substring(0, 5) - @item.HORARIO.HORA_FIN.ToString().Substring(0, 5)</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    }
                                 }
+
                             }
                         }
                     </ul>
@@ -90,61 +99,65 @@
                 </div>
             </div>
 
-
-            <!--Se listaran los horarios por descripcion, encargado y hora de inicio y fin-->
+            <!-- Filtro para que no aparescan en los que te registraste -->
+            <!-- Se listaran los horarios por descripcion, encargado y hora de inicio y fin -->
             <div class="col-lg-8 col-md-6">
                 @foreach (var usuario in Model)
                 {
-                    foreach (var dato in horarios)
+                    if (iduser.ID_USUARIO != usuario.ID_USUARIO)
                     {
-                        i = i + 2;
-                        if (usuario.ID_USUARIO == dato.ID_USUARIO && usuario.ID_TIPOUSUARIO == 3)
+
+                        foreach (var dato in horarios)
                         {
-                            <div class="panel panel-color panel-tabs panel-collapse panel-custom">
+                            i = i + 2;
+                            if (usuario.ID_USUARIO == dato.ID_USUARIO && usuario.ID_TIPOUSUARIO == 3)
+                            {
+                                <div class="panel panel-color panel-tabs panel-collapse panel-custom">
 
-                                <div class="panel-heading">
-                                    <ul class="nav nav-pills pull-right">
-                                        <li class="active">
-                                            <a href="#navpills-@(i)" data-toggle="tab" aria-expanded="true">Descripcion</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="#navpills-@(i+1)" data-toggle="tab" aria-expanded="false">Horario</a>
-                                        </li>
-                                    </ul>
-                                    <!--Abrir modal de rellenar campos faltante-->
+                                    <div class="panel-heading">
+                                        <ul class="nav nav-pills pull-right">
+                                            <li class="active">
+                                                <a href="#navpills-@(i)" data-toggle="tab" aria-expanded="true">Descripcion</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#navpills-@(i+1)" data-toggle="tab" aria-expanded="false">Horario</a>
+                                            </li>
+                                        </ul>
+                                        <!--Abrir modal de rellenar campos faltante-->
 
-                                    <h3 class="panel-title">
-                                        <a href="#" class="btn btn-default waves-effect m-b-5"> <i class="fa zmdi zmdi-plus-circle-o m-r-5"></i> <span>Agregar</span></a>
-                                        Horario @dato.ID_HORARIO por @usuario.NOMBRE @usuario.APELLIDO
-                                    </h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="tab-content">
-                                        <div id="navpills-@(i)" class="tab-pane fade in active">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p>
-                                                        @dato.DESCRIPCION
-                                                    </p>
+                                        <h3 class="panel-title">
+                                            <a href="#" class="btn btn-default waves-effect m-b-5"> <i class="fa zmdi zmdi-plus-circle-o m-r-5"></i> <span>Agregar</span></a>
+                                            Horario @dato.ID_HORARIO por @usuario.NOMBRE @usuario.APELLIDO
+                                        </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="tab-content">
+                                            <div id="navpills-@(i)" class="tab-pane fade in active">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p>
+                                                            @dato.DESCRIPCION
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div id="navpills-@(i+1)" class="tab-pane fade">
-                                            <div class="row">
-                                                <div class="col-md-12">
+                                            <div id="navpills-@(i+1)" class="tab-pane fade">
+                                                <div class="row">
+                                                    <div class="col-md-12">
 
-                                                    <p>Hora</p>
-                                                    <p>@dato.HORA_INICIO.ToString().Substring(0, 5) - @dato.HORA_FIN.ToString().Substring(0, 5)</p>
+                                                        <p>Hora</p>
+                                                        <p>@dato.HORA_INICIO.ToString().Substring(0, 5) - @dato.HORA_FIN.ToString().Substring(0, 5)</p>
 
-                                                    <p>Fecha inicio y fin</p>
-                                                    <p>@dato.FECHA_INICIO.ToString("dd/MM/yyyy") - @dato.FECHA_FIN.ToString("dd/MM/yyyy")</p>
+                                                        <p>Fecha inicio y fin</p>
+                                                        <p>@dato.FECHA_INICIO.ToString("dd/MM/yyyy") - @dato.FECHA_FIN.ToString("dd/MM/yyyy")</p>
 
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
                         }
                     }
                 }

@@ -128,7 +128,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
 
         public void RegistarCliente()
-        {              
+        {
             try
             {
                 using (var db = new ModeloGGYM())

@@ -3,22 +3,22 @@ var usuario = document.getElementById("usuario").innerText;
 var nombrehtml = location.pathname.split("/").slice(-2);
 var idllamada = location.pathname.split("/").slice(-1);
 
-if (usuario.includes("Paolo")) {
+if (usuario.includes("PAOLO")) {
     imagen.src = "/Source/images/Fotos/Paolo.jpg";
 
-} else if (usuario.includes("Bayron")) {
+} else if (usuario.includes("BAYRON")) {
     imagen.src = "/Source/images/Fotos/Bayron.jpg";
 
-} else if (usuario.includes("Daniel")) {
+} else if (usuario.includes("DANIEL")) {
     imagen.src = "/Source/images/Fotos/danielo.jpg";
 
-} else if (usuario.includes("Alvaro")) {
+} else if (usuario.includes("ALVARO")) {
     imagen.src = "/Source/images/Fotos/alvaro.jpg";
 
 } else if (usuario.includes("CAMILA")) {
     imagen.src = "/Source/images/Fotos/camila.jpg";
 
-} else if (usuario.includes("Piero")) {
+} else if (usuario.includes("PIERO")) {
     imagen.src = "/Source/images/Fotos/piero.jpg";
 
 } else {
