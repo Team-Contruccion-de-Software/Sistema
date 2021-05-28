@@ -15,79 +15,33 @@
         <!--LOGICA USUARIO PREMIUM-->
         @if (usuario.ID_TIPOUSUARIO == 2)
         {
-            <div class="row" style="height: 500px;">
 
-                <div class="col-lg-12" style="height: 500px;">
-                    <div>
-                        <div class="col-lg-4 col-md-6">
-                            <input class="form-control" placeholder="Ingresar el nombre..." type="text" id="username-input" />
-                        </div>
+            <div class="m-0 row justify-content-center" style="border-radius: 20px;">
 
-                        <div class="col-lg-8 col-md-6">
-                            <button class="btn btn-success" onclick="joinCall()">Ingresar a la llamada</button>
-                        </div>
-                    </div>
+                <div class="col-auto text-center" style="height: 650px; border-radius: 20px;">
 
-                    <div id="video-call-div">
-
-
-                        <video muted id="local-video" autoplay></video>
-
-
-                        <video id="remote-video" autoplay></video>
-
-
-                        <div class="call-action-div">
-                            <button class="btn btn-custom" onclick="muteAudio()">Silenciar</button>
-                            <a class="btn btn-danger" href="~/Usuario/Horario"> Salir </a>
-                            <button class="btn btn-custom" onclick="muteVideo()">Apagar camara</button>
-                        </div>
-                    </div>
+                    <iframe allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://jitsimeet-ggym.herokuapp.com/public_html/" style="height: 100%; width: 100%; border: 0px;  border-radius: 20px;"></iframe>
 
                 </div>
             </div>
+            
 
-            <script src="~/Source/js/Videollamada/receiver.js"></script>
         }
 
         <!--LOGICA ENTRENADOR-->
         @if (usuario.ID_TIPOUSUARIO == 3)
         {
-            <div class="row" style="height: 500px;">
+            <div class="m-0 row justify-content-center" style="border-radius: 20px;">
 
-                <div class="col-lg-12" style="height: 500px;">
-                    <div>
-                        <div class="col-lg-4 col-md-12">
-                            <input class="form-control" placeholder="Ingresar el nombre..." type="text" id="username-input" />
-                        </div>
-                        <br /><br /><br />
-                        <div class="col-lg-12 col-md-12">
-                            <button class="btn btn-primary" onclick="sendUsername()">Enviar identificador</button>
-                            <button class="btn btn-success" onclick="startCall()">Iniciar videollamada</button>
-                        </div>
-                    </div>
+                <div class="col-auto text-center" style="height: 650px; border-radius: 20px;">
 
-                    <div id="video-call-div">
-
-
-                        <video muted id="local-video" autoplay></video>
-
-
-                        <video id="remote-video" autoplay></video>
-
-
-                        <div class="call-action-div">
-                            <button class="btn btn-custom" onclick="muteAudio()">Silenciar</button>
-                            <button class="btn btn-danger" onclick="endCall()">Terminar llamada</button>
-                            <button class="btn btn-custom" onclick="muteVideo()">Apagar camara</button>
-                        </div>
-                    </div>
+                    <iframe allow="camera; microphone; fullscreen; display-capture; autoplay" src="https://jitsimeet-ggym.herokuapp.com/public_html/" style="height: 100%; width: 100%; border: 0px;  border-radius: 20px;"></iframe>
 
                 </div>
             </div>
 
-            <script src="~/Source/js/Videollamada/sender.js"></script>
         }
+        <br />
 
     </div>
 </div>
