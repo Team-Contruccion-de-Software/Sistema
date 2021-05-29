@@ -1,113 +1,76 @@
 ﻿
 @{
-    ViewBag.Title = "Dieta";
+    ViewBag.Title = "Dietas";
     Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+    Sistema_GGYM.Models.Base_De_Datos.USUARIO usuario = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
 }
 
 <div class="content">
     <div class="container">
 
-        <div class="row m-t-40">
-            <div class="col-sm-12">
-                <div class="text-center">
-                    <h2 class="text-success m-t-0 text-uppercase font-600">Proximamente</h2>
-                </div>
-            </div>
-        </div>
-
         <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="panel-group" id="accordion" role="tablist"
+                     aria-multiselectable="true">
 
-            <div class="col-md-12">
-                <div id="count-down" class="row center-block">
-                    <div class="clock-presenter days_dash col-sm-3">
-                        <div class="digit"></div>
-                        <div class="digit"></div>
-                        <div class="digit"></div>
-                        <p class='note dash_title'>Dias</p>
-                    </div>
-                    <div class="clock-presenter hours_dash col-sm-3">
-                        <div class="digit"></div>
-                        <div class="digit"></div>
-                        <p class='note dash_title'>Horas</p>
-                    </div>
-                    <div class="clock-presenter minutes_dash col-sm-3">
-                        <div class="digit"></div>
-                        <div class="digit"></div>
-                        <p class='note dash_title'>Minutos</p>
-                    </div>
-                    <div class="clock-presenter seconds_dash col-sm-3">
-                        <div class="digit"></div>
-                        <div class="digit"></div>
-                        <p class='note dash_title'>Segundos</p>
+                    <!--Lista desplegable de rutinas-->
+
+                    <div class="panel panel-default bx-shadow-none">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse"
+                                   data-parent="#accordion" href="#collapseOne"
+                                   aria-expanded="false" aria-controls="collapseOne">
+                                    Rutinas Recomendadas
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse"
+                             role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+
+                                <div class="row port m-b-20">
+                                    <div id="galeria1" class="portfolioContainer">
+
+                                        <!--Lista de imagenes generadas con js-->
+                                        <!--Cargar ejercicios-->
+                                        <script src="~/Source/js/Dietas.js"></script>
+                                        <!--Fin de la lista-->
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div><!-- end col -->
         </div>
     </div>
-
 </div>
+
+<!--Jquery-->
+<script src="~/Source/User/js/jquery.min.js"></script>
+
+<!--Efecto carrusel-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.image-popup').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            mainClass: 'mfp-fade',
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0, 1]
+            }
+        });
+    });
+</script>
 
 <!--Efecto de seleccion-->
 <script src="~/Source/js/Indices.js"></script>
 
 <!--Lectura imagenes de perfil-->
 <script src="~/Source/js/ImagenDePerfil.js"></script>
-
-<!--Jquery-->
-<script src="~/Source/User/js/jquery.min.js"></script>
-
-<!--Efecto de conteo-->
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        "use strict";
-
-        //Set your date
-        $('#count-down').countDown({
-            targetDate: {
-                'day': 19,
-                'month': 5,
-                'year': 2021,
-                'hour': 20,
-                'min': 50,
-                'sec': 0
-            },
-            omitWeeks: true
-        });
-
-    });
-</script>
-
-@{ 
-/*
-<div class="panel panel-default bx-shadow-none">
-                    <div class="panel-heading" role="tab" id="headingOne">
-                        <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse"
-                               data-parent="#accordion" href="#collapseOne"
-                               aria-expanded="false" aria-controls="collapseOne">
-                                Dietas recomendadas
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse"
-                         role="tabpanel" aria-labelledby="headingOne">
-                        <div class="panel-body">
-
-                            <div class="row port m-b-20">
-                                <div id="galeria1" class="portfolioContainer">
-
-                                    <!--Lista de imagenes generadas con js-->
-                                    <!--Cargar ejercicios-->
-                                    <script src="~/Source/js/Dietas.js"></script>
-                                    <!--Fin de la lista-->
-
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-    */
-}
