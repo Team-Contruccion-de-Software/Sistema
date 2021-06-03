@@ -34,9 +34,13 @@ namespace Sistema_GGYM.Controllers
         {
             var rm = usuario.ValidarLogin(Email, Contraseña);
 
-            if (rm.response)
+            if (rm.response == true && rm.idtipo < 4)
             {
-                rm.href = Url.Content("/Usuario");
+                rm.href = Url.Content("/Usuario/Index");
+            }
+            else if (rm.response == true && rm.idtipo == 4)
+            {
+                rm.href = Url.Content("/Administrador/Index");
             }
             return Json(rm);
         }

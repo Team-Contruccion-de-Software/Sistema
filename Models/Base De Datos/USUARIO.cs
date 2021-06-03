@@ -111,6 +111,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
                     {
                         SessionHelper.AddUserToSession(usuario.ID_USUARIO.ToString());
                         rm.SetResponse(true);
+                        rm.idtipo = usuario.ID_TIPOUSUARIO;
                     }
                     else
                     {
@@ -142,6 +143,33 @@ namespace Sistema_GGYM.Models.Base_De_Datos
                         DateTime now = DateTime.Now;
                         this.PASSWORD = HashHelper.SHA1(this.PASSWORD);
                         this.ID_TIPOUSUARIO = 1;
+                        this.FECHA_CREACION = Convert.ToDateTime(now.ToString("yyyy/MM/dd hh:mm:ss"));
+                        db.Entry(this).State = EntityState.Added;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+        public void RegistarEntrenador()
+        {
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    if (this.ID_USUARIO > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        DateTime now = DateTime.Now;
+                        this.PASSWORD = HashHelper.SHA1(this.PASSWORD);
+                        this.ID_TIPOUSUARIO = 3;
                         this.FECHA_CREACION = Convert.ToDateTime(now.ToString("yyyy/MM/dd hh:mm:ss"));
                         db.Entry(this).State = EntityState.Added;
                     }

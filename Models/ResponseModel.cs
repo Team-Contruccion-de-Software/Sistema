@@ -12,6 +12,7 @@ namespace Sistema_GGYM.Models
         public string message { get; set; }
         public string href { get; set; }
         public string function { get; set; }
+        public int idtipo { get; set; }
 
         public ResponseModel()
         {

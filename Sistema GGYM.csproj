@@ -286,6 +286,25 @@
     <Content Include="Source\User\pages\jquery.xeditable.js" />
     <Content Include="Source\User\pages\jvectormap.init.js" />
     <Content Include="Source\User\plugins\count-down\jquery.lwtCountdown-1.0.js" />
+    <Content Include="Source\User\plugins\datatables\buttons.bootstrap.min.css" />
+    <Content Include="Source\User\plugins\datatables\buttons.bootstrap.min.js" />
+    <Content Include="Source\User\plugins\datatables\buttons.html5.min.js" />
+    <Content Include="Source\User\plugins\datatables\buttons.print.min.js" />
+    <Content Include="Source\User\plugins\datatables\dataTables.bootstrap.js" />
+    <Content Include="Source\User\plugins\datatables\dataTables.buttons.min.js" />
+    <Content Include="Source\User\plugins\datatables\dataTables.fixedHeader.min.js" />
+    <Content Include="Source\User\plugins\datatables\dataTables.keyTable.min.js" />
+    <Content Include="Source\User\plugins\datatables\dataTables.responsive.min.js" />
+    <Content Include="Source\User\plugins\datatables\dataTables.scroller.min.js" />
+    <Content Include="Source\User\plugins\datatables\fixedHeader.bootstrap.min.css" />
+    <Content Include="Source\User\plugins\datatables\jquery.dataTables.min.css" />
+    <Content Include="Source\User\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="Source\User\plugins\datatables\jszip.min.js" />
+    <Content Include="Source\User\plugins\datatables\pdfmake.min.js" />
+    <Content Include="Source\User\plugins\datatables\responsive.bootstrap.min.css" />
+    <Content Include="Source\User\plugins\datatables\responsive.bootstrap.min.js" />
+    <Content Include="Source\User\plugins\datatables\scroller.bootstrap.min.css" />
+    <Content Include="Source\User\plugins\datatables\vfs_fonts.js" />
     <Content Include="Source\User\plugins\fullcalendar\dist\fullcalendar.css" />
     <Content Include="Source\User\plugins\fullcalendar\dist\fullcalendar.js" />
     <Content Include="Source\User\plugins\fullcalendar\dist\fullcalendar.min.css" />
@@ -903,6 +922,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdministradorController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DietasController.cs" />
     <Compile Include="Controllers\EjercicioController.cs" />
@@ -962,6 +982,9 @@
     <Content Include="Source\User\plugins\magnific-popup\src\css\main.scss" />
     <Content Include="Source\User\plugins\magnific-popup\src\css\_settings.scss" />
     <Content Include="Views\Seguimiento\Seguimiento.cshtml" />
+    <Content Include="Views\Administrador\Index.cshtml" />
+    <Content Include="Views\Administrador\Entrenador.cshtml" />
+    <Content Include="Source\User\plugins\datatables\json\scroller-demo.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

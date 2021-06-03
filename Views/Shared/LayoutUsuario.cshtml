@@ -32,6 +32,13 @@
     <!--venobox lightbox-->
     <link rel="stylesheet" href="~/Source/User/plugins/magnific-popup/dist/magnific-popup.css" />
 
+    <!-- DataTables -->
+    <link href="~/Source/User/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Source/User/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Source/User/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Source/User/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Source/User/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+
 
     <script src="~/Source/User/js/modernizr.min.js"></script>
     <link rel="shortcut icon" href="~/Source/images/ggymlogo.png">
@@ -127,6 +134,10 @@
                     {
                         <small class="text-warning"><b>@usuario.TIPO_USUARIO.DESCRIPCION </b><i class="ti ti-basketball"></i></small>
                     }
+                    else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 4)
+                    {
+                        <small class="text-warning"><b>@usuario.TIPO_USUARIO.DESCRIPCION </b><i class="ti ti-key"></i></small>
+                    }
 
 
                     <ul class="list-inline">
@@ -150,45 +161,67 @@
                     <ul>
                         <li class="text-muted menu-title">Navegación</li>
 
-                        <li>
-                            <a href="~/Usuario/Index" id="Indice1" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Inicio </span> </a>
-                        </li>
-
-                        @if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 3)
+                        @if (usuario.TIPO_USUARIO.IDTIPOUSUARIO < 4)
                         {
                             <li>
-                                <a href="~/Usuario/CoachHorario" id="Indice2" class="waves-effect"><i class="ti ti-alarm-clock"></i><span> Horarios </span></a>
+                                <a href="~/Usuario/Index" id="Indice1" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Inicio </span> </a>
                             </li>
+
+                            if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 3)
+                            {
+                                <li>
+                                    <a href="~/Usuario/CoachHorario" id="Indice2" class="waves-effect"><i class="ti ti-alarm-clock"></i><span> Horarios </span></a>
+                                </li>
+                            }
+                            else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 2)
+                            {
+                                <li>
+                                    <a href="~/Usuario/Horario" id="Indice3" class="waves-effect"><i class="ti ti-alarm-clock"></i><span> Horarios </span></a>
+                                </li>
+
+                                <li>
+                                    <a href="~/Usuario/Calendario" id="Indice4" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Calendario </span></a>
+                                </li>
+
+                                <li>
+                                    <a href="~/Seguimiento/Seguimiento" id="Indice5" class="waves-effect"><i class="zmdi zmdi-trending-up"></i><span> Seguimiento </span></a>
+                                </li>
+                            }
+
+                            <li>
+                                <a href="~/Ejercicio/Ejercicio" id="Indice6" class="waves-effect"><i class="fa fa-heartbeat"></i><span> Ejercicios rutinas </span></a>
+                            </li>
+
+                            <li>
+                                <a href="~/Dietas/Dieta" id="Indice7" class="waves-effect"><i class="fa fa-leaf"></i><span> Recetas dietas </span></a>
+                            </li>
+
+                            if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 1)
+                            {
+                                <li>
+                                    <a href="~/Usuario" id="Indice8" class="text-warning waves-effect"><i class="ti ti-crown"></i><span> Membresía </span></a>
+                                </li>
+                            }
                         }
-                        else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 2)
+                        else if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 4)
                         {
                             <li>
-                                <a href="~/Usuario/Horario" id="Indice3" class="waves-effect"><i class="ti ti-alarm-clock"></i><span> Horarios </span></a>
+                                <a href="~/Administrador/Index" id="Indice1" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> Inicio </span> </a>
                             </li>
 
                             <li>
-                                <a href="~/Usuario/Calendario" id="Indice4" class="waves-effect"><i class="zmdi zmdi-calendar"></i><span> Calendario </span></a>
+                                <a href="~/Administrador/Membresia" id="Indice8" class="waves-effect"><i class="ti ti-crown"></i><span> Membresía </span></a>
                             </li>
 
                             <li>
-                                <a href="~/Seguimiento/Seguimiento" id="Indice5" class="waves-effect"><i class="zmdi zmdi-trending-up"></i><span> Seguimiento </span></a>
+                                <a href="~/Administrador/Entrenador" id="Indice9" class="waves-effect"><i class="ti ti-basketball"></i><span> Entrenador </span></a>
+                            </li>
+
+                            <li>
+                                <a href="~/Adminstrador/Calendario" id="Indice10" class="waves-effect"><i class="ti ti-calendar"></i><span> Calendario </span></a>
                             </li>
                         }
 
-                        <li>
-                            <a href="~/Ejercicio/Ejercicio" id="Indice6" class="waves-effect"><i class="fa fa-heartbeat"></i><span> Ejercicios rutinas </span></a>
-                        </li>
-
-                        <li>
-                            <a href="~/Dietas/Dieta" id="Indice7" class="waves-effect"><i class="fa fa-leaf"></i><span> Recetas dietas </span></a>
-                        </li>
-
-                        @if (usuario.TIPO_USUARIO.IDTIPOUSUARIO == 1)
-                        {
-                            <li>
-                                <a href="~/Usuario" id="Indice8" class="text-warning waves-effect"><i class="ti ti-crown"></i><span> Membresía </span></a>
-                            </li>
-                        }
 
                     </ul>
                     <div class="clearfix"></div>
@@ -233,6 +266,7 @@
     <script src="~/Source/User/js/jquery.scrollTo.min.js"></script>
     <script src="~/Source/User/plugins/jquery-knob/jquery.knob.js"></script>
 
+
     <!-- isotope filter plugin -->
     <script type="text/javascript" src="~/Source/User/plugins/isotope/dist/isotope.pkgd.min.js"></script>
 
@@ -251,20 +285,56 @@
     <script src='~/Source/User/plugins/fullcalendar/dist/fullcalendar.min.js'></script>
     <script src="~/Source/User/pages/jquery.fullcalendar.js"></script>
 
+    <!--Morris Chart-->
+    <script src="~/Source/User/plugins/morris/morris.min.js"></script>
+    <script src="~/Source/User/plugins/raphael/raphael-min.js"></script>
+
+    <!-- Dashboard init -->
+    <script src="~/Source/User/pages/jquery.dashboard.js"></script>
+
+    <!-- Datatables-->
+    <script src="~/Source/User/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Source/User/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="~/Source/User/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/Source/User/plugins/datatables/buttons.bootstrap.min.js"></script>
+    <script src="~/Source/User/plugins/datatables/jszip.min.js"></script>
+    <script src="~/Source/User/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/Source/User/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/Source/User/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/Source/User/plugins/datatables/buttons.print.min.js"></script>
+    <script src="~/Source/User/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+    <script src="~/Source/User/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="~/Source/User/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/Source/User/plugins/datatables/responsive.bootstrap.min.js"></script>
+    <script src="~/Source/User/plugins/datatables/dataTables.scroller.min.js"></script>
+
+    <!-- Datatable init js -->
+    <script src="~/Source/User/pages/datatables.init.js"></script>
+
     <!-- Count down js -->
     <script src="~/Source/User/plugins/count-down/jquery.lwtCountdown-1.0.js"></script>
 
     <!-- Editar usuario -->
     <script src="~/Source/js/EditarUsuario.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable').dataTable();
+            $('#datatable-keytable').DataTable({ keys: true });
+            $('#datatable-responsive').DataTable();
+            $('#datatable-scroller').DataTable({ ajax: "assets/plugins/datatables/json/scroller-demo.json", deferRender: true, scrollY: 380, scrollCollapse: true, scroller: true });
+            var table = $('#datatable-fixed-header').DataTable({ fixedHeader: true });
+        });
+        TableManageButtons.init();
 
+    </script>
 
 
     <!-- Modal para editar el usuario -->
 
     <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" style="border-radius: 20px;">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title">Datos de usuario</h4>
