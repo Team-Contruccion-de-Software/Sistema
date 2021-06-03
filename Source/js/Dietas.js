@@ -28,7 +28,7 @@ let descripcion = ["La pirámide de la dieta mediterránea enfatiza en el consum
 
 //Creando el estilo
 var parte1 = '<div class="col-sm-6 col-lg-3 col-md-4">'
-    + '<div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999;">';
+    + '<div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999; height: 450px;">';
 var p = '<p class="text-muted" style="text-align: justify">';
 
 var galeria1 = document.getElementById("galeria1");
@@ -38,7 +38,7 @@ var galeria1 = document.getElementById("galeria1");
 for (var i = 1; i < descripcion.length + 1; i++) {
 
     var imagen = '<a href="/Source/images/dietas/dieta' + i + '.jpg" class="image-popup" title="Screenshot-' + i + '">';
-    var imagen2 = '<img class="img-responsive img-circle" src="/Source/images/dietas/dieta' + i + '.jpg" class="thumb-img" alt="work-thumbnail"></a>';
+    var imagen2 = '<img class="img-responsive" src="/Source/images/dietas/dieta' + i + '.jpg" class="thumb-img" alt="work-thumbnail"></a>';
     var titulo = '<h4 id="Titulo' + i + '">' + titulodescripcion[i - 1] + '</h4>';
 
     galeria1.innerHTML += parte1 + imagen + imagen2 + titulo + p + descripcion[i - 1] + '</p>' + '</div>' + '</div>';

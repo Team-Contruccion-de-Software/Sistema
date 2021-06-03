@@ -26,7 +26,7 @@ let descripcion = ["La sentadilla plié es un movimiento compuesto que se dirige
 
 //Creando el estilo
 var parte1 = '<div class="col-sm-6 col-lg-3 col-md-4">'
-    + '<div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999;">';
+    + '<div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999; ; height: 480px;">';
 var p = '<p class="text-muted" style="text-align: justify">';
 
 var galeria1 = document.getElementById("galeria1");
