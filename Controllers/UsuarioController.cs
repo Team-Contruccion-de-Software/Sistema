@@ -16,6 +16,7 @@ namespace Sistema_GGYM.Controllers
         TIPO_USUARIO tipo_usuario = new TIPO_USUARIO();
         HORARIO horario = new HORARIO();
         REGISTRO registro = new REGISTRO();
+        MEMBRESIA membresia = new MEMBRESIA();
 
         // GET: Usuario
         public ActionResult Index()
@@ -27,6 +28,25 @@ namespace Sistema_GGYM.Controllers
         public ActionResult Calendario()
         {
             return View();
+        }
+
+        /********METODOS PARA LA MEMBRESIA*******/
+        public ActionResult Membresia()
+        {
+            return View(membresia.ListarTodo());
+        }
+
+        public ActionResult GuardarMembresia(USUARIO usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                usuario.RegistrarMembresia();
+                return Redirect("~/Usuario");
+            }
+            else
+            {
+                return View("~/Usuario");
+            }
         }
 
 

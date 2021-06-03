@@ -44,7 +44,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             {
                 using (var db = new ModeloGGYM())
                 {
-                    membresia = db.MEMBRESIA.ToList();
+                    membresia = db.MEMBRESIA.OrderBy(x => x.COSTO).ToList();
                 }
             }
             catch (Exception e)

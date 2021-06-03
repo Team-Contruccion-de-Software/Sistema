@@ -182,6 +182,26 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             }
         }
 
+        public void RegistrarMembresia()
+        {
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    if (this.ID_USUARIO > 0)
+                    {
+                        this.ID_TIPOUSUARIO = 2;
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
 
         public USUARIO ObtenerUsuario(int id)
         {

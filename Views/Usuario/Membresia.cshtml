@@ -1,0 +1,90 @@
+﻿@model List<Sistema_GGYM.Models.Base_De_Datos.MEMBRESIA>
+@{
+    ViewBag.Title = "Membresia";
+    Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+
+    Sistema_GGYM.Models.Base_De_Datos.USUARIO usuario = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
+}
+
+<div class="content">
+    <div class="container">
+
+        <div class="row m-t-10">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+
+                    <!--LISTADO DE MEMBRESIAS-->
+
+                    @foreach (var membresia in Model)
+                    {
+
+                        using (Html.BeginForm("GuardarMembresia", "Usuario", FormMethod.Post, new { id = "frm-membresia" }))
+                        {
+                            @Html.HiddenFor(x => usuario.ID_USUARIO)
+                            @Html.HiddenFor(x => usuario.NOMBRE)
+                            @Html.HiddenFor(x => usuario.APELLIDO)
+                            @Html.HiddenFor(x => usuario.FECHA_CREACION)
+                            @Html.HiddenFor(x => usuario.TELEFONO)
+                            @Html.HiddenFor(x => usuario.DIRECCION)
+                            @Html.HiddenFor(x => usuario.PESO)
+                            @Html.HiddenFor(x => usuario.ESTATURA)
+                            @Html.HiddenFor(x => usuario.EDAD)
+                            @Html.HiddenFor(x => usuario.EMAIL)
+                            @Html.HiddenFor(x => usuario.PASSWORD)
+
+                            usuario.ID_MEMBRESIA = membresia.ID_MEMBRESIA;
+                            @Html.HiddenFor(x => usuario.ID_MEMBRESIA)
+
+                            <article class="pricing-column col-lg-3 col-sm-6">
+
+                                @if (Convert.ToInt32(membresia.COSTO) < 200)
+                                {
+                                    <div class="ribbon"><span>POPULAR</span></div>
+                                }
+
+                                <div class="inner-box card-box">
+                                    <div class="plan-header text-center">
+
+                                        @if (Convert.ToInt32(membresia.COSTO) < 100)
+                                        {
+                                            <h3 class="plan-title">Básico</h3>
+                                        }
+                                        else if (Convert.ToInt32(membresia.COSTO) < 1000)
+                                        {
+                                            <h3 class="plan-title">Medio</h3>
+                                        }
+                                        else if (Convert.ToInt32(membresia.COSTO) >= 3000)
+                                        {
+                                            <h3 class="plan-title">Premium</h3>
+                                        }
+
+                                        <h2 class="plan-price">S/@membresia.COSTO</h2>
+                                        <div class="plan-duration">@membresia.DESCRIPCION</div>
+                                    </div>
+                                    <ul class="plan-stats list-unstyled text-center">
+                                        <li>Acceso a videollamadas</li>
+                                        <li>Acceso a dietas</li>
+                                        <li>Acceso a recomendaciones</li>
+                                        <li>Acceso a calendario de actividades</li>
+                                        <li>Soporte 24x7</li>
+                                    </ul>
+
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-success btn-bordred btn-rounded waves-effect waves-light">Adquirirlo</button>
+                                    </div>
+                                </div>
+                            </article>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Efecto de seleccion-->
+<script src="~/Source/js/Indices.js"></script>
+
+<!--Lectura imagenes de perfil-->
+<script src="~/Source/js/ImagenDePerfil.js"></script>

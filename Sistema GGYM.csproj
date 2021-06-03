@@ -988,6 +988,7 @@
     <Content Include="Source\User\plugins\datatables\json\scroller-demo.json" />
     <Content Include="Views\Administrador\Membresia.cshtml" />
     <Content Include="Views\Administrador\Calendario.cshtml" />
+    <Content Include="Views\Usuario\Membresia.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
