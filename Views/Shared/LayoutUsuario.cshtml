@@ -115,7 +115,7 @@
                     </div>
 
                     <h5>
-                        <a id="usuario" href="#" data-toggle="modal" data-target="#con-close-modal" onclick="editar(@usuario.ID_USUARIO)">
+                        <a id="usuario" href="#" data-toggle="modal" data-target="#con-close-modal-editar" onclick="editar(@usuario.ID_USUARIO)">
                             @usuario.NOMBRE @usuario.APELLIDO
                         </a>
                     </h5>
@@ -218,7 +218,7 @@
                             </li>
 
                             <li>
-                                <a href="~/Adminstrador/Calendario" id="Indice10" class="waves-effect"><i class="ti ti-calendar"></i><span> Calendario </span></a>
+                                <a href="~/Administrador/Calendario" id="Indice4" class="waves-effect"><i class="ti ti-calendar"></i><span> Calendario </span></a>
                             </li>
                         }
 
@@ -266,7 +266,6 @@
     <script src="~/Source/User/js/jquery.scrollTo.min.js"></script>
     <script src="~/Source/User/plugins/jquery-knob/jquery.knob.js"></script>
 
-
     <!-- isotope filter plugin -->
     <script type="text/javascript" src="~/Source/User/plugins/isotope/dist/isotope.pkgd.min.js"></script>
 
@@ -280,7 +279,7 @@
     <!-- Jquery-Ui -->
     <script src="~/Source/User/plugins/jquery-ui/jquery-ui.min.js"></script>
 
-    <!-- BEGIN PAGE SCRIPTS -->
+    <!-- Calendario -->
     <script src="~/Source/User/plugins/moment/moment.js"></script>
     <script src='~/Source/User/plugins/fullcalendar/dist/fullcalendar.min.js'></script>
     <script src="~/Source/User/pages/jquery.fullcalendar.js"></script>
@@ -332,7 +331,7 @@
 
     <!-- Modal para editar el usuario -->
 
-    <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div id="con-close-modal-editar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content" style="border-radius: 20px;">
                 <div class="modal-header">

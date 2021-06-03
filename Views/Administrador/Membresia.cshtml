@@ -1,0 +1,109 @@
+﻿@model List<Sistema_GGYM.Models.Base_De_Datos.MEMBRESIA>
+@{
+    ViewBag.Title = "Membresia";
+    Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+}
+
+<div class="content">
+    <div class="container">
+
+        <!--Row del boton para agregar nuevo-->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="m-b-30">
+                    <a data-toggle="modal" data-target="#con-close-modal-membresia" class="btn btn-custom waves-effect waves-light"><i class="fa fa-plus"></i> Agregar Membresia</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Row de listado de los datos-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box table-responsive">
+
+                    <h2 class="header-title m-t-0 m-b-30"><i class="fa fa-book"></i> Lista de Membresias</h2>
+
+                    <table id="datatable-buttons" class="table table-striped table-bordered">
+                        <thead class="bg-custom">
+                            <tr>
+                                <th class="text-white">Nº</th>
+                                <th class="text-white">Descripcion</th>
+                                <th class="text-white">Duracion</th>
+                                <th class="text-white">Costo</th>
+                                <th class="text-white">Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var membresia in Model)
+                            {
+                                <tr>
+                                    <td>@membresia.ID_MEMBRESIA</td>
+                                    <td>Membresia @membresia.DESCRIPCION</td>
+                                    <td>@membresia.DURACION días</td>
+                                    <td>@membresia.COSTO soles</td>
+                                    <td align="center" class="actions">
+                                        <a href="#" class="text-warning edit-row"><i class="fa fa-pencil"></i></a>
+                                        <a href="#" class="text-danger remove-row" onclick="return confirm('¿Esta seguro de eliminarlo?');"><i class="fa fa-trash-o"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Efecto de seleccion-->
+<script src="~/Source/js/Indices.js"></script>
+
+<!--Lectura imagenes de perfil-->
+<script src="~/Source/js/ImagenDePerfil.js"></script>
+
+<!-- Modal para agregar la membresia -->
+<div id="con-close-modal-membresia" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content" style="border-radius: 20px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Datos de la membresia</h4>
+            </div>
+
+            @using (Html.BeginForm("GuardarMembresia", "Administrador", FormMethod.Post, new { id = "frm-membresia" }))
+            {
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.Label("Descripcion", new { @class = "control-label" })
+                                <input type="text" name="DESCRIPCION" id="DESCRIPCION" class="form-control" placeholder="Ingrese la descripcion" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label("Duracion", new { @class = "control-label" })
+                                <input type="number" name="DURACION" id="DURACION" class="form-control" placeholder="Ingrese la duracion en dias" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label("Costo", new { @class = "control-label" })
+                                <input type="number" name="COSTO" id="COSTO" class="form-control" placeholder="Ingrese el costo en soles" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-custom waves-effect waves-light">Agregar</button>
+                </div>
+            }
+
+        </div>
+    </div>
+</div><!-- /.modal -->

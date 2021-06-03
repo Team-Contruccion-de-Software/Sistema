@@ -12,6 +12,8 @@ namespace Sistema_GGYM.Controllers
     public class AdministradorController : Controller
     {
         USUARIO usuario = new USUARIO();
+        MEMBRESIA membresia = new MEMBRESIA();
+        HORARIO horario = new HORARIO();
 
         // GET: Administrador
         public ActionResult Index()
@@ -26,12 +28,12 @@ namespace Sistema_GGYM.Controllers
 
         public ActionResult Membresia()
         {
-            return View();
+            return View(membresia.ListarTodo());
         }
 
         public ActionResult Calendario()
         {
-            return View();
+            return View(horario.ListarTodo());
         }
 
 
@@ -47,6 +49,20 @@ namespace Sistema_GGYM.Controllers
             else
             {
                 return View("~/Administrador/Entrenador");
+            }
+        }
+
+        /**************METODOS DE GUARDADO DE MEMBRESIA*****************************/
+        public ActionResult GuardarMembresia(MEMBRESIA membresia)
+        {
+            if (ModelState.IsValid)
+            {
+                membresia.RegistrarMembresia();
+                return Redirect("~/Administrador/Membresia");
+            }
+            else
+            {
+                return View("~/Administrador/Membresia");
             }
         }
     }

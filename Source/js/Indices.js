@@ -10,12 +10,13 @@ var indice5 = document.getElementById('Indice5');
 var indice6 = document.getElementById('Indice6');
 var indice7 = document.getElementById('Indice7');
 var indice8 = document.getElementById('Indice8');
+var indice9 = document.getElementById('Indice9');
 
 //Estilo para el default del usuario
 if (nombrehtml == "" || nombrehtml.includes("Usuario")) {
     indice1.className = 'waves-effect active';
     titulo.innerHTML = 'Pagina Principal';
-    for (var i = 1; i <= 8; i++) {
+    for (var i = 1; i <= 9; i++) {
         if (i != 1) {
             ("indice" + i).className = 'waves-effect';
         }
@@ -26,7 +27,7 @@ if (nombrehtml == "" || nombrehtml.includes("Usuario")) {
 if (nombrehtml.includes("Index")) {
     indice1.className = 'waves-effect active';
     titulo.innerHTML = 'Pagina Principal';
-    for (var i = 1; i <= 8; i++) {
+    for (var i = 1; i <= 9; i++) {
         if (i != 1) {
             ("indice" + i).className = 'waves-effect';
         }        
@@ -37,7 +38,7 @@ if (nombrehtml.includes("Index")) {
 if (nombrehtml.includes("CoachHorario")) {
     indice2.className = 'waves-effect active';
     titulo.innerHTML = 'Horarios';
-    for (var i = 1; i <= 8; i++) {
+    for (var i = 1; i <= 9; i++) {
         if (i != 2) {
             ("indice" + i).className = 'waves-effect';
         }
@@ -48,7 +49,7 @@ if (nombrehtml.includes("CoachHorario")) {
 if (nombrehtml.includes("Horario")) {
     indice3.className = 'waves-effect active';
     titulo.innerHTML = 'Horarios';
-    for (var i = 1; i <= 8; i++) {
+    for (var i = 1; i <= 9; i++) {
         if (i != 3) {
             ("indice" + i).className = 'waves-effect';
         }
@@ -59,7 +60,7 @@ if (nombrehtml.includes("Horario")) {
 if (nombrehtml.includes("Calendario")) {
     indice4.className = 'waves-effect active';
     titulo.innerHTML = 'Calendario';
-    for (var i = 1; i <= 8; i++) {
+    for (var i = 1; i <= 9; i++) {
         if (i != 4) {
             ("indice" + i).className = 'waves-effect';
         }
@@ -70,7 +71,7 @@ if (nombrehtml.includes("Calendario")) {
 if (nombrehtml.includes("Seguimiento")) {
     indice5.className = 'waves-effect active';
     titulo.innerHTML = 'Seguimiento';
-    for (var i = 1; i <= 8; i++) {
+    for (var i = 1; i <= 9; i++) {
         if (i != 5) {
             ("indice" + i).className = 'waves-effect';
         }
@@ -81,7 +82,7 @@ if (nombrehtml.includes("Seguimiento")) {
 if (nombrehtml.includes("Ejercicio")) {
     indice6.className = 'waves-effect active';
     titulo.innerHTML = 'Rutinas de Ejercicios';
-    for (var i = 1; i <= 8; i++) {
+    for (var i = 1; i <= 9; i++) {
         if (i != 6) {
             ("indice" + i).className = 'waves-effect';
         }
@@ -92,8 +93,32 @@ if (nombrehtml.includes("Ejercicio")) {
 if (nombrehtml.includes("Dieta")) {
     indice7.className = 'waves-effect active';
     titulo.innerHTML = 'Dietas';
-    for (var i = 1; i <= 8; i++) {
+    for (var i = 1; i <= 9; i++) {
         if (i != 7) {
+            ("indice" + i).className = 'waves-effect';
+        }
+    }
+}
+
+//Estilo para las membresias del usuario/administrador
+if (nombrehtml.includes("Membresia")) {
+    indice8.className = 'waves-effect active';
+    titulo.innerHTML = 'Membresia';
+    for (var i = 1; i <= 9; i++) {
+        if (i != 8) {
+            ("indice" + i).className = 'waves-effect';
+        }
+    }
+}
+
+/*************para el administrador****************************/
+
+//Estilo para la vista entrenador del administrador
+if (nombrehtml.includes("Entrenador")) {
+    indice9.className = 'waves-effect active';
+    titulo.innerHTML = 'Entrenador';
+    for (var i = 1; i <= 9; i++) {
+        if (i != 9) {
             ("indice" + i).className = 'waves-effect';
         }
     }

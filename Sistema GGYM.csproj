@@ -276,6 +276,7 @@
     <Content Include="Source\User\pages\jquery.dashboard.js" />
     <Content Include="Source\User\pages\jquery.flot.init.js" />
     <Content Include="Source\User\pages\jquery.fullcalendar.js" />
+    <Content Include="Source\User\pages\jquery.fullcalendarAdmin.js" />
     <Content Include="Source\User\pages\jquery.gmaps.js" />
     <Content Include="Source\User\pages\jquery.morris.init.js" />
     <Content Include="Source\User\pages\jquery.other-charts.js" />
@@ -985,6 +986,8 @@
     <Content Include="Views\Administrador\Index.cshtml" />
     <Content Include="Views\Administrador\Entrenador.cshtml" />
     <Content Include="Source\User\plugins\datatables\json\scroller-demo.json" />
+    <Content Include="Views\Administrador\Membresia.cshtml" />
+    <Content Include="Views\Administrador\Calendario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,68 @@
+﻿@model List<Sistema_GGYM.Models.Base_De_Datos.HORARIO>
+@{
+    ViewBag.Title = "Calendario";
+    Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+}
+
+@{
+    string contenido = "";
+    string inicio = "[";
+    string final = "];";
+
+    foreach (var horario in Model)
+    {
+        string titulo = "{title: '" + horario.DESCRIPCION + "',";
+        string start = "start: new Date($.now() + 158000000),";
+        string classname = "className: 'bg-purple'},";
+
+        contenido += titulo + start + classname;
+    }
+
+    string contenidofinal = inicio + contenido + final;
+}
+
+<p id="horariosfinal" hidden>@contenidofinal</p>
+
+<div class="content">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-box">
+                            <div id="calendar"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Efecto de seleccion-->
+<script src="~/Source/js/Indices.js"></script>
+
+<!--Lectura imagenes de perfil-->
+<script src="~/Source/js/ImagenDePerfil.js"></script>
+
+<!--Modals-->
+
+<div class="modal fade none-border" id="event-modal">
+    <div class="modal-dialog">
+        <div class="modal-content" style="border-radius: 20px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"><strong>Agregar nuevo evento</strong></h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-custom save-event waves-effect waves-light">Crear evento</button>
+                <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Borrar</button>
+            </div>
+        </div>
+    </div>
+</div>
