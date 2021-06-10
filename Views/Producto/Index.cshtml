@@ -1,0 +1,142 @@
+﻿@model List<Sistema_GGYM.Models.Base_De_Datos.PRODUCTO>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+}
+
+<div class="content">
+    <div class="container">
+
+        <!--Row del boton para agregar nuevo-->
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="m-b-30">
+                    <a data-toggle="modal" data-target="#con-close-modal" class="btn btn-custom waves-effect waves-light"><i class="fa fa-plus"></i> Agregar producto</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Row de listado de los datos-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box table-responsive">
+
+                    <h2 class="header-title m-t-0 m-b-30"><i class="fa fa-book"></i> Lista de productos</h2>
+
+                    <table id="datatable-buttons" class="table table-striped table-bordered">
+                        <thead class="bg-custom">
+                            <tr>
+                                <th class="text-white">Codigo</th>
+                                <th class="text-white">Descripcion</th>
+                                <th class="text-white">Stock</th>
+                                <th class="text-white">Precio</th>
+                                <th class="text-white">Categoria</th>
+                                <th class="text-white">Imagen</th>
+                                <th class="text-white">Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var product in Model)
+                            {
+                            <tr>
+                                <td>@product.CODIGO</td>
+                                <td>@product.DESCRIPCION</td>
+                                <td>@product.STOCK</td>
+                                <td>@product.PRECIO soles</td>
+                                <td>@product.CATEGORIA_PRODUCTO.DESCRIPCION</td>
+                                <td><img width="50px" src="@product.IMAGEN"/></td>
+                                <td align="center" class="actions">
+
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn waves-effect waves-light btn-success btn-trans" style="overflow: hidden; position: relative;">Acciones</button>
+                                        <button type="button" class="btn waves-effect waves-light btn-success btn-trans dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative;"><span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a id="editar" href="~/Producto/Editar/@product.ID_PRODUCTO"><i class="fa fa-pencil text-warning"></i> Editar</a></li>
+                                            <li><a href="~/Producto/Eliminar/@product.ID_PRODUCTO" onclick="return confirm('¿Esta seguro que quiere eliminar @(product.DESCRIPCION)?')"><i class="fa fa-trash-o text-danger"></i> Eliminar</a></li>
+                                        </ul>
+                                    </div>
+
+                                </td>
+                            </tr>                                
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Efecto de seleccion-->
+<script src="~/Source/js/Indices.js"></script>
+
+<!--Lectura imagenes de perfil-->
+<script src="~/Source/js/ImagenDePerfil.js"></script>
+
+<!-- Modal para agregar el entrenador -->
+<div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content" style="border-radius: 20px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Datos del producto</h4>
+            </div>
+
+            @using (Html.BeginForm("Guardar", "Producto", FormMethod.Post, new { id = "frm-producto" }))
+            {
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label("Codigo", new { @class = "control-label" })
+                                <input type="text" name="CODIGO" id="CODIGO" class="form-control" placeholder="Ingrese el codigo" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label("Descripcion", new { @class = "control-label" })
+                                <input type="text" name="DESCRIPCION" id="DESCRIPCION" class="form-control" placeholder="Ingrese la descripcion" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.Label("Stock", new { @class = "control-label" })
+                                <input type="text" name="STOCK" id="STOCK" class="form-control" placeholder="Ingrese el stock">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.Label("Precio", new { @class = "control-label" })
+                                <input type="text" name="PRECIO" id="PRECIO" class="form-control" placeholder="Ingrese el precio">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.Label("Categoria", new { @class = "control-label" })
+                                <input type="text" name="ID_CATEGORIA" id="ID_CATEGORIA" class="form-control" placeholder="Ingrese la categoria">
+                            </div>
+                        </div>                  
+                    </div> 
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @Html.Label("Imagen", new { @class = "control-label" })
+                                    <input type="text" name="IMAGEN" id="IMAGEN" class="form-control" placeholder="Ingrese la url de la imagen" required>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-custom waves-effect waves-light">Agregar</button>
+                </div>
+            }
+
+        </div>
+    </div>
+</div><!-- /.modal -->
