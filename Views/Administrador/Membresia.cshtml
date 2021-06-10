@@ -37,16 +37,50 @@
                         <tbody>
                             @foreach (var membresia in Model)
                             {
-                                <tr>
-                                    <td>@membresia.ID_MEMBRESIA</td>
-                                    <td>Membresia @membresia.DESCRIPCION</td>
-                                    <td>@membresia.DURACION días</td>
-                                    <td>@membresia.COSTO soles</td>
-                                    <td align="center" class="actions">
-                                        <a href="#" class="text-warning edit-row"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="text-danger remove-row" onclick="return confirm('¿Esta seguro de eliminarlo?');"><i class="fa fa-trash-o"></i></a>
-                                    </td>
-                                </tr>
+                                if (membresia.ESTADO == true)
+                                {
+                                    <tr>
+                                        <td>@membresia.ID_MEMBRESIA</td>
+                                        <td>Membresia @membresia.DESCRIPCION</td>
+                                        <td>@membresia.DURACION días</td>
+                                        <td>@membresia.COSTO soles</td>
+                                        <td align="center" class="actions">
+
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn waves-effect waves-light btn-success btn-trans" style="overflow: hidden; position: relative;">Acciones</button>
+                                                <button type="button" class="btn waves-effect waves-light btn-success btn-trans dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative;"><span class="caret"></span></button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a id="editar" href="~/Administrador/EditMem/@membresia.ID_MEMBRESIA"><i class="fa fa-pencil text-warning"></i> Editar</a></li>
+                                                    <li><a href="~/Administrador/EliminarMem/@membresia.ID_MEMBRESIA" onclick="return confirm('¿Esta seguro de eliminar la @(membresia.DESCRIPCION)?')"><i class="fa fa-trash-o text-danger"></i> Eliminar</a></li>
+                                                </ul>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                }
+
+                                else if (membresia.ESTADO == false)
+                                {
+                                    <tr>
+                                        <td>@membresia.ID_MEMBRESIA</td>
+                                        <td class="text-danger" ><i class="ti ti-alert"></i> Membresia @membresia.DESCRIPCION</td>
+                                        <td>@membresia.DURACION días</td>
+                                        <td>@membresia.COSTO soles</td>
+                                        <td align="center" class="actions">
+
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn waves-effect waves-light btn-success btn-trans" style="overflow: hidden; position: relative;">Acciones</button>
+                                                <button type="button" class="btn waves-effect waves-light btn-success btn-trans dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative;"><span class="caret"></span></button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a id="editar" href="~/Administrador/EditMem/@membresia.ID_MEMBRESIA"><i class="fa fa-pencil text-warning"></i> Editar</a></li>
+                                                    <li><a href="~/Administrador/HabilitarMem/@membresia.ID_MEMBRESIA" onclick="return confirm('¿Esta seguro de habilitar la @(membresia.DESCRIPCION)?')"><i class="fa fa-check text-success"></i> Habilitar</a></li>
+                                                </ul>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                }
+
                             }
                         </tbody>
                     </table>

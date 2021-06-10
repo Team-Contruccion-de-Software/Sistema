@@ -114,7 +114,7 @@ if (nombrehtml.includes("Membresia")) {
 /*************para el administrador****************************/
 
 //Estilo para la vista entrenador del administrador
-if (nombrehtml.includes("Entrenador")) {
+if (nombrehtml.includes("Entrenador") || nombrehtml.split("/").slice(-1).includes("Edituser")) {
     indice9.className = 'waves-effect active';
     titulo.innerHTML = 'Entrenador';
     for (var i = 1; i <= 9; i++) {

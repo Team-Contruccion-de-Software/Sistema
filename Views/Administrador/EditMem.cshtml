@@ -1,0 +1,82 @@
+﻿@model Sistema_GGYM.Models.Base_De_Datos.MEMBRESIA
+@{
+    ViewBag.Title = "EditMem";
+    Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+}
+
+<div class="content">
+    <div class="container">
+
+        <div class="row" style="padding: 10px;">
+
+            @using (Html.BeginForm("GuardarMembresia", "Administrador", FormMethod.Post, new { id = "frm-membresia" }))
+            {
+
+                @Html.HiddenFor(x => Model.ID_MEMBRESIA)
+
+                <div class="form">
+
+                    <div class="row card-box">
+                        <h4 class="header-title"><i class="fa fa-pencil"></i> Editar membresia</h4>
+                    </div>
+
+                    <div class="row card-box">
+                        <h4 class="header-title m-t-0 m-b-30">Datos generales</h4>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.Label("ID", new { @class = "control-label" })
+                                @Html.TextBoxFor(x => Model.ID_MEMBRESIA, new { @class = "form-control", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(x => Model.ID_MEMBRESIA, null, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                @Html.Label("Descripcion", new { @class = "control-label" })
+                                @Html.TextBoxFor(x => Model.DESCRIPCION, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => Model.DESCRIPCION, null, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="row card-box">
+                        <h4 class="header-title m-t-0 m-b-30">Otros datos</h4>
+                        <!--peso, estatura, edad-->
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label("Duracion", new { @class = "control-label", type = "number" })
+                                <input type="number" name="DURACION" id="DURACION" class="form-control" value="@(Model.DURACION)" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label("Costo", new { @class = "control-label", type = "number" })
+                                <input type="number" name="COSTO" id="COSTO" class="form-control" value="@(Model.COSTO)" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-custom waves-effect waves-light">Guardar Cambios</button>
+                </div>
+            }
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<!--Efecto de seleccion-->
+<script src="~/Source/js/Indices.js"></script>
+
+<!--Lectura imagenes de perfil-->
+<script src="~/Source/js/ImagenDePerfil.js"></script>

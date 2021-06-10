@@ -989,6 +989,8 @@
     <Content Include="Views\Administrador\Membresia.cshtml" />
     <Content Include="Views\Administrador\Calendario.cshtml" />
     <Content Include="Views\Usuario\Membresia.cshtml" />
+    <Content Include="Views\Administrador\Edituser.cshtml" />
+    <Content Include="Views\Administrador\EditMem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

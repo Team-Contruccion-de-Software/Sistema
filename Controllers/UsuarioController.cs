@@ -92,11 +92,11 @@ namespace Sistema_GGYM.Controllers
             if (ModelState.IsValid)
             {
                 usuario.RegistarCliente();
-                return Redirect("~/Usuario");
+                return Redirect("~/Administrador/Index");
             }
             else
             {
-                return View("~/Usuario");
+                return View("~/Administrador/Index");
             }
         }
     }

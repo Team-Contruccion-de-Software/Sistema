@@ -38,7 +38,7 @@ namespace Sistema_GGYM.Controllers
 
 
 
-        /**************METODOS DE GUARDADO DE ENTRENADOR*****************************/
+        /**************METODOS DE GUARDADO, EDICION Y ELIMINACION DEL ENTRENADOR*****************************/
         public ActionResult Guardar(USUARIO usuario)
         {
             if (ModelState.IsValid)
@@ -52,7 +52,26 @@ namespace Sistema_GGYM.Controllers
             }
         }
 
-        /**************METODOS DE GUARDADO DE MEMBRESIA*****************************/
+        public ActionResult Eliminar(int id)
+        {
+            usuario.ID_USUARIO = id;
+            usuario.Eliminar();
+            return Redirect("~/Administrador/Entrenador");
+        }
+
+        public ActionResult Habilitar(int id)
+        {
+            usuario.ID_USUARIO = id;
+            usuario.Habilitar();
+            return Redirect("~/Administrador/Entrenador");
+        }
+
+        public ActionResult Edituser(int id = 0)
+        {
+            return View(id == 0 ? new USUARIO() : usuario.ObtenerUsuario(id));
+        }
+
+        /**************METODOS DE GUARDADO, EDICIO Y ELIMINADA DE LA MEMBRESIA*****************************/
         public ActionResult GuardarMembresia(MEMBRESIA membresia)
         {
             if (ModelState.IsValid)
@@ -64,6 +83,25 @@ namespace Sistema_GGYM.Controllers
             {
                 return View("~/Administrador/Membresia");
             }
+        }
+
+        public ActionResult EliminarMem(int id)
+        {
+            membresia.ID_MEMBRESIA = id;
+            membresia.Eliminar();
+            return Redirect("~/Administrador/Membresia");
+        }
+
+        public ActionResult HabilitarMem(int id)
+        {
+            membresia.ID_MEMBRESIA = id;
+            membresia.Habilitar();
+            return Redirect("~/Administrador/Membresia");
+        }
+
+        public ActionResult EditMem(int id = 0)
+        {
+            return View(id == 0 ? new MEMBRESIA() : membresia.ObtenerMembresia(id));
         }
     }
 }

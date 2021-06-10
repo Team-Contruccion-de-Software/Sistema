@@ -24,6 +24,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
         public virtual USUARIO USUARIO { get; set; }
 
+
         public List<REGISTRO> ListarTodo()
         {
             var registro = new List<REGISTRO>();
@@ -62,7 +63,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
                         db.Entry(this).State = EntityState.Modified;
                     }
                     else
-                    {                        
+                    {
                         db.Entry(this).State = EntityState.Added;
                     }
                     db.SaveChanges();
@@ -73,5 +74,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
                 throw;
             }
         }
+
+
     }
 }

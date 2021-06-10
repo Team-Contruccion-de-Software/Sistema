@@ -40,17 +40,53 @@
                             {
                                 if (user.ID_TIPOUSUARIO == 3)
                                 {
-                                    <tr>
-                                        <td>@user.NOMBRE @user.APELLIDO</td>
-                                        <td>@user.TELEFONO</td>
-                                        <td>@user.DIRECCION</td>
-                                        <td>@user.FECHA_CREACION</td>
-                                        <td>@user.EDAD años</td>
-                                        <td align="center" class="actions">
-                                            <a href="#" class="text-warning edit-row"><i class="fa fa-pencil"></i></a>
-                                            <a href="#" class="text-danger remove-row"><i class="fa fa-trash-o"></i></a>
-                                        </td>
-                                    </tr>
+                                    if (user.ESTADO == true)
+                                    {
+                                        <tr>
+                                            <td>@user.NOMBRE @user.APELLIDO</td>
+                                            <td>@user.TELEFONO</td>
+                                            <td>@user.DIRECCION</td>
+                                            <td>@user.FECHA_CREACION</td>
+                                            <td>@user.EDAD años</td>
+                                            <td align="center" class="actions">
+
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn waves-effect waves-light btn-success btn-trans" style="overflow: hidden; position: relative;">Acciones</button>
+                                                    <button type="button" class="btn waves-effect waves-light btn-success btn-trans dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative;"><span class="caret"></span></button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a id="editar" href="~/Administrador/Edituser/@user.ID_USUARIO"><i class="fa fa-pencil text-warning"></i> Editar</a></li>
+                                                        <li><a href="~/Administrador/Eliminar/@user.ID_USUARIO" onclick="return confirm('¿Esta seguro de eliminar a @(user.NOMBRE) @(user.APELLIDO)?')"><i class="fa fa-trash-o text-danger"></i> Eliminar</a></li>
+                                                    </ul>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                    else if (user.ESTADO == false)
+                                    {
+                                        <tr>
+                                            <td class="text-danger" ><i class="ti ti-alert"></i> @user.NOMBRE @user.APELLIDO</td>
+                                            <td>@user.TELEFONO</td>
+                                            <td>@user.DIRECCION</td>
+                                            <td>@user.FECHA_CREACION</td>
+                                            <td>@user.EDAD años</td>
+                                            <td align="center" class="actions">
+
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn waves-effect waves-light btn-success btn-trans" style="overflow: hidden; position: relative;">Acciones</button>
+                                                    <button type="button" class="btn waves-effect waves-light btn-success btn-trans dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative;"><span class="caret"></span></button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a id="editar" href="~/Administrador/Edituser/@user.ID_USUARIO"><i class="fa fa-pencil text-warning"></i> Editar</a></li>
+                                                        <li><a href="~/Administrador/Habilitar/@user.ID_USUARIO" onclick="return confirm('¿Esta seguro de habilitar a @(user.NOMBRE) @(user.APELLIDO)?')"><i class="fa fa-check text-success"></i> Habilitar</a></li>
+                                                    </ul>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    }
+
                                 }
                             }
                         </tbody>

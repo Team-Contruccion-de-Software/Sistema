@@ -59,6 +59,8 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
         public int? ID_MEMBRESIA { get; set; }
 
+        public bool? ESTADO { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HORARIO> HORARIO { get; set; }
 
@@ -71,6 +73,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         public virtual ICollection<REPORTES> REPORTES { get; set; }
 
         public virtual TIPO_USUARIO TIPO_USUARIO { get; set; }
+
 
         public List<USUARIO> ListarTodo()
         {
@@ -130,6 +133,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
         public void RegistarCliente()
         {
+            this.ESTADO = true;
             try
             {
                 using (var db = new ModeloGGYM())
@@ -157,6 +161,8 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
         public void RegistarEntrenador()
         {
+            this.ESTADO = true;
+
             try
             {
                 using (var db = new ModeloGGYM())
@@ -184,6 +190,8 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
         public void RegistrarMembresia()
         {
+            this.ESTADO = true;
+
             try
             {
                 using (var db = new ModeloGGYM())
@@ -223,5 +231,75 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
             return usuario;
         }
+
+        public void Eliminar()
+        {
+            var usuario = ObtenerUsuario(ID_USUARIO);
+            this.ID_USUARIO = usuario.ID_USUARIO;
+            this.NOMBRE = usuario.NOMBRE;
+            this.APELLIDO = usuario.APELLIDO;
+            this.FECHA_CREACION = usuario.FECHA_CREACION;
+            this.TELEFONO = usuario.TELEFONO;
+            this.DIRECCION = usuario.DIRECCION;
+            this.PESO = usuario.PESO;
+            this.ESTATURA = usuario.ESTATURA;
+            this.EDAD = usuario.EDAD;
+            this.EMAIL = usuario.EMAIL;
+            this.PASSWORD = usuario.PASSWORD;
+            this.ID_TIPOUSUARIO = usuario.ID_TIPOUSUARIO;
+            this.ID_MEMBRESIA = usuario.ID_MEMBRESIA;
+            this.ESTADO = false;
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    if (this.ID_USUARIO > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+        public void Habilitar()
+        {
+            var usuario = ObtenerUsuario(ID_USUARIO);
+            this.ID_USUARIO = usuario.ID_USUARIO;
+            this.NOMBRE = usuario.NOMBRE;
+            this.APELLIDO = usuario.APELLIDO;
+            this.FECHA_CREACION = usuario.FECHA_CREACION;
+            this.TELEFONO = usuario.TELEFONO;
+            this.DIRECCION = usuario.DIRECCION;
+            this.PESO = usuario.PESO;
+            this.ESTATURA = usuario.ESTATURA;
+            this.EDAD = usuario.EDAD;
+            this.EMAIL = usuario.EMAIL;
+            this.PASSWORD = usuario.PASSWORD;
+            this.ID_TIPOUSUARIO = usuario.ID_TIPOUSUARIO;
+            this.ID_MEMBRESIA = usuario.ID_MEMBRESIA;
+            this.ESTADO = true;
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    if (this.ID_USUARIO > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+
     }
 }

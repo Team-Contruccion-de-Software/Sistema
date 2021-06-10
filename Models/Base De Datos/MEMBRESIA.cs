@@ -30,6 +30,8 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         [StringLength(10)]
         public string COSTO { get; set; }
 
+        public bool? ESTADO { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REPORTES> REPORTES { get; set; }
 
@@ -57,6 +59,8 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
         public void RegistrarMembresia()
         {
+            this.ESTADO = true;
+
             try
             {
                 using (var db = new ModeloGGYM())
@@ -77,5 +81,79 @@ namespace Sistema_GGYM.Models.Base_De_Datos
                 throw;
             }
         }
+
+        public MEMBRESIA ObtenerMembresia(int id)
+        {
+            var membresia = new MEMBRESIA();
+
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    membresia = db.MEMBRESIA
+                        .Where(x => x.ID_MEMBRESIA == id)
+                        .SingleOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return membresia;
+        }
+
+
+        public void Eliminar()
+        {
+            var membresia = ObtenerMembresia(ID_MEMBRESIA);
+            this.ID_MEMBRESIA = membresia.ID_MEMBRESIA;
+            this.DESCRIPCION = membresia.DESCRIPCION;
+            this.DURACION = membresia.DURACION;
+            this.COSTO = membresia.COSTO;
+            this.ESTADO = false;
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    if (this.ID_MEMBRESIA > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+        public void Habilitar()
+        {
+            var membresia = ObtenerMembresia(ID_MEMBRESIA);
+            this.ID_MEMBRESIA = membresia.ID_MEMBRESIA;
+            this.DESCRIPCION = membresia.DESCRIPCION;
+            this.DURACION = membresia.DURACION;
+            this.COSTO = membresia.COSTO;
+            this.ESTADO = true;
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    if (this.ID_MEMBRESIA > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+
     }
 }
