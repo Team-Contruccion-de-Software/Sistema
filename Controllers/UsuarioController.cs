@@ -7,6 +7,12 @@ using static Sistema_GGYM.Filters.AdminFilters;
 using Sistema_GGYM.Models.Base_De_Datos;
 using Sistema_GGYM.Models;
 
+// Librerias para el correo 
+using System.Net.Mail;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+using System.Net.Security;
+
 namespace Sistema_GGYM.Controllers
 {
     [Autenticado]
@@ -41,12 +47,40 @@ namespace Sistema_GGYM.Controllers
             if (ModelState.IsValid)
             {
                 usuario.RegistrarMembresia();
+                EnviarCorreo(usuario);
                 return Redirect("~/Usuario");
             }
             else
             {
                 return View("~/Usuario");
             }
+        }
+
+        //Metodo para enviar el recibo de la compra de la membrecia
+        public void EnviarCorreo(USUARIO usuario)
+        {
+            string body =
+                "<body>" +
+                    "<h1>Bienvenido al sistema GGYM</h1>" +
+                    "<h4>Hola " + usuario.NOMBRE + " " + usuario.APELLIDO + "</h4>" +
+                    "<spam>Este es un mensaje de que usted realizo la compra correcta de una membresia para poder acceder a nuevas caracteristicas que el sistema ofrece</spam>" +
+                    "<br/><br/><spam>Servidor de correos GGYM</spam>" +
+                "<body>";
+
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential("hakunaggym@gmail.com", "Computo.123"); //CREDENCIALES
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.EnableSsl = true;
+
+            MailMessage correo = new MailMessage();
+            correo.From = new MailAddress("hakunaggym@gmail.com", "Sistema GGYM"); //ORIGEN Y NOMBRE
+            correo.To.Add(new MailAddress(usuario.EMAIL, usuario.NOMBRE + " " + usuario.APELLIDO)); //DESTINO Y NOMBRE
+            correo.Subject = "Compra de membresia"; //ASUNTO
+            correo.IsBodyHtml = true;
+            correo.Body = body;
+
+            smtp.Send(correo);
         }
 
 

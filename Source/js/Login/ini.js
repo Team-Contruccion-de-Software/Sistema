@@ -65,14 +65,84 @@ $(document).ready(function () {
                 if (r.message != null) {
                     if (r.message.length > 0) {
                         var css = "";
-                        if (r.response) css = "alert-success";
-                        else {
-                            $(document).ready(function () {
-                                $('.toast').toast('show');
-                            });
-                        };                        
-                        
+                        if (r.response) {
+                            var toastCount = 0;
+                            var shortCutFunction = "success";
+                            var msg = "Bienvenido";
+                            var title = "GGYM";
+                            var $showDuration = 300;
+                            var toastIndex = toastCount++;
 
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": true,
+                                "progressBar": true,
+                                "positionClass": "toast-top-right",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            };
+
+                            $('#toastrOptions').text('Command: toastr["'
+                                + shortCutFunction
+                                + '"]("'
+                                + msg
+                                + (title ? '", "' + title : '')
+                                + '")\n\ntoastr.options = '
+                                + JSON.stringify(toastr.options, null, 2)
+                            );
+
+                            var $toast = toastr[shortCutFunction](msg, title);
+                            
+                            css = "alert-success";
+                        }
+                        else {
+
+                            //Mensaje de usuario
+                            var toastCount = 0;
+                            var shortCutFunction = "error";
+                            var msg = "Usuario y/o contraseña incorrectos";
+                            var title = "GGYM";
+                            var $showDuration = 300;
+                            var toastIndex = toastCount++;
+
+                            toastr.options = {
+                                "closeButton": false,
+                                "debug": false,
+                                "newestOnTop": true,
+                                "progressBar": true,
+                                "positionClass": "toast-top-right",
+                                "preventDuplicates": false,
+                                "onclick": null,
+                                "showDuration": "300",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            };
+
+                            $('#toastrOptions').text('Command: toastr["'
+                                + shortCutFunction
+                                + '"]("'
+                                + msg
+                                + (title ? '", "' + title : '')
+                                + '")\n\ntoastr.options = '
+                                + JSON.stringify(toastr.options, null, 2)
+                            );
+
+                            var $toast = toastr[shortCutFunction](msg, title);                           
+                        };                 
                     }
                 }
 

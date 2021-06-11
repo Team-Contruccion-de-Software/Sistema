@@ -919,6 +919,9 @@
     <Content Include="Source\User\plugins\morris\morris.js" />
     <Content Include="Source\User\plugins\morris\morris.min.js" />
     <Content Include="Source\User\plugins\raphael\raphael-min.js" />
+    <Content Include="Source\User\plugins\toastr\toastr.css" />
+    <Content Include="Source\User\plugins\toastr\toastr.min.css" />
+    <Content Include="Source\User\plugins\toastr\toastr.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -993,6 +996,8 @@
     <Content Include="Views\Administrador\Edituser.cshtml" />
     <Content Include="Views\Administrador\EditMem.cshtml" />
     <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Source\User\plugins\toastr\toastr.js.map" />
+    <Content Include="Views\Login\Recuperar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -232,6 +232,28 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             return usuario;
         }
 
+        public USUARIO ObtenerRespaldo(string EmailRecuperar)
+        {
+            var usuario = new USUARIO();
+
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    usuario = db.USUARIO.Include("TIPO_USUARIO")
+                        .Where(x => x.EMAIL == EmailRecuperar)
+                        .SingleOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return usuario;
+        }
+
+
         public void Eliminar()
         {
             var usuario = ObtenerUsuario(ID_USUARIO);
