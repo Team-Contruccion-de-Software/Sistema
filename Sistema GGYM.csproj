@@ -998,6 +998,7 @@
     <Content Include="Views\Producto\Index.cshtml" />
     <Content Include="Source\User\plugins\toastr\toastr.js.map" />
     <Content Include="Views\Login\Recuperar.cshtml" />
+    <Content Include="Views\Producto\Editproduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

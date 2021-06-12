@@ -32,5 +32,10 @@ namespace Sistema_GGYM.Controllers
                 return View("~/Producto");
             }
         }
+
+        public ActionResult Editproduct(int id = 0)
+        {
+            return View(id == 0 ? new PRODUCTO() : producto.ObtenerProducto(id));
+        }
     }
 }

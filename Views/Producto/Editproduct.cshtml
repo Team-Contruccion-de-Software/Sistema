@@ -1,0 +1,91 @@
+﻿@model Sistema_GGYM.Models.Base_De_Datos.PRODUCTO
+@{
+    ViewBag.Title = "Editproduct";
+    Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+}
+
+<div class="content">
+    <div class="container">
+
+        <div class="row" style="padding: 10px;">
+
+            @using(Html.BeginForm("Guardar", "Producto", FormMethod.Post, new { id = "frm-producto" }))
+            {
+
+                @Html.HiddenFor(x => Model.ID_PRODUCTO)
+
+                <div class="form">
+
+                    <div class="row card-box">
+                        <h4 class="header-title"><i class="fa fa-pencil"></i> Editar producto @Model.DESCRIPCION</h4>
+                    </div>
+
+                    <br />
+
+                    <div class="row card-box">
+                        <h4 class="header-title m-t-0 m-b-30">Datos del producto</h4>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label("Codigo", new { @class = "control-label" })
+                                @Html.TextBoxFor(x => Model.CODIGO, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => Model.CODIGO, null, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label("Descripcion", new { @class = "control-label" })
+                                @Html.TextBoxFor(x => Model.DESCRIPCION, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => Model.DESCRIPCION, null, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.Label("Stock", new { @class = "control-label" })
+                                @Html.TextBoxFor(x => Model.STOCK, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => Model.STOCK, null, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.Label("Precio", new { @class = "control-label" })
+                                @Html.TextBoxFor(x => Model.PRECIO, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => Model.PRECIO, null, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.Label("Categoria", new { @class = "control-label" })
+                                @Html.TextBoxFor(x => Model.ID_CATEGORIA, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => Model.ID_CATEGORIA, null, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.Label("Imagen", new { @class = "control-label" })
+                                @Html.TextBoxFor(x => Model.IMAGEN, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => Model.IMAGEN, null, new { @class = "label label-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />               
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-custom waves-effect waves-light">Guardar Cambios</button>
+                </div>
+            }
+
+        </div>
+
+    </div>
+</div>
+
+
+<!--Efecto de seleccion-->
+<script src="~/Source/js/Indices.js"></script>
+
+<!--Lectura imagenes de perfil-->
+<script src="~/Source/js/ImagenDePerfil.js"></script>
+
