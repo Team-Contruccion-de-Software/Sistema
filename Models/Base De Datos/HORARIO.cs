@@ -4,6 +4,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity;
     using System.Data.Entity.Spatial;
     using System.Linq;
 
@@ -61,6 +62,23 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             }
 
             return horario;
+        }
+
+
+        public void RegistrarHorario()
+        {
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    db.Entry(this).State = EntityState.Added;
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
 
 

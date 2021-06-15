@@ -114,6 +114,39 @@ namespace Sistema_GGYM.Controllers
             return View(usuario.ListarTodo());
         }
 
+        public ActionResult GuardarCoachHorario(HORARIO horario, string daterange, string hora)
+        {
+            
+
+            if (!horario.DESCRIPCION.Equals("") && !daterange.Equals(""))
+            {
+                //split de la fecha
+                string[] fechas = daterange.Split('-');
+                horario.FECHA_INICIO = Convert.ToDateTime(fechas[0]);
+                horario.FECHA_FIN = Convert.ToDateTime(fechas[1]);
+
+                // aumentar 2 horas a la hora
+                DateTime dateTime = new DateTime();
+                string[] horas = hora.Split(':');
+                horas[0] = (Convert.ToInt32(horas[0]) + 2).ToString();
+
+                dateTime = DateTime.Parse(hora);
+                horario.HORA_INICIO = dateTime.TimeOfDay;
+
+                dateTime = DateTime.Parse(horas[0] + ":" + horas[1]);
+                horario.HORA_FIN = dateTime.TimeOfDay;
+
+                horario.RegistrarHorario();
+                return Redirect("~/Usuario/CoachHorario");
+            }
+            else
+            {
+                return View("/Usuario/CoachHorario");
+            }
+        }
+
+
+
         /********METODOS PARA LAS VIDEOLLAMADAS*******/
         public ActionResult Videollamada()
         {
