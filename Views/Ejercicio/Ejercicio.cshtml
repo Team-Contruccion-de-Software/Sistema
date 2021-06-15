@@ -18,14 +18,14 @@
                     <div class="panel panel-default bx-shadow-none">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse"
+                                <a class="" role="button" data-toggle="collapse"
                                    data-parent="#accordion" href="#collapseOne"
                                    aria-expanded="false" aria-controls="collapseOne">
                                     Rutinas Recomendadas
                                 </a>
                             </h4>
                         </div>
-                        <div id="collapseOne" class="panel-collapse collapse"
+                        <div id="collapseOne" class="panel-collapse collapse in"
                              role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
 
@@ -43,7 +43,7 @@
 
                             </div>
                         </div>
-                    </div>                    
+                    </div>
 
                     <!--Lista desplegable de videos recomendados de los entrenadores-->
 
@@ -94,17 +94,28 @@
                         <div id="collapseThree" class="panel-collapse collapse"
                              role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life
-                                accusamus terry richardson ad squid. 3 wolf moon officia
-                                aute, non cupidatat skateboard dolor brunch. Food truck
-                                quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                                sunt aliqua put a bird on it squid single-origin coffee
-                                nulla assumenda shoreditch et. Nihil anim keffiyeh
-                                helvetica, craft beer labore wes anderson cred nesciunt
-                                sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                                Leggings occaecat craft beer farm-to-table, raw denim
-                                aesthetic synth nesciunt you probably haven't heard of them
-                                accusamus labore sustainable VHS.
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card-box">
+                                            <div class="dropdown pull-right">
+                                                <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="zmdi zmdi-more-vert"></i>
+                                                </a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Action</a></li>
+                                                    <li><a href="#">Another action</a></li>
+                                                    <li><a href="#">Something else here</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#">Separated link</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <h4 class="header-title m-t-0 m-b-30">Markers</h4>
+
+                                            <div id="gmaps-markers" class="gmaps"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

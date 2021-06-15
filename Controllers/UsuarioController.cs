@@ -159,11 +159,28 @@ namespace Sistema_GGYM.Controllers
             if (ModelState.IsValid)
             {
                 usuario.RegistarCliente();
-                return Redirect("~/Administrador/Index");
+
+                if (usuario.ID_TIPOUSUARIO == 4)
+                {
+                    return Redirect("~/Administrador/Index");
+                }
+                else
+                {
+                    return Redirect("~/Usuario/Index");
+                }
+                
+                
             }
             else
             {
-                return View("~/Administrador/Index");
+                if (usuario.ID_TIPOUSUARIO == 4)
+                {
+                    return Redirect("~/Administrador/Index");
+                }
+                else
+                {
+                    return Redirect("~/Usuario/Index");
+                }
             }
         }
     }

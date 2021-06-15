@@ -155,6 +155,7 @@
     <Content Include="Source\js\ImagenDePerfil.js" />
     <Content Include="Source\js\Indices.js" />
     <Content Include="Source\js\Login\ini.js" />
+    <Content Include="Source\js\Mensaje.js" />
     <Content Include="Source\js\nicepage.js" />
     <Content Include="Source\css\Login\Login.css" />
     <Content Include="Source\js\Login\bootstrap.bundle.js" />

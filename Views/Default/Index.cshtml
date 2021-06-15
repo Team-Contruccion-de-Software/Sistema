@@ -69,9 +69,18 @@
 
                         @if (Sistema_GGYM.Models.SessionHelper.GetUser() > 0)
                         {
-                            <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Usuario" style="padding: 10px 20px;">@usuario.NOMBRE @usuario.APELLIDO</a>
-                            </li>
+                            if (usuario.ID_TIPOUSUARIO == 4)
+                            {
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Administrador/Index" style="padding: 10px 20px;">@usuario.NOMBRE @usuario.APELLIDO</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Usuario/Index" style="padding: 10px 20px;">@usuario.NOMBRE @usuario.APELLIDO</a>
+                                </li>
+                            }
                         }
 
 
@@ -100,10 +109,21 @@
 
                                 @if (Sistema_GGYM.Models.SessionHelper.GetUser() > 0)
                                 {
-                                    <li class="u-nav-item">
-                                        <a class="u-button-style u-nav-link" href="~/Usuario">@usuario.NOMBRE @usuario.APELLIDO</a>
-                                        <!--A futuro estara una imagen-->
-                                    </li>
+                                    if (usuario.ID_TIPOUSUARIO == 4)
+                                    {
+                                        <li class="u-nav-item">
+                                            <a class="u-button-style u-nav-link" href="~/Administrador/Index">@usuario.NOMBRE @usuario.APELLIDO</a>
+                                            <!--A futuro estara una imagen-->
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="u-nav-item">
+                                            <a class="u-button-style u-nav-link" href="~/Usuario/Index">@usuario.NOMBRE @usuario.APELLIDO</a>
+                                            <!--A futuro estara una imagen-->
+                                        </li>
+                                    }
+
                                 }
 
                             </ul>
