@@ -1,0 +1,55 @@
+﻿@model List<Sistema_GGYM.Models.Base_De_Datos.PRODUCTO>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Caompatible" content="ie=edge">
+    <title>Productos GGYM</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:500,600&display=swap" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- CSS Estilos -->
+    <link href="~/Source/User/productos/css/estilos.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h1 class="center-align titulo">GGYM te ofrece los siguiente</h1>
+
+                <div class="carousel center-align">
+
+                    @foreach (var producto in Model)
+                    {
+                    <div class="carousel-item">
+                        <h2 class="subtitulo">@producto.DESCRIPCION</h2>
+                        <div class="linea-division"></div>
+                        <p class="sabor">@producto.STOCK en stock</p>
+                        <p class="sabor2">Precio: S/. @producto.PRECIO</p>
+                        <img src="@producto.IMAGEN" />
+                        <button class="waves-effect waves-light btn" type="submit">Comprar</button>
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- JS Main -->
+    <script src="~/Source/User/productos/js/main.js"></script>
+</body>
+</html>

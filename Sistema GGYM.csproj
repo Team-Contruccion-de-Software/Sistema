@@ -1196,6 +1196,8 @@
     <Content Include="Source\User\plugins\toastr\toastr.css" />
     <Content Include="Source\User\plugins\toastr\toastr.min.css" />
     <Content Include="Source\User\plugins\toastr\toastr.min.js" />
+    <Content Include="Source\User\productos\css\estilos.css" />
+    <Content Include="Source\User\productos\js\main.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1290,6 +1292,7 @@
     <Content Include="Source\User\plugins\select2\src\scss\_dropdown.scss" />
     <Content Include="Source\User\plugins\select2\src\scss\_multiple.scss" />
     <Content Include="Source\User\plugins\select2\src\scss\_single.scss" />
+    <Content Include="Views\Default\Productos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
