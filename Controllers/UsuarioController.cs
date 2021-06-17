@@ -33,7 +33,8 @@ namespace Sistema_GGYM.Controllers
         /********METODOS PARA EL CALENDARIO*******/
         public ActionResult Calendario()
         {
-            return View();
+            ViewBag.registro = registro.ListarTodo();
+            return View(horario.ListarTodo());
         }
 
         /********METODOS PARA LA MEMBRESIA*******/
