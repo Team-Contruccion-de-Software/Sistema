@@ -4,16 +4,16 @@
     box-sizing: border-box;
 }
 
-body { 
+body {
     min-height: 100vh;
-    background-image: linear-gradient(-45deg, #e3ddd9 50%, #324d33 50%);
+    background-image: linear-gradient(-45deg, #b8d5e0 50%, #0676a4 50%);
     font-family: 'Raleway', sans-serif;
 }
 
 .titulo {
-    font-size: 40px;
+    font-size: 30px;
     font-family: 'sans-serif', cursive;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     color: #fff;
 }
 
@@ -23,7 +23,6 @@ body {
     display: inline;
     font-size: 50px;
     font-weight: 500;
-    text-transform: uppercase;
 }
 
 .sabor { 
@@ -47,9 +46,9 @@ body {
 }
 
 .linea-division {
-    width: 80%;
-    height: 2px;
-    background-color: #36221c;
+    width: 50%;
+    height: 3px;
+    background-color: #0676a4;
 }
 
 
@@ -65,8 +64,8 @@ body {
     justify-content: center;
     align-items: center;
     user-select: none;
-    width: 500px;
-    height: 600px;
+    width: 350px;
+    height: 550px;
     text-shadow: -2px -2px 1px #fff;
 }
 
@@ -79,11 +78,15 @@ body {
     left: 0;
     z-index: -1;
     border-radius: 25px;
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
 }
 
 .carousel .indicators .indicator-item {
     margin: 0 15px;
     background: #000;
+}
+
+a {
+    color: #fff;
 }

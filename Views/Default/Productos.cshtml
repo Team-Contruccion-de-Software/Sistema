@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Caompatible" content="ie=edge">
     <title>Productos GGYM</title>
-
+    <link rel="shortcut icon" href="~/Source/images/ggymlogonormal.png">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:500,600&display=swap" rel="stylesheet">
 
@@ -18,14 +18,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- CSS Estilos -->
+    <link href="~/Source/User/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Source/User/productos/css/estilos.css" rel="stylesheet" />
 </head>
 <body>
 
     <div class="container">
         <div class="row">
-            <div class="col s12">
-                <h1 class="center-align titulo">GGYM te ofrece los siguiente</h1>
+            <div class="col-md-12">
+                <h1 class="center-align titulo"><a href="~/Default/Index">GGYM te ofrece los siguiente</a></h1>
 
                 <div class="carousel center-align">
 
@@ -37,7 +38,8 @@
                         <p class="sabor">@producto.STOCK en stock</p>
                         <p class="sabor2">Precio: S/. @producto.PRECIO</p>
                         <img src="@producto.IMAGEN" />
-                        <button class="waves-effect waves-light btn" type="submit">Comprar</button>
+                        <div class="linea-division"></div><br />
+                        <button type="button" class="btn btn-primary" onclick="alert('Comprado')" >Comprar</button>
                     </div>
                     }
 
@@ -51,5 +53,6 @@
 
     <!-- JS Main -->
     <script src="~/Source/User/productos/js/main.js"></script>
+
 </body>
 </html>
