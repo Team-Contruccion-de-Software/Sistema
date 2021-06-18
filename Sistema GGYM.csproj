@@ -110,6 +110,9 @@
     <Content Include="Source\images\1.jpeg" />
     <Content Include="Source\images\2.jpeg" />
     <Content Include="Source\images\3.jpeg" />
+    <Content Include="Source\images\aboutus\bayron.jpg" />
+    <Content Include="Source\images\aboutus\danielo.jpg" />
+    <Content Include="Source\images\aboutus\paolo.jpg" />
     <Content Include="Source\images\athletic-boxer-punching-with-determination-precaution_158595-4826.jpg" />
     <Content Include="Source\images\banner.jpg" />
     <Content Include="Source\images\bvn.jpg" />
@@ -146,6 +149,8 @@
     <Content Include="Source\images\gff.jpg" />
     <Content Include="Source\images\gfggg-min1.jpg" />
     <Content Include="Source\images\ggymlogo.png" />
+    <Content Include="Source\images\ggymlogodegrade.png" />
+    <Content Include="Source\images\ggymlogonormal.png" />
     <Content Include="Source\images\muscular-guy-with-dumbbell_144627-27153.jpg" />
     <Content Include="Source\images\portrait-young-afro-american-sports-man-looks-away_171337-8255.jpg" />
     <Content Include="Source\images\VideoEjercicios\Video1.mp4" />
@@ -1293,6 +1298,8 @@
     <Content Include="Source\User\plugins\select2\src\scss\_multiple.scss" />
     <Content Include="Source\User\plugins\select2\src\scss\_single.scss" />
     <Content Include="Views\Default\Productos.cshtml" />
+    <Content Include="Views\Default\AcercaDe.cshtml" />
+    <Content Include="Views\Default\Contacto.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

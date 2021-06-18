@@ -22,5 +22,15 @@ namespace Sistema_GGYM.Controllers
         {
             return View(producto.ListarTodo());
         }
+
+        public ActionResult AcercaDe()
+        {
+            return View();
+        }
+
+        public ActionResult Contacto()
+        {
+            return View();
+        }
     }
 }

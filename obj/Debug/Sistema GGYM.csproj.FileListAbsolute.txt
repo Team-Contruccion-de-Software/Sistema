@@ -1007,3 +1007,84 @@ D:\95. Proyecto Contruccion\Respaldo\Sistema\bin\roslyn\vbc.exe.config
 D:\95. Proyecto Contruccion\Respaldo\Sistema\bin\roslyn\vbc.rsp
 D:\95. Proyecto Contruccion\Respaldo\Sistema\bin\roslyn\VBCSCompiler.exe
 D:\95. Proyecto Contruccion\Respaldo\Sistema\bin\roslyn\VBCSCompiler.exe.config
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\Sistema GGYM.dll.config
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\Sistema GGYM.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\Sistema GGYM.pdb
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\EntityFramework.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\EntityFramework.SqlServer.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\Microsoft.Web.Infrastructure.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\System.Web.Helpers.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\System.Web.Mvc.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\System.Web.Razor.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\System.Web.Webpages.Deployment.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\System.Web.Webpages.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\System.Web.Webpages.Razor.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\EntityFramework.xml
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\EntityFramework.SqlServer.xml
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\System.Web.Razor.xml
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\System.Web.Webpages.xml
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\System.Web.Webpages.Deployment.xml
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\System.Web.Webpages.Razor.xml
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\System.Web.Helpers.xml
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\System.Web.Mvc.xml
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\es\System.Web.Razor.resources.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\es\System.Web.Webpages.resources.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\es\System.Web.Webpages.Deployment.resources.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\es\System.Web.Webpages.Razor.resources.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\es\System.Web.Helpers.resources.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\es\System.Web.Mvc.resources.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\obj\Debug\Sistema GGYM.csproj.CoreCompileInputs.cache
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\obj\Debug\Sistema GGYM.csproj.CopyComplete
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\obj\Debug\Sistema GGYM.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\obj\Debug\Sistema GGYM.pdb
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\csc.exe
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\csc.exe.config
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\csc.rsp
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\csi.exe
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\csi.exe.config
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\csi.rsp
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\Microsoft.Managed.Core.targets
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.AppContext.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Collections.Immutable.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Console.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Globalization.Calendars.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.IO.Compression.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.IO.FileSystem.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Net.Http.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Net.Sockets.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Reflection.Metadata.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.ValueTuple.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Xml.XmlDocument.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Xml.XPath.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\vbc.exe
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\vbc.exe.config
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\vbc.rsp
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\VBCSCompiler.exe
+D:\GGYM Proyecto Versiones\ggym v 1.9\Sistema\bin\roslyn\VBCSCompiler.exe.config

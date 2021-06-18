@@ -1,0 +1,222 @@
+﻿@{
+    Layout = null;
+
+    Sistema_GGYM.Models.Base_De_Datos.USUARIO usuario = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>GGYM - Acerca de</title>
+    <link rel="stylesheet" href="~/Source/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="~/Source/css/Casa.css" media="screen">
+    <link rel="shortcut icon" href="~/Source/images/ggymlogonormal.png">
+    <link href="~/Source/css/Login/bootstrap.min.css" rel="stylesheet" />
+
+    <script class="u-script" type="text/javascript" src="~/Source/js/Login/jquery.js"></script>
+    <script class="u-script" type="text/javascript" src="~/Source/js/nicepage.js" defer=""></script>
+
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Black:400">
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
+</head>
+
+<body class="u-body">
+
+
+    <header class="u-clearfix u-header u-header" id="sec-52aa" style="background-color:white;">
+        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+
+            <a href="~/Default/Index" class="u-image u-logo u-image-1">
+                <img src="~/Source/images/ggymlogonormal.png" class="u-logo-image u-logo-image-1">
+            </a>
+
+            <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+                <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+                    <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
+                                    <rect y="1" width="16" height="2"></rect>
+                                    <rect y="7" width="16" height="2"></rect>
+                                    <rect y="13" width="16" height="2"></rect>
+                                </symbol>
+                            </defs>
+                        </svg>
+                    </a>
+                </div>
+                <div class="u-nav-container">
+                    <ul class="u-nav u-unstyled u-nav-1">
+
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/Productos" style="padding: 10px 20px; font-weight:bold">Tienda</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/AcercaDe" style="padding: 10px 20px; font-weight:bold">Acerca de</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/Contacto" style="padding: 10px 20px; font-weight:bold">Contacto</a>
+                        </li>
+
+                        @if (Sistema_GGYM.Models.SessionHelper.GetUser() == 0)
+                        {
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Login/Index" style="padding: 10px 20px; font-weight:bold">Iniciar sesión</a>
+                            </li>
+                        }
+
+                        @if (Sistema_GGYM.Models.SessionHelper.GetUser() > 0)
+                        {
+                            if (usuario.ID_TIPOUSUARIO == 4)
+                            {
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Administrador/Index" style="padding: 10px 20px; font-weight:bold">@usuario.NOMBRE @usuario.APELLIDO</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Usuario/Index" style="padding: 10px 20px; font-weight:bold">@usuario.NOMBRE @usuario.APELLIDO</a>
+                                </li>
+                            }
+                        }
+
+
+
+                    </ul>
+                </div>
+                <div class="u-nav-container-collapse">
+                    <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                        <div class="u-sidenav-overflow">
+                            <div class="u-menu-close"></div>
+                            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" href="~/Default/Productos">Tienda</a>
+                                </li>
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" href="~/Default/AcercaDe">Acerca de</a>
+                                </li>
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" href="~/Default/Contacto">Contacto</a>
+                                </li>
+                                @if (Sistema_GGYM.Models.SessionHelper.GetUser() == 0)
+                                {
+                                    <li class="u-nav-item">
+                                        <a class="u-button-style u-nav-link" href="~/Login/Index">Iniciar sesión</a>
+                                    </li>
+                                }
+
+                                @if (Sistema_GGYM.Models.SessionHelper.GetUser() > 0)
+                                {
+                                    if (usuario.ID_TIPOUSUARIO == 4)
+                                    {
+                                        <li class="u-nav-item">
+                                            <a class="u-button-style u-nav-link" href="~/Administrador/Index">@usuario.NOMBRE @usuario.APELLIDO</a>
+                                            <!--A futuro estara una imagen-->
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="u-nav-item">
+                                            <a class="u-button-style u-nav-link" href="~/Usuario/Index">@usuario.NOMBRE @usuario.APELLIDO</a>
+                                            <!--A futuro estara una imagen-->
+                                        </li>
+                                    }
+
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .img-thumbnail {
+            padding: .25rem;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 50%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .social-link {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            border-radius: 50%;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+    </style>
+
+    <br />
+    <br />
+    <div class="container py-5">
+        <div class="row mb-4">
+            <div class="col-lg-5">
+                <h2 class="display-4 font-weight-light">Nuestro equipo</h2>
+                <p class="font-italic text-muted">Acerca de nuestro equipo de desarrollo.</p>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row text-center">
+            <!-- Team item-->
+            <div class="col-sm-3 col-sm-4 mb-5">
+                <img src="~/Source/images/aboutus/paolo.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0" style="font-weight:bold">Paolo Lizárraga</h5><span class="small text-uppercase text-muted">Desarrollador - Founder</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="https://www.facebook.com/paolopatrick.lizarragamorera" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/PaoloLM" class="social-link"><i class="fa fa-github"></i></a></li>
+                </ul>
+            </div>
+            <!-- End-->
+            <!-- Team item-->
+            <div class="col-sm-3 col-sm-4 mb-5">
+                <img src="~/Source/images/aboutus/bayron.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0" style="font-weight:bold">Bayron Sánchez</h5><span class="small text-uppercase text-muted">Desarrollador - Founder</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="https://www.facebook.com/bayron.sanchezrodriguez" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/BayronAndresSR" class="social-link"><i class="fa fa-github"></i></a></li>
+                </ul>
+            </div>
+            <!-- End-->
+            <!-- Team item-->
+            <div class="col-sm-3 col-sm-4 mb-5">
+                <img src="~/Source/images/aboutus/danielo.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                <h5 class="mb-0" style="font-weight:bold">Daniel Loja</h5><span class="small text-uppercase text-muted">Desarrollador - Founder</span>
+                <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="https://www.facebook.com/jordanloja20" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/Danielo20" class="social-link"><i class="fa fa-github"></i></a></li>
+                </ul>
+            </div>
+            <!-- End-->
+        </div>
+        <br /><br>
+    </div>
+
+
+
+</body>
+</html>
