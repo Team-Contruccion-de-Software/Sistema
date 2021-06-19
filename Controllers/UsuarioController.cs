@@ -23,6 +23,8 @@ namespace Sistema_GGYM.Controllers
         HORARIO horario = new HORARIO();
         REGISTRO registro = new REGISTRO();
         MEMBRESIA membresia = new MEMBRESIA();
+        SEGUIMIENTO seguimiento = new SEGUIMIENTO();
+        IMC imc = new IMC();
 
         // GET: Usuario
         public ActionResult Index()
@@ -154,24 +156,59 @@ namespace Sistema_GGYM.Controllers
             return View();
         }
 
-        /********METODOS PARA LOS USUARIOS AL EDITAR SUS DATOS*******/
+        /********METODOS PARA LOS USUARIOS AL EDITAR SUS DATOS, ASI COMO LA TABLA DE IMC Y DEL SEGUIMIENTO*******/
         public ActionResult Guardar(USUARIO usuario)
         {
             if (ModelState.IsValid)
             {
-                usuario.RegistarCliente();
-
                 if (usuario.ID_TIPOUSUARIO == 4)
                 {
+                    usuario.RegistarCliente();
                     return Redirect("~/Administrador/Index");
                 }
                 else
                 {
-                    return Redirect("~/Usuario/Index");
-                }
-                
-                
+                    if (usuario.ID_TIPOUSUARIO == 3)
+                    {
+                        usuario.RegistarCliente();
+                        return Redirect("~/Usuario/Index");
+                    }
+
+                    else if (usuario.ID_TIPOUSUARIO == 2)
+                    {
+                        if (!usuario.PESO.Equals(""))
+                        {
+                            //validamos que los dias sean iguales para que la fecha se sobreescriba
+                            seguimiento.RegistarSeguimiento(usuario.ID_USUARIO, usuario.PESO);
+
+                            if (!usuario.ESTATURA.Equals(""))
+                            {
+                                //Se registra en la bd del imc para mas control
+                                double pesito = Convert.ToDouble(usuario.PESO);
+                                double estaturita = Convert.ToDouble(usuario.ESTATURA);
+                                string imcTemporal = (pesito * 10000 / Math.Pow(estaturita, 2)).ToString("0.0");
+
+                                imc.RegistrarIMC(usuario.ID_USUARIO, imcTemporal);
+                            }
+                            usuario.RegistarCliente();
+                            return Redirect("~/Usuario/Index");
+                        }
+
+                        else
+                        {
+                            return Redirect("~/Usuario/Index");
+                        }
+                    }
+
+                    else
+                    {
+                        usuario.RegistarCliente();
+                        return Redirect("~/Usuario/Index");
+                    }
+                    
+                }                
             }
+
             else
             {
                 if (usuario.ID_TIPOUSUARIO == 4)
