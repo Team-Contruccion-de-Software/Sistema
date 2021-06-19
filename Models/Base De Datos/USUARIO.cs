@@ -15,8 +15,11 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         public USUARIO()
         {
             HORARIO = new HashSet<HORARIO>();
+            IMC = new HashSet<IMC>();
+            PEDIDO = new HashSet<PEDIDO>();
             REGISTRO = new HashSet<REGISTRO>();
             REPORTES = new HashSet<REPORTES>();
+            SEGUIMIENTO = new HashSet<SEGUIMIENTO>();
         }
 
         [Key]
@@ -64,7 +67,13 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HORARIO> HORARIO { get; set; }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<IMC> IMC { get; set; }
+
         public virtual MEMBRESIA MEMBRESIA { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PEDIDO> PEDIDO { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REGISTRO> REGISTRO { get; set; }
@@ -72,8 +81,10 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REPORTES> REPORTES { get; set; }
 
-        public virtual TIPO_USUARIO TIPO_USUARIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SEGUIMIENTO> SEGUIMIENTO { get; set; }
 
+        public virtual TIPO_USUARIO TIPO_USUARIO { get; set; }
 
         public List<USUARIO> ListarTodo()
         {
@@ -321,7 +332,5 @@ namespace Sistema_GGYM.Models.Base_De_Datos
                 throw;
             }
         }
-
-
     }
 }

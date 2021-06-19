@@ -14,6 +14,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PRODUCTO()
         {
+            DETALLE_PEDIDO = new HashSet<DETALLE_PEDIDO>();
             REPORTES = new HashSet<REPORTES>();
         }
 
@@ -37,6 +38,9 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         public int ID_CATEGORIA { get; set; }
 
         public virtual CATEGORIA_PRODUCTO CATEGORIA_PRODUCTO { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DETALLE_PEDIDO> DETALLE_PEDIDO { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REPORTES> REPORTES { get; set; }

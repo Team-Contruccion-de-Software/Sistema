@@ -153,7 +153,5 @@ namespace Sistema_GGYM.Models.Base_De_Datos
                 throw;
             }
         }
-
-
     }
 }

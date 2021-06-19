@@ -1220,14 +1220,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Base De Datos\CATEGORIA_PRODUCTO.cs" />
+    <Compile Include="Models\Base De Datos\DETALLE_PEDIDO.cs" />
     <Compile Include="Models\Base De Datos\HORARIO.cs" />
+    <Compile Include="Models\Base De Datos\IMC.cs" />
     <Compile Include="Models\Base De Datos\MEMBRESIA.cs" />
     <Compile Include="Models\Base De Datos\ModeloGGYM.cs" />
+    <Compile Include="Models\Base De Datos\PEDIDO.cs" />
     <Compile Include="Models\Base De Datos\PRODUCTO.cs" />
     <Compile Include="Models\Base De Datos\REGISTRO.cs" />
     <Compile Include="Models\Base De Datos\REPORTES.cs" />
+    <Compile Include="Models\Base De Datos\SEGUIMIENTO.cs" />
     <Compile Include="Models\Base De Datos\TIPO_USUARIO.cs" />
+    <Compile Include="Models\Base De Datos\TIPO_VIDEO.cs" />
     <Compile Include="Models\Base De Datos\USUARIO.cs" />
+    <Compile Include="Models\Base De Datos\VIDEO.cs" />
     <Compile Include="Models\HashHelper.cs" />
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Models\SessionHelper.cs" />
