@@ -173,9 +173,9 @@
 
         //creating donut chart
         var $donutData = [
-                {label: "Download Sales", value: 12},
-                {label: "In-Store Sales", value: 30},
-                {label: "Mail-Order Sales", value: 20}
+                {label: "Membresia Diaria", value: 12},
+                {label: "Membresia Semanal", value: 30},
+                {label: "Membresia Anual", value: 20}
             ];
         this.createDonutChart('morris-donut-example', $donutData, ['#ff8acc', '#5b69bc', "#35b8e0"]);
     },

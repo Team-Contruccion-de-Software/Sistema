@@ -1,50 +1,82 @@
-﻿
+﻿@model List<Sistema_GGYM.Models.Base_De_Datos.SEGUIMIENTO>
 @{
     ViewBag.Title = "Seguimiento";
     Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+
+    Sistema_GGYM.Models.Base_De_Datos.IMC IMCusuario = ViewBag.Usuario;
+
+    string contenidolabel = "";
+    string contenidoseries = "";
+
+    if (Model.Count > 0)
+    {
+        foreach (var seguimiento in Model)
+        {
+            //labels / fechas
+            contenidolabel += "'" + seguimiento.FECHA.Value.ToString("dd/MM/yyyy") + "',";
+
+            //series / peso
+            contenidoseries += seguimiento.PESO + ",";
+        }
+    }
 }
 
+<!--Mostrando los datos de peso e imc-->
 <div class="content">
     <div class="container">
-
-        <div class="row m-t-40">
-            <div class="col-sm-12">
-                <div class="text-center">
-                    <h2 class="text-success m-t-0 text-uppercase font-600">Proximamente</h2>
-                </div>
-            </div>
-        </div>
-
         <div class="row">
 
-            <div class="col-md-12">
-                <div id="count-down" class="row center-block">
-                    <div class="clock-presenter days_dash col-sm-3">
-                        <div class="digit"></div>
-                        <div class="digit"></div>
-                        <div class="digit"></div>
-                        <p class='note dash_title'>Dias</p>
-                    </div>
-                    <div class="clock-presenter hours_dash col-sm-3">
-                        <div class="digit"></div>
-                        <div class="digit"></div>
-                        <p class='note dash_title'>Horas</p>
-                    </div>
-                    <div class="clock-presenter minutes_dash col-sm-3">
-                        <div class="digit"></div>
-                        <div class="digit"></div>
-                        <p class='note dash_title'>Minutos</p>
-                    </div>
-                    <div class="clock-presenter seconds_dash col-sm-3">
-                        <div class="digit"></div>
-                        <div class="digit"></div>
-                        <p class='note dash_title'>Segundos</p>
+            @if (IMCusuario != null)
+            {
+                <!--edad, peso, altura e imc-->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-box widget-user">
+                        <div class="text-center">
+                            <h2 class="text-custom">@IMCusuario.USUARIO.EDAD</h2>
+                            <h5>Años</h5>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-box widget-user">
+                        <div class="text-center">
+                            <h2 class="text-danger">@IMCusuario.USUARIO.PESO</h2>
+                            <h5>KG</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-box widget-user">
+                        <div class="text-center">
+                            <h2 class="text-warning">@IMCusuario.USUARIO.ESTATURA</h2>
+                            <h5>m de altura</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card-box widget-user">
+                        <div class="text-center">
+                            <h2 class="text-info">@IMCusuario.IMC1</h2>
+                            <h5>IMC</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <!--CHART DEL SEGUMIENTO-->
+                    <div class="card-box">
+                        <h4 class="header-title m-t-0 m-b-30">Evolucion del peso</h4>
+                        <div id="chart-with-area" class="ct-chart ct-golden-section"></div>
+                    </div>
+                </div>
+            }
+
         </div>
     </div>
-
 </div>
 
 <!--Efecto de seleccion-->
@@ -56,24 +88,23 @@
 <!--Jquery-->
 <script src="~/Source/User/js/jquery.min.js"></script>
 
-<!--Efecto de conteo-->
+<!--Chartist Chart-->
+<script src="~/Source/User/plugins/chartist/dist/chartist.min.js"></script>
+<script src="~/Source/User/plugins/chartist/dist/chartist-plugin-tooltip.min.js"></script>
+
 <script type="text/javascript">
-    $(document).ready(function () {
 
-        "use strict";
-
-        //Set your date
-        $('#count-down').countDown({
-            targetDate: {
-                'day': 19,
-                'month': 5,
-                'year': 2021,
-                'hour': 20,
-                'min': 50,
-                'sec': 0
-            },
-            omitWeeks: true
-        });
-
+    new Chartist.Line('#chart-with-area', {
+        labels: [@Html.Raw(contenidolabel)],
+        series: [
+            [@Html.Raw(contenidoseries)]
+        ]
+    }, {
+        low: 0,
+        showArea: true,
+        plugins: [
+            Chartist.plugins.tooltip()
+        ]
     });
+
 </script>

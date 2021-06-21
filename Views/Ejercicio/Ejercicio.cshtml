@@ -66,10 +66,18 @@
                                     <div class="row port m-b-20">
                                         <div id="galeria2" class="portfolioContainer">
 
-                                            <!--Lista de videos generadas con js-->
-                                            <!--Cargar videos de los entrenadores-->
-                                            <script src="~/Source/js/Videos.js"></script>
-                                            <!--Fin de la lista-->
+                                            <!--Lista de videos de la bd-->
+                                            <!--Cargar videos de los entrenadores recomendados-->
+
+                                            <div class="col-sm-6 col-lg-3 col-md-4">
+                                                <div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999;">
+                                                    <p class="u-text-black m-b-10" style="text-align: center">Video recomendado 1</p>
+                                                    <video class="thumb-img" alt="work-thumbnail" controls>
+                                                        <source src="~/Source/images/VideoEjercicios/Video1.mp4" type="video/mp4"></source>
+                                                    </video>
+                                                    <p class="text-muted" style="text-align: center">Descripcion del video</p>
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -78,53 +86,8 @@
                         </div>
                     }
 
-
-                    <!--Lista desplegable de otras cosas-->
-
-                    <div class="panel panel-default bx-shadow-none">
-                        <div class="panel-heading" role="tab" id="headingThree">
-                            <h4 class="panel-title">
-                                <a class="collapsed" role="button" data-toggle="collapse"
-                                   data-parent="#accordion" href="#collapseThree"
-                                   aria-expanded="false" aria-controls="collapseThree">
-                                    Otras cosas
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse"
-                             role="tabpanel" aria-labelledby="headingThree">
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="card-box">
-                                            <div class="dropdown pull-right">
-                                                <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                                                    <i class="zmdi zmdi-more-vert"></i>
-                                                </a>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <h4 class="header-title m-t-0 m-b-30">Markers</h4>
-
-                                            <div id="gmaps-markers" class="gmaps"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
                 </div>
-            </div><!-- end col -->
+            </div>
         </div>
     </div>
 </div>

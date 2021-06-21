@@ -386,7 +386,13 @@
     <Content Include="Source\User\plugins\bootstrap-touchspin\dist\jquery.bootstrap-touchspin.min.js" />
     <Content Include="Source\User\plugins\bootstrap-touchspin\src\jquery.bootstrap-touchspin.css" />
     <Content Include="Source\User\plugins\bootstrap-touchspin\src\jquery.bootstrap-touchspin.js" />
+    <Content Include="Source\User\plugins\chartist\dist\chartist-plugin-tooltip.js" />
+    <Content Include="Source\User\plugins\chartist\dist\chartist-plugin-tooltip.min.js" />
+    <Content Include="Source\User\plugins\chartist\dist\chartist.js" />
+    <Content Include="Source\User\plugins\chartist\dist\chartist.min.css" />
+    <Content Include="Source\User\plugins\chartist\dist\chartist.min.js" />
     <Content Include="Source\User\plugins\count-down\jquery.lwtCountdown-1.0.js" />
+    <Content Include="Source\User\plugins\counterup\jquery.counterup.min.js" />
     <Content Include="Source\User\plugins\datatables\buttons.bootstrap.min.css" />
     <Content Include="Source\User\plugins\datatables\buttons.bootstrap.min.js" />
     <Content Include="Source\User\plugins\datatables\buttons.html5.min.js" />
@@ -1201,6 +1207,19 @@
     <Content Include="Source\User\plugins\toastr\toastr.css" />
     <Content Include="Source\User\plugins\toastr\toastr.min.css" />
     <Content Include="Source\User\plugins\toastr\toastr.min.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\jquery.waypoints.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\jquery.waypoints.min.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\noframework.waypoints.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\noframework.waypoints.min.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\shortcuts\infinite.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\shortcuts\infinite.min.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\shortcuts\inview.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\shortcuts\inview.min.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\shortcuts\sticky.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\shortcuts\sticky.min.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\waypoints.debug.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\zepto.waypoints.js" />
+    <Content Include="Source\User\plugins\waypoints\lib\zepto.waypoints.min.js" />
     <Content Include="Source\User\productos\css\estilos.css" />
     <Content Include="Source\User\productos\js\main.js" />
     <Content Include="Web.config" />
@@ -1315,6 +1334,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Source\User\plugins\chartist\dist\chartist.min.js.map" />
+    <Content Include="Source\User\plugins\chartist\dist\LICENSE" />
+    <Content Include="Source\User\plugins\chartist\dist\scss\chartist.scss" />
+    <Content Include="Source\User\plugins\chartist\dist\scss\settings\_chartist-settings.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

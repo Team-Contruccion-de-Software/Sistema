@@ -30,7 +30,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             {
                 using (var db = new ModeloGGYM())
                 {
-                    imcchiquito = db.IMC
+                    imcchiquito = db.IMC.Include("USUARIO")
                         .Where(x => x.ID_USUARIO == idusuario)
                         .SingleOrDefault();
                 }

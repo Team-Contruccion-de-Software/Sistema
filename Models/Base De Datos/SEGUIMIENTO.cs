@@ -46,6 +46,26 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             return seguimiento;
         }
 
+        public List<SEGUIMIENTO> ObtenerSeguimientoDelUsuario(int id)
+        {
+            var seguimiento = new List<SEGUIMIENTO>();
+
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    seguimiento = db.SEGUIMIENTO
+                        .Where(x => x.ID_USUARIO == id).ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return seguimiento;
+        }
+
         public SEGUIMIENTO ObtenerSeguimientoPorFecha(DateTime diahoy, int id)
         {
             var seguimiento = new SEGUIMIENTO();
