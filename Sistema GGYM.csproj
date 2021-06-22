@@ -106,6 +106,17 @@
     <Content Include="Source\css\Login\bootstrap.min.css" />
     <Content Include="Source\css\Login\LoginForm.css" />
     <Content Include="Source\css\nicepage.css" />
+    <Content Include="Source\css\Productos\css\bootstrap.min.css" />
+    <Content Include="Source\css\Productos\css\font-awesome.min.css" />
+    <Content Include="Source\css\Productos\js\bootstrap.min.js" />
+    <Content Include="Source\css\Productos\js\jquery.min.js" />
+    <Content Include="Source\css\Productos\js\jquery.zoom.min.js" />
+    <Content Include="Source\css\Productos\js\main.js" />
+    <Content Include="Source\css\Productos\js\nouislider.min.js" />
+    <Content Include="Source\css\Productos\js\slick.min.js" />
+    <Content Include="Source\css\Productos\css\slick-theme.css" />
+    <Content Include="Source\css\Productos\css\slick.css" />
+    <Content Include="Source\css\Productos\css\style.css" />
     <Content Include="Source\css\Videollamada\video.css" />
     <Content Include="Source\images\1.jpeg" />
     <Content Include="Source\images\2.jpeg" />
@@ -1253,6 +1264,7 @@
     <Compile Include="Models\Base De Datos\TIPO_VIDEO.cs" />
     <Compile Include="Models\Base De Datos\USUARIO.cs" />
     <Compile Include="Models\Base De Datos\VIDEO.cs" />
+    <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\HashHelper.cs" />
     <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Models\SessionHelper.cs" />
@@ -1338,6 +1350,8 @@
     <Content Include="Source\User\plugins\chartist\dist\LICENSE" />
     <Content Include="Source\User\plugins\chartist\dist\scss\chartist.scss" />
     <Content Include="Source\User\plugins\chartist\dist\scss\settings\_chartist-settings.scss" />
+    <Content Include="Views\Default\ListarCarrito.cshtml" />
+    <Content Include="Views\Default\ProductoDetalle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

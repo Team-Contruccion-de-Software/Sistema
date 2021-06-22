@@ -1,8 +1,6 @@
-﻿@model List<Sistema_GGYM.Models.Base_De_Datos.PRODUCTO>
+﻿
 @{
     Layout = null;
-    List<Sistema_GGYM.Models.Base_De_Datos.CATEGORIA_PRODUCTO> categoria = ViewBag.Categoria;
-    List<Sistema_GGYM.Models.Base_De_Datos.PRODUCTO> productoTodos = ViewBag.ProductoTodos;
     Sistema_GGYM.Models.Base_De_Datos.USUARIO usuario = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
 }
 
@@ -147,94 +145,73 @@
         </div>
     </header>
 
-    <br /><br />
     <!-- SECTION -->
     <div class="section">
         <!-- container -->
         <div class="container">
             <!-- row -->
             <div class="row">
-                <!-- STORE -->
-                <div id="store" class="col-md-12">
-                    <!-- store top filter -->
-                    <div class="section-title">
-                        <h3 class="title">Todos los productos</h3>
-                        <div class="section-nav">
-                            <ul class="section-tab-nav tab-nav">
-                                <li><a href="~/Views/Default/Productos">Ver todos</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="store-filter clearfix">
-                        <div class="store-sort">
-                            <label>
-                                Ordenar por:
-                                <select class="input-select">
-                                    <option value="0">Relevancia</option>
-                                    <option value="1">Precio</option>
-                                </select>
-                            </label>
-                            <label>
-                                Mostrar:
-                                <select class="input-select">
-                                    <option value="0">20</option>
-                                    <option value="1">50</option>
-                                </select>
-                            </label>
-                        </div>
-                        <ul class="store-grid">
-                            <li class="active"><i class="fa fa-th"></i></li>
-                            <li><a href="#"><i class="fa fa-th-list"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- /store top filter -->
-                    <!-- store products -->
-                    <div class="row">
-                        <!-- product -->
-                        @foreach (var pt in productoTodos)
+                @if (TempData["Carrito"] != null)
+                {
+                    <h2 style="color:#fdb933"> Su carrito contiene.</h2>
+
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                                <th>Remover</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in TempData["Carrito"] as List<Sistema_GGYM.Models.Carrito>)
+                            {
+                                <tr>
+                                    <td><img src="@item.imagen" height="50" /></td>
+                                    <td>@item.productname</td>
+                                    <td>S/. @item.precio</td>
+                                    <td>@item.cantidad unidades</td>
+                                    <td>@item.total soles</td>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm" href="@Url.Action("Remover", new { id = @item.productid})">&#10000;</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><b>Total</b></td>
+                                <td>@TempData["TotalaPagar"] soles</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                }
+
+                else
+                {
+                    <h2 style="color:#fdb933"> Su carrito esta vacio.</h2>
+                }
+                @Html.ActionLink("Volver", "Index", "Default")
+                @if (usuario == null)
+                {
+                    <h2 style="color:red">Por favor inicie sesión para comprar</h2>
+                }
+                else
+                {
+                    if (TempData["Carrito"] != null)
+                    {
+                        using (Html.BeginForm("GuardarPedido", "Default", FormMethod.Post))
                         {
-                            <div class="col-md-3 col-xs-6">
-                                <div class="product">
-                                    <div class="product-img">
-                                        <img src="@pt.IMAGEN" height="300" style="padding:30px;" />
-                                        <div class="product-label">
-                                            <span class="new">NEW</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-body">
-                                        <p class="product-category">@pt.CATEGORIA_PRODUCTO.NOMBRE</p>
-                                        <h3 class="product-name"><a href="~/Default/ProductoDetalle/@pt.ID_PRODUCTO">@pt.DESCRIPCION</a></h3>
-                                        <h4 class="product-price">S/.@pt.PRECIO</h4>
-                                        <div class="product-rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="add-to-cart">
-                                        <button class="add-to-cart-btn" onclick="location.href='/Default/ProductoDetalle/@pt.ID_PRODUCTO';"><i class="fa fa-shopping-cart"></i> Añadir al carro</button>
-                                    </div>
-                                </div>
-                            </div>
+                            <input type="submit" value="Comprar ahora" class="btn btn-primary" />
                         }
-                    </div>
-                    <!-- /store products -->
-                    <!-- store bottom filter -->
-                    <div class="store-filter clearfix">
-                        <span class="store-qty">Mostrando 20-100 productos</span>
-                        <ul class="store-pagination">
-                            <li class="active">1</li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- /store bottom filter -->
-                </div>
-                <!-- /STORE -->
+                    }
+                }
             </div>
             <!-- /row -->
         </div>

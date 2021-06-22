@@ -1,8 +1,6 @@
-﻿@model List<Sistema_GGYM.Models.Base_De_Datos.PRODUCTO>
+﻿@model Sistema_GGYM.Models.Base_De_Datos.PRODUCTO
 @{
     Layout = null;
-    List<Sistema_GGYM.Models.Base_De_Datos.CATEGORIA_PRODUCTO> categoria = ViewBag.Categoria;
-    List<Sistema_GGYM.Models.Base_De_Datos.PRODUCTO> productoTodos = ViewBag.ProductoTodos;
     Sistema_GGYM.Models.Base_De_Datos.USUARIO usuario = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
 }
 
@@ -147,100 +145,105 @@
         </div>
     </header>
 
-    <br /><br />
     <!-- SECTION -->
     <div class="section">
         <!-- container -->
         <div class="container">
             <!-- row -->
             <div class="row">
-                <!-- STORE -->
-                <div id="store" class="col-md-12">
-                    <!-- store top filter -->
-                    <div class="section-title">
-                        <h3 class="title">Todos los productos</h3>
-                        <div class="section-nav">
-                            <ul class="section-tab-nav tab-nav">
-                                <li><a href="~/Views/Default/Productos">Ver todos</a></li>
-                            </ul>
+                <!-- Product main img -->
+                <div class="col-md-5 col-md-push-2">
+                    <div id="product-main-img">
+                        <div class="product-preview">
+                            <img src="@Model.IMAGEN" alt="">
+                        </div>
+                        <div class="product-preview">
+                            <img src="@Model.IMAGEN" alt="">
+                        </div>
+                        <div class="product-preview">
+                            <img src="@Model.IMAGEN" alt="">
+                        </div>
+                        <div class="product-preview">
+                            <img src="@Model.IMAGEN" alt="">
                         </div>
                     </div>
-                    <div class="store-filter clearfix">
-                        <div class="store-sort">
-                            <label>
-                                Ordenar por:
-                                <select class="input-select">
-                                    <option value="0">Relevancia</option>
-                                    <option value="1">Precio</option>
-                                </select>
-                            </label>
-                            <label>
-                                Mostrar:
-                                <select class="input-select">
-                                    <option value="0">20</option>
-                                    <option value="1">50</option>
-                                </select>
-                            </label>
-                        </div>
-                        <ul class="store-grid">
-                            <li class="active"><i class="fa fa-th"></i></li>
-                            <li><a href="#"><i class="fa fa-th-list"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- /store top filter -->
-                    <!-- store products -->
-                    <div class="row">
-                        <!-- product -->
-                        @foreach (var pt in productoTodos)
-                        {
-                            <div class="col-md-3 col-xs-6">
-                                <div class="product">
-                                    <div class="product-img">
-                                        <img src="@pt.IMAGEN" height="300" style="padding:30px;" />
-                                        <div class="product-label">
-                                            <span class="new">NEW</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-body">
-                                        <p class="product-category">@pt.CATEGORIA_PRODUCTO.NOMBRE</p>
-                                        <h3 class="product-name"><a href="~/Default/ProductoDetalle/@pt.ID_PRODUCTO">@pt.DESCRIPCION</a></h3>
-                                        <h4 class="product-price">S/.@pt.PRECIO</h4>
-                                        <div class="product-rating">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="add-to-cart">
-                                        <button class="add-to-cart-btn" onclick="location.href='/Default/ProductoDetalle/@pt.ID_PRODUCTO';"><i class="fa fa-shopping-cart"></i> Añadir al carro</button>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    </div>
-                    <!-- /store products -->
-                    <!-- store bottom filter -->
-                    <div class="store-filter clearfix">
-                        <span class="store-qty">Mostrando 20-100 productos</span>
-                        <ul class="store-pagination">
-                            <li class="active">1</li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- /store bottom filter -->
                 </div>
-                <!-- /STORE -->
+                <!-- /Product main img -->
+                <!-- Product thumb imgs -->
+                <div class="col-md-2  col-md-pull-5">
+                    <div id="product-imgs">
+                        <div class="product-preview">
+                            <img src="@Model.IMAGEN" alt="" height="150">
+                        </div>
+                        <div class="product-preview">
+                            <img src="@Model.IMAGEN" alt="" height="150">
+                        </div>
+                        <div class="product-preview">
+                            <img src="@Model.IMAGEN" alt="" height="150">
+                        </div>
+                        <div class="product-preview">
+                            <img src="@Model.IMAGEN" alt="" height="150">
+                        </div>
+                    </div>
+                </div>
+                <!-- /Product thumb imgs -->
+                <!-- Product details -->
+                <div class="col-md-5">
+                    <div class="product-details">
+                        @using (Html.BeginForm("Adtocart", "Default", FormMethod.Post))
+                        {
+                            @Html.TextBoxFor(x => x.ID_PRODUCTO, new { style = "display: none;" })
+
+                            if (Model.STOCK == 0)
+                            {
+                                <h2 class="product-name">@Model.DESCRIPCION</h2>
+                                <div>
+                                    <h3 class="product-price">S/. @Model.PRECIO</h3>
+                                    <span class="product-available">No hay stock por el momento</span>
+                                </div>
+                                <p>@Model.DESCRIPCION es un producto del tipo @Model.CATEGORIA_PRODUCTO.NOMBRE y es vendido por GGYM</p>
+
+                                <div class="add-to-cart">
+                                    <input type="number" name="cantidad" value="1" id="cantidad" min="1" max="20" disabled />
+                                    <button type="submit" class="add-to-cart-btn" disabled><i class="fa fa-shopping-cart"></i>Añadir al carro</button>
+                                </div>
+                            }
+                            else
+                            {
+                                <h2 class="product-name">@Model.DESCRIPCION</h2>
+                                <div>
+                                    <h3 class="product-price">S/. @Model.PRECIO</h3>
+                                    <span class="product-available">Quedan @Model.STOCK en stock</span>
+                                </div>
+                                <p>@Model.DESCRIPCION es un producto del tipo @Model.CATEGORIA_PRODUCTO.NOMBRE y es vendido por GGYM</p>
+
+                                <div class="add-to-cart">
+                                    <input type="number" name="cantidad" value="1" id="cantidad" min="1" max="20" />
+                                    <button type="submit" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Añadir al carro</button>
+                                </div>
+                            }
+
+                            <ul class="product-links">
+                                <li>Categoria:</li>
+                                <li><a href="~/Default/ProductoCategoria/@Model.ID_CATEGORIA">@Model.CATEGORIA_PRODUCTO.NOMBRE</a></li>                             
+                            </ul>
+                            <ul class="product-links">
+                                <li>Compartir:</li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        }
+
+                    </div>
+                </div>
+                <!-- /product tab -->
             </div>
             <!-- /row -->
         </div>
         <!-- /container -->
     </div>
     <!-- /SECTION -->
+
 
     <script src="~/Source/css/Productos/js/jquery.min.js"></script>
     <script src="~/Source/css/Productos/js/bootstrap.min.js"></script>

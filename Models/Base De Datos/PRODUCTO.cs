@@ -107,5 +107,26 @@ namespace Sistema_GGYM.Models.Base_De_Datos
 
             return producto;
         }
+
+        public PRODUCTO ObtenerDetalle(int id)
+        {
+            var producto = new PRODUCTO();
+
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    producto = db.PRODUCTO.Include("CATEGORIA_PRODUCTO")
+                        .Where(x => x.ID_PRODUCTO == id)
+                        .SingleOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return producto;
+        }
     }
 }
