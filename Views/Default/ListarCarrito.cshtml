@@ -2,6 +2,16 @@
 @{
     Layout = null;
     Sistema_GGYM.Models.Base_De_Datos.USUARIO usuario = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
+    string contenidoCulqi = "";
+
+
+
+    /*
+        Credeniales culqi
+        4111111111111111
+        0925
+        123
+    */
 }
 
 <!DOCTYPE html>
@@ -10,7 +20,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>GGYM - Contacto</title>
+    <title>GGYM - Carrito</title>
     <link rel="stylesheet" href="~/Source/css/nicepage.css" media="screen">
     <link rel="stylesheet" href="~/Source/css/Casa.css" media="screen">
     <link rel="shortcut icon" href="~/Source/images/ggymlogonormal.png">
@@ -21,12 +31,16 @@
     <link href="~/Source/css/Productos/css/slick-theme.css" rel="stylesheet" />
     <link href="~/Source/css/Productos/css/slick.css" rel="stylesheet" />
     <link href="~/Source/css/Productos/css/style.css" rel="stylesheet" />
+    <link href="~/Source/User/css/icons.css" rel="stylesheet" type="text/css" />
 
     <script class="u-script" type="text/javascript" src="~/Source/js/Login/jquery.js"></script>
     <script class="u-script" type="text/javascript" src="~/Source/js/nicepage.js" defer=""></script>
 
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Black:400">
+
+    <!--CULQI-->
+    <script src="https://checkout.culqi.com/js/v3"></script>
 
 </head>
 
@@ -155,28 +169,30 @@
                 {
                     <h2 style="color:#10c469"> Su carrito contiene:</h2>
 
-                    <table class="table table-responsive">
-                        <thead>
+                    <table class="table table-striped table-bordered">
+
+                        <thead class="table-primary">
                             <tr>
                                 <th>Imagen</th>
                                 <th>Nombre</th>
                                 <th>Precio</th>
                                 <th>Cantidad</th>
                                 <th>Subtotal</th>
-                                <th>Remover</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in TempData["Carrito"] as List<Sistema_GGYM.Models.Carrito>)
                             {
+                                contenidoCulqi += item.productname + ", ";
                                 <tr>
-                                    <td><img src="@item.imagen" height="50" /></td>
-                                    <td>@item.productname</td>
-                                    <td>S/. @item.precio</td>
-                                    <td>@item.cantidad unidades</td>
-                                    <td>@item.total soles</td>
-                                    <td>
-                                        <a class="btn btn-danger btn-sm" href="@Url.Action("Remover", new { id = @item.productid})">&#10000;</a>
+                                    <td style="vertical-align: middle;"><img src="@item.imagen" height="50" /></td>
+                                    <td style="vertical-align: middle;">@item.productname</td>
+                                    <td style="vertical-align: middle;">S/. @item.precio</td>
+                                    <td style="vertical-align: middle;">@item.cantidad unidades</td>
+                                    <td style="vertical-align: middle;">@item.total soles</td>
+                                    <td style="vertical-align: middle;">
+                                        <a class="btn btn-danger btn-sm" href="@Url.Action("Remover", new { id = @item.productid})"><i class="fa fa-trash"></i> Remover</a>
                                     </td>
                                 </tr>
                             }
@@ -191,6 +207,8 @@
                             </tr>
                         </tfoot>
                     </table>
+                    <p id="totalpago" hidden>@(TempData["TotalaPagar"])00</p>
+                    contenidoCulqi = contenidoCulqi.Substring(0, contenidoCulqi.Length - 2);
                 }
 
                 else
@@ -205,18 +223,70 @@
                 {
                     if (TempData["Carrito"] != null)
                     {
-                        using (Html.BeginForm("GuardarPedido", "Default", FormMethod.Post))
+                        using (Html.BeginForm("GuardarPedido", "Default", FormMethod.Post, new { id = "FormPedido"}))
                         {
-                            <input type="submit" value="Comprar ahora" class="btn btn-primary" />
+                            <input type="button" id="Comprar" value="Comprar ahora" class="btn btn-primary" />
                         }
                     }
                 }
             </div>
-            <!-- /row -->
         </div>
-        <!-- /container -->
     </div>
-    <!-- /SECTION -->
+
+    <script>
+
+        Culqi.publicKey = 'pk_test_49b5b18467b0e81b';
+        var precio = "";
+
+        $('#Comprar').on('click', function (e) {
+            precio = document.getElementById("totalpago").innerHTML;
+            var producto = "@(contenidoCulqi)";
+            var titulo = "Compras GGYM"
+
+            Culqi.settings({
+                title: titulo,
+                currency: 'PEN',
+                description: producto,
+                amount: precio
+            });
+            Culqi.open();
+            e.preventDefault();
+        });
+
+        function culqi() {
+            if (Culqi.token) {
+                var token = Culqi.token.id;
+                $.ajax({
+                    url: 'https://api.culqi.com/v2/charges',
+                    data: JSON.stringify({
+                        "amount": precio,
+                        "currency_code": "PEN",
+                        "email": Culqi.token.email,
+                        "source_id": Culqi.token.id,
+                    }),
+                    contentType: "application/json",
+                    headers: {
+                        "Accept": "application/json",
+                        "Authorization": "Bearer sk_test_3cf0b6e646c7eba8",
+                    },
+                    error: function (err) {
+                        alert('Lo sentimos, a ocurrido un error');
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#FormPedido').submit();
+                        alert("Pago Exitoso")
+                    },
+                    type: 'POST'
+                });
+
+            } else {
+                alert(Culqi.error.user_message);
+            }
+        };
+
+    </script>
+
 
     <script src="~/Source/css/Productos/js/jquery.min.js"></script>
     <script src="~/Source/css/Productos/js/bootstrap.min.js"></script>
