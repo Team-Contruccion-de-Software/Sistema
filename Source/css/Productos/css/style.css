@@ -242,7 +242,7 @@ textarea.input {
 }
 
 .input-checkbox input[type="checkbox"]+label span:after {
-  content: '✔';
+  content: 'âœ”';
   position: absolute;
   top: -2px;
   left: 1px;
@@ -431,11 +431,11 @@ textarea.input {
 }
 
 .header-links li a:hover {
-  color: #fdb933;
+  color: #188ae2;
 }
 
 .header-links li i {
-  color: #fdb933;
+  color: #188ae2;
   margin-right: 5px;
 }
 
@@ -446,7 +446,7 @@ textarea.input {
 #header {
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: #fdb933;
+  background-color: #188ae2;
 }
 
 .header-logo {
@@ -592,7 +592,7 @@ textarea.input {
   display: inline-block;
   width: calc(50% - 0px);
   padding: 12px;
-  background-color: #fdb933;
+  background-color: #188ae2;
   color: #FFF;
   text-align: center;
   font-weight: 700;
@@ -725,7 +725,7 @@ textarea.input {
   bottom: 0;
   left: 0px;
   width: 60%;
-  background: #fdb933;
+  background: #188ae2;
   opacity: 0.9;
   -webkit-transform: skewX(-45deg);
   -ms-transform: skewX(-45deg);
@@ -739,7 +739,7 @@ textarea.input {
   bottom: 0;
   left: 1px;
   width: 100%;
-  background: #fdb933;
+  background: #188ae2;
   opacity: 0.9;
   -webkit-transform: skewX(-45deg) translateX(-100%);
   -ms-transform: skewX(-45deg) translateX(-100%);
@@ -888,13 +888,13 @@ textarea.input {
 
 .product .product-img .product-label>span.sale {
   background-color: #FFF;
-  border-color: #fdb933;
-  color: #fdb933;
+  border-color: #188ae2;
+  color: #188ae2;
 }
 
 .product .product-img .product-label>span.new {
-  background-color: #fdb933;
-  border-color: #fdb933;
+  background-color: #188ae2;
+  border-color: #188ae2;
   color: #FFF;
 }
 
@@ -922,11 +922,11 @@ textarea.input {
 }
 
 .product .product-body .product-name>a:hover, .product .product-body .product-name>a:focus {
-  color: #fdb933;
+  color: #10c469;
 }
 
 .product .product-body .product-price {
-  color: #fdb933;
+  color: #10c469;
   font-size: 18px;
 }
 
@@ -952,7 +952,7 @@ textarea.input {
 }
 
 .product .product-body .product-rating>i.fa-star {
-  color: #fdb933;
+  color: #188ae2;
 }
 
 .product .product-body .product-rating:after {
@@ -981,7 +981,7 @@ textarea.input {
 
 .product .product-body .product-btns>button:hover {
   background-color: #E4E7ED;
-  color: #fdb933;
+  color: #188ae2;
   border-radius: 50%;
 }
 
@@ -1041,7 +1041,7 @@ textarea.input {
   border: 2px solid transparent;
   height: 40px;
   padding: 0 30px;
-  background-color: #fdb933;
+  background-color: #188ae2;
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
@@ -1057,15 +1057,15 @@ textarea.input {
   width: 40px;
   height: 40px;
   line-height: 38px;
-  color: #fdb933;
+  color: #188ae2;
   opacity: 0;
   visibility: hidden;
 }
 
 .product .add-to-cart .add-to-cart-btn:hover {
   background-color: #FFF;
-  color: #fdb933;
-  border-color: #fdb933;
+  color: #188ae2;
+  border-color: #188ae2;
   padding: 0px 30px 0px 50px;
 }
 
@@ -1118,12 +1118,12 @@ textarea.input {
 }
 
 .product-widget .product-body .product-name>a:hover, .product-widget .product-body .product-name>a:focus {
-  color: #fdb933;
+  color: #188ae2;
 }
 
 .product-widget .product-body .product-price {
   font-size: 14px;
-  color: #fdb933;
+  color: #188ae2;
 }
 
 .product-widget .product-body .product-price .product-old-price {
@@ -1249,7 +1249,7 @@ textarea.input {
 }
 
 .noUi-connect {
-  background-color: #fdb933;
+  background-color: #188ae2;
 }
 
 .noUi-horizontal {
@@ -1262,7 +1262,7 @@ textarea.input {
   left: -6px;
   top: -4px;
   border: none;
-  background: #fdb933;
+  background: #188ae2;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 50%;
@@ -1323,12 +1323,12 @@ textarea.input {
 
 .store-grid li:hover {
   background-color: #E4E7ED;
-  color: #fdb933;
+  color: #188ae2;
 }
 
 .store-grid li.active {
-  background-color: #fdb933;
-  border-color: #fdb933;
+  background-color: #10c469;
+  border-color: #10c469;
   color: #FFF;
   cursor: default;
 }
@@ -1361,12 +1361,12 @@ textarea.input {
 
 .store-pagination li:hover {
   background-color: #E4E7ED;
-  color: #fdb933;
+  color: #188ae2;
 }
 
 .store-pagination li.active {
-  background-color: #2f4858;
-  border-color: #2f4858;
+  background-color: #10c469;
+  border-color: #10c469;
   color: #FFF;
   font-weight: 500;
   cursor: default;
@@ -1430,7 +1430,7 @@ textarea.input {
 }
 
 #product-imgs .product-preview.slick-current {
-  border-color: #fdb933;
+  border-color: #188ae2;
 }
 
 #product-imgs .slick-prev {
@@ -1480,7 +1480,7 @@ textarea.input {
 }
 
 .product-details .product-rating>i.fa-star {
-  color: #fdb933;
+  color: #188ae2;
 }
 
 .product-details .review-link {
@@ -1492,7 +1492,7 @@ textarea.input {
   font-size: 24px;
   margin-top: 10px;
   margin-bottom: 15px;
-  color: #fdb933;
+  color: #188ae2;
 }
 
 .product-details .product-price .product-old-price {
@@ -1551,15 +1551,15 @@ textarea.input {
   width: 40px;
   height: 40px;
   line-height: 38px;
-  color: #fdb933;
+  color: #188ae2;
   opacity: 0;
   visibility: hidden;
 }
 
 .product-details .add-to-cart .add-to-cart-btn:hover {
   background-color: #FFF;
-  color: #fdb933;
-  border-color: #fdb933;
+  color: #188ae2;
+  border-color: #188ae2;
   padding: 0px 30px 0px 50px;
 }
 
@@ -1918,7 +1918,7 @@ textarea.input {
 
 #newsletter.section {
   border-top: 2px solid #E4E7ED;
-  border-bottom: 3px solid #fdb933;
+  border-bottom: 3px solid #188ae2;
   margin-top: 30px;
 }
 
@@ -1960,7 +1960,7 @@ textarea.input {
   width: 160px;
   height: 40px;
   font-weight: 700;
-  background: #fdb933;
+  background: #188ae2;
   color: #FFF;
   border: none;
   border-radius: 0px 40px 40px 0px;
@@ -1994,7 +1994,7 @@ textarea.input {
 
 .newsletter .newsletter-follow li a:hover, .newsletter .newsletter-follow li a:focus {
   background-color: #E4E7ED;
-  color: #fdb933;
+  color: #188ae2;
 }
 
 /*=========================================================
@@ -2031,13 +2031,13 @@ textarea.input {
 
 .footer-links li i {
   margin-right: 15px;
-  color: #fdb933;
+  color: #188ae2;
   width: 14px;
   text-align: center;
 }
 
 .footer-links li a:hover {
-  color: #fdb933;
+  color: #188ae2;
 }
 
 .copyright {
@@ -2077,8 +2077,8 @@ textarea.input {
 }
 
 .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
-  background-color: #fdb933;
-  border-color: #fdb933;
+  background-color: #188ae2;
+  border-color: #188ae2;
 }
 
 .slick-prev:before, .slick-next:before {

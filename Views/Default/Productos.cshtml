@@ -19,7 +19,7 @@
 
     <!-- Estilos vista productos-->
     <link href="~/Source/css/Login/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Source/css/Productos/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Source/User/css/icons.css" rel="stylesheet" type="text/css" />
     <link href="~/Source/css/Productos/css/slick-theme.css" rel="stylesheet" />
     <link href="~/Source/css/Productos/css/slick.css" rel="stylesheet" />
     <link href="~/Source/css/Productos/css/style.css" rel="stylesheet" />
@@ -61,13 +61,13 @@
                     <ul class="u-nav u-unstyled u-nav-1">
 
                         <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/Index" style="padding: 10px 20px; font-weight:bold">Volver</a>
+                        </li>
+                        <li class="u-nav-item">
                             <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/Productos" style="padding: 10px 20px; font-weight:bold">Tienda</a>
                         </li>
                         <li class="u-nav-item">
-                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/AcercaDe" style="padding: 10px 20px; font-weight:bold">Acerca de</a>
-                        </li>
-                        <li class="u-nav-item">
-                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/Contacto" style="padding: 10px 20px; font-weight:bold">Contacto</a>
+                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/ListarCarrito" style="padding: 10px 20px; font-weight:bold">Carrito</a>
                         </li>
 
                         @if (Sistema_GGYM.Models.SessionHelper.GetUser() == 0)
@@ -146,8 +146,7 @@
             </nav>
         </div>
     </header>
-
-    <br /><br />
+    <hr />
     <!-- SECTION -->
     <div class="section">
         <!-- container -->
@@ -183,8 +182,8 @@
                             </label>
                         </div>
                         <ul class="store-grid">
-                            <li class="active"><i class="fa fa-th"></i></li>
-                            <li><a href="#"><i class="fa fa-th-list"></i></a></li>
+                            <li class="active"><i class="fa fa-arrow-left"></i></li>
+                            <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
                         </ul>
                     </div>
                     <!-- /store top filter -->
@@ -198,7 +197,7 @@
                                     <div class="product-img">
                                         <img src="@pt.IMAGEN" height="300" style="padding:30px;" />
                                         <div class="product-label">
-                                            <span class="new">NEW</span>
+                                            <span class="new">NUEVO</span>
                                         </div>
                                     </div>
                                     <div class="product-body">

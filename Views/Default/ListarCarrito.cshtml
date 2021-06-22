@@ -59,13 +59,13 @@
                     <ul class="u-nav u-unstyled u-nav-1">
 
                         <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/Index" style="padding: 10px 20px; font-weight:bold">Volver</a>
+                        </li>
+                        <li class="u-nav-item">
                             <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/Productos" style="padding: 10px 20px; font-weight:bold">Tienda</a>
                         </li>
                         <li class="u-nav-item">
-                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/AcercaDe" style="padding: 10px 20px; font-weight:bold">Acerca de</a>
-                        </li>
-                        <li class="u-nav-item">
-                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/Contacto" style="padding: 10px 20px; font-weight:bold">Contacto</a>
+                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="~/Default/ListarCarrito" style="padding: 10px 20px; font-weight:bold">Carrito</a>
                         </li>
 
                         @if (Sistema_GGYM.Models.SessionHelper.GetUser() == 0)
@@ -144,7 +144,7 @@
             </nav>
         </div>
     </header>
-
+    <hr />
     <!-- SECTION -->
     <div class="section">
         <!-- container -->
@@ -153,7 +153,7 @@
             <div class="row">
                 @if (TempData["Carrito"] != null)
                 {
-                    <h2 style="color:#fdb933"> Su carrito contiene.</h2>
+                    <h2 style="color:#10c469"> Su carrito contiene:</h2>
 
                     <table class="table table-responsive">
                         <thead>
@@ -195,9 +195,8 @@
 
                 else
                 {
-                    <h2 style="color:#fdb933"> Su carrito esta vacio.</h2>
+                    <h2 style="color:#10c469"> Su carrito esta vacio.</h2>
                 }
-                @Html.ActionLink("Volver", "Index", "Default")
                 @if (usuario == null)
                 {
                     <h2 style="color:red">Por favor inicie sesión para comprar</h2>

@@ -186,7 +186,7 @@ namespace Sistema_GGYM.Controllers
                                 //Se registra en la bd del imc para mas control
                                 double pesito = Convert.ToDouble(usuario.PESO);
                                 double estaturita = Convert.ToDouble(usuario.ESTATURA);
-                                string imcTemporal = (pesito * 10000 / Math.Pow(estaturita, 2)).ToString("0.0");
+                                string imcTemporal = (pesito/ Math.Pow(estaturita, 2)).ToString("0.0");
 
                                 imc.RegistrarIMC(usuario.ID_USUARIO, imcTemporal);
                             }
