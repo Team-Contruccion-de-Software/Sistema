@@ -85,6 +85,13 @@ namespace Sistema_GGYM.Controllers
             return View(producto.ObtenerDetalle(id));
         }
 
+        public ActionResult ProductoCategoria(int id)
+        {
+            ViewBag.Categoria = categoria_producto.Listar();
+            ViewBag.ProductoCategorias = producto.ListarPorCategoria(id);
+            return View(producto.ListarPorCategoria(id));
+        }
+
         //Aqui empieza lo del carrito
 
         List<Carrito> li = new List<Carrito>();

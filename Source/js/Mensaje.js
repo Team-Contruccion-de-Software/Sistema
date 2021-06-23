@@ -10,7 +10,7 @@ if (mensaje == "Si") {
     var toastIndex = toastCount++;
 
     toastr.options = {
-        "closeButton": false,
+        "closeButton": true,
         "debug": false,
         "newestOnTop": true,
         "progressBar": true,
@@ -49,7 +49,7 @@ if (mensaje == "Si") {
     var toastIndex = toastCount++;
 
     toastr.options = {
-        "closeButton": false,
+        "closeButton": true,
         "debug": false,
         "newestOnTop": true,
         "progressBar": true,
@@ -86,7 +86,7 @@ if (mensaje == "Si") {
     var toastIndex = toastCount++;
 
     toastr.options = {
-        "closeButton": false,
+        "closeButton": true,
         "debug": false,
         "newestOnTop": true,
         "progressBar": true,

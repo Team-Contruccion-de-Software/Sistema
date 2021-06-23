@@ -1242,6 +1242,7 @@
     <Compile Include="Controllers\DietasController.cs" />
     <Compile Include="Controllers\EjercicioController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\SeguimientoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -1352,6 +1353,9 @@
     <Content Include="Source\User\plugins\chartist\dist\scss\settings\_chartist-settings.scss" />
     <Content Include="Views\Default\ListarCarrito.cshtml" />
     <Content Include="Views\Default\ProductoDetalle.cshtml" />
+    <Content Include="Views\Default\ProductoCategoria.cshtml" />
+    <Content Include="Views\Pedido\Index.cshtml" />
+    <Content Include="Views\Pedido\Ver.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

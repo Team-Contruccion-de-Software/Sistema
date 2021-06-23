@@ -64,6 +64,26 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             return productos;
         }
 
+        public List<PRODUCTO> ListarPorCategoria(int aux)
+        {
+            var producto = new List<PRODUCTO>();
+
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    producto = db.PRODUCTO.Include("CATEGORIA_PRODUCTO")
+                        .Where(x => x.ID_CATEGORIA == aux).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+            return producto;
+        }
+
         public void RegistrarProducto()
         {
             try
@@ -127,6 +147,25 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             }
 
             return producto;
+        }
+
+        public void Editar(PRODUCTO producto)
+        {
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    if (this.ID_PRODUCTO > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
     }
 }

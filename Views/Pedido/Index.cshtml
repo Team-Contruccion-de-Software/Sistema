@@ -1,0 +1,75 @@
+﻿@model List<Sistema_GGYM.Models.Base_De_Datos.PEDIDO>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+    Random rnd = new Random();
+    Sistema_GGYM.Models.Base_De_Datos.USUARIO usuario = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
+}
+
+<div class="content">
+    <div class="container">
+
+        <!--Row de listado de los datos-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box table-responsive">
+
+                    <h2 class="header-title m-t-0 m-b-30"><i class="fa fa-book"></i> Lista de pedidos</h2>
+
+                    <table id="datatable-buttons" class="table table-striped table-bordered">
+                        <thead class="bg-custom">
+                            <tr>
+                                <th class="text-white">ID</th>
+                                <th class="text-white">Numero de pedido</th>
+                                <th class="text-white">Usuario</th>
+                                <th class="text-white">Fecha</th>
+                                <th class="text-white">Total</th>
+                                <th class="text-white">Estado</th>
+                                <th class="text-white">Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var pedido in Model)
+                            {
+                            <tr>
+                                <td>@pedido.ID_PEDIDO</td>
+                                <td>@pedido.NUMERO_PEDIDO</td>
+                                <td>@(pedido.USUARIO.NOMBRE) @(pedido.USUARIO.APELLIDO)</td>
+                                <td>@pedido.FECHA</td>
+                                <td>S/. @pedido.TOTAL</td>
+
+                                @if (pedido.ESTADO == true)
+                                {
+                                    <td style="color: forestgreen;"><strong>Finalizado</strong></td>
+                                }
+                                else
+                                {
+                                    <td style="color: #fdb933">
+                                        <a href="~/Pedido/Editar/@pedido.ID_PEDIDO" class="btn btn-success">
+                                            <span class="icon text-white-50"><i class="fa fa-check-circle"></i></span>
+                                        </a>
+                                        <strong>Pendiente</strong>
+                                    </td>
+                                }
+                                <td style="align-content: center;">
+                                    <a href="~/Pedido/Ver/@pedido.ID_PEDIDO" class="btn btn-info">
+                                        <span class="icon text-white-50"><i class="fa fa-info-circle"></i></span>
+                                        <span class="text">Ver detalle pedido</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Efecto de seleccion-->
+<script src="~/Source/js/Indices.js"></script>
+
+<!--Lectura imagenes de perfil-->
+<script src="~/Source/js/ImagenDePerfil.js"></script>

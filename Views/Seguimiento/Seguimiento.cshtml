@@ -60,7 +60,26 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="card-box widget-user">
                         <div class="text-center">
-                            <h2 class="text-info">@IMCusuario.IMC1</h2>
+                            @if (Convert.ToDouble(IMCusuario.IMC1) < 18.5)
+                            {
+                                <h2 class="text-info">@IMCusuario.IMC1 - Delgadez extrema</h2>
+                            }
+                            @if (Convert.ToDouble(IMCusuario.IMC1) >= 18.5 && Convert.ToDouble(IMCusuario.IMC1) < 24.9)
+                            {
+                                <h2 class="text-info">@IMCusuario.IMC1 - Peso normal</h2>
+                            }
+                            @if (Convert.ToDouble(IMCusuario.IMC1) >= 25 && Convert.ToDouble(IMCusuario.IMC1) < 29.9)
+                            {
+                                <h2 class="text-info">@IMCusuario.IMC1 - Sobrepeso</h2>
+                            }
+                            @if (Convert.ToDouble(IMCusuario.IMC1) >= 30 && Convert.ToDouble(IMCusuario.IMC1) < 34.9)
+                            {
+                                <h2 class="text-info">@IMCusuario.IMC1 - Obesidad</h2>
+                            }
+                            @if (Convert.ToDouble(IMCusuario.IMC1) >= 35)
+                            {
+                                <h2 class="text-info">@IMCusuario.IMC1 - Obesidad extrema</h2>
+                            }
                             <h5>IMC</h5>
                         </div>
                     </div>
