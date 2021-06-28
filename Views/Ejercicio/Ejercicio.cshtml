@@ -3,6 +3,10 @@
     ViewBag.Title = "Ejercicio";
     Layout = "~/Views/Shared/LayoutUsuario.cshtml";
     Sistema_GGYM.Models.Base_De_Datos.USUARIO usuario = new Sistema_GGYM.Models.Base_De_Datos.USUARIO().ObtenerUsuario((Sistema_GGYM.Models.SessionHelper.GetUser()));
+
+    Sistema_GGYM.Models.Base_De_Datos.IMC Imc = ViewBag.imc;
+    List<Sistema_GGYM.Models.Base_De_Datos.VIDEO> Videos = ViewBag.video;
+
 }
 
 <div class="content">
@@ -69,16 +73,42 @@
                                             <!--Lista de videos de la bd-->
                                             <!--Cargar videos de los entrenadores recomendados-->
 
-                                            <div class="col-sm-6 col-lg-3 col-md-4">
-                                                <div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999;">
-                                                    <p class="u-text-black m-b-10" style="text-align: center">Video recomendado 1</p>
-                                                    <video class="thumb-img" alt="work-thumbnail" controls>
-                                                        <source src="~/Source/images/VideoEjercicios/Video1.mp4" type="video/mp4"></source>
-                                                    </video>
-                                                    <p class="text-muted" style="text-align: center">Descripcion del video</p>
-                                                </div>
-                                            </div>
+                                            @if (Videos.Count > 0)
+                                            {
+                                                foreach (var video in Videos)
+                                                {
+                                                    //aca el criterio del video seria un numero para el imc
+                                                    //pero para esta solucion sera estatico
+                                                    //cuando lo hagas daniel, coloca un if segun el imc
+                                                    //el imc ya lo obtengo
 
+                                                    //validando si el imc no es nulo
+                                                    if (Imc != null)
+                                                    {
+                                                        //if para el criterio
+                                                        if (Convert.ToDouble(video.CRITERIO) >= Convert.ToDouble(Imc.IMC1))
+                                                        {
+                                                            //carga los datos
+                                                            //recuerda que ya esta el foreach, solo dar la forma
+                                                        }
+
+                                                        //en este caso es estatico / luego lo borras
+                                                        <div class="col-sm-6 col-lg-3 col-md-4">
+                                                            <div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999;">
+                                                                <p class="u-text-black m-b-10" style="text-align: center">@video.TITULO</p>
+
+                                                                <!--cargando el iframe / la url solo es el id del video-->
+                                                                <iframe class="thumb-img" width="560" height="315" src="https://www.youtube.com/embed/@video.URL" frameborder="0"></iframe>
+                                                                <p class="text-muted" style="text-align: center">@video.DESCRIPCION</p>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <h2>No tenemos videos en estos momentos</h2>
+                                            }
                                         </div>
                                     </div>
                                 </div>

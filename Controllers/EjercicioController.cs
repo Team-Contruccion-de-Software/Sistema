@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sistema_GGYM.Models;
+using Sistema_GGYM.Models.Base_De_Datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,9 +12,13 @@ namespace Sistema_GGYM.Controllers
     [Autenticado]
     public class EjercicioController : Controller
     {
-        // GET: Ejercicio
+        //Obtener imc del usuario
+        VIDEO video = new VIDEO();
+        IMC imc = new IMC();
         public ActionResult Ejercicio()
         {
+            ViewBag.imc = imc.ObtenerIMC(SessionHelper.GetUser());
+            ViewBag.video = video.ListarTodo();
             return View();
         }
     }

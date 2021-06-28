@@ -5,6 +5,7 @@ namespace Sistema_GGYM.Models.Base_De_Datos
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("VIDEO")]
     public partial class VIDEO
@@ -27,5 +28,22 @@ namespace Sistema_GGYM.Models.Base_De_Datos
         public int? ID_TIPOVIDEO { get; set; }
 
         public virtual TIPO_VIDEO TIPO_VIDEO { get; set; }
+
+        public List<VIDEO> ListarTodo()
+        {
+            var video = new List<VIDEO>();
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    video = db.VIDEO.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            return video;
+        }
     }
 }
