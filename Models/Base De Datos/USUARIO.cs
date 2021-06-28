@@ -105,6 +105,62 @@ namespace Sistema_GGYM.Models.Base_De_Datos
             return usuarios;
         }
 
+        public List<USUARIO> ListarComunes()
+        {
+            var usuarios = new List<USUARIO>();
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    usuarios = db.USUARIO.Include("TIPO_USUARIO")
+                        .Where(x => x.ID_TIPOUSUARIO == 1)
+                        .ToList();
+                }
+            } catch (Exception e)
+            {
+                throw;
+            }
+            return usuarios;
+        }
+
+        public List<USUARIO> ListarEntrenadores()
+        {
+            var usuarios = new List<USUARIO>();
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    usuarios = db.USUARIO.Include("TIPO_USUARIO")
+                        .Where(x => x.ID_TIPOUSUARIO == 3)
+                        .ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            return usuarios;
+        }
+
+        public List<USUARIO> ListarPremium()
+        {
+            var usuarios = new List<USUARIO>();
+            try
+            {
+                using (var db = new ModeloGGYM())
+                {
+                    usuarios = db.USUARIO.Include("TIPO_USUARIO")
+                        .Where(x => x.ID_TIPOUSUARIO == 2)
+                        .ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            return usuarios;
+        }
+
 
         public ResponseModel ValidarLogin(string Usuario, string Contraseña)
         {

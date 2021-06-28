@@ -14,10 +14,26 @@ namespace Sistema_GGYM.Controllers
         USUARIO usuario = new USUARIO();
         MEMBRESIA membresia = new MEMBRESIA();
         HORARIO horario = new HORARIO();
+        PEDIDO pedido = new PEDIDO();
+        REGISTRO registro = new REGISTRO();
 
-        // GET: Administrador
+        //Para reportes se usara el index        
+
         public ActionResult Index()
         {
+            //Se retornaran con ViewBags
+            /*****************Usuarios en el sistema*********************/
+            //comunes   entrenadores    premium
+            ViewBag.Reportecomunes = usuario.ListarComunes();
+            ViewBag.Reporteentrenadores = usuario.ListarEntrenadores();
+            ViewBag.Reportepremium = usuario.ListarPremium();
+
+            /*****************Usuarios registrados a un horario y que horario es en el sistema*********************/
+            ViewBag.ReporteHorarios = registro.ListarTodo();
+            ViewBag.ReporteHelperHorario = horario.ListarTodo();
+
+            /*****************Reporte de ventas*********************/
+            ViewBag.ReporteGanancias = pedido.ListarTodo();
             return View();
         }
 

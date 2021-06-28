@@ -2,6 +2,19 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/LayoutUsuario.cshtml";
+
+    //Obteniendo los viewbags para mostrar reportes
+    //Reporte 1
+    List<Sistema_GGYM.Models.Base_De_Datos.USUARIO> Reportecomunes = ViewBag.Reportecomunes;
+    List<Sistema_GGYM.Models.Base_De_Datos.USUARIO> Reporteentrenadores = ViewBag.Reporteentrenadores;
+    List<Sistema_GGYM.Models.Base_De_Datos.USUARIO> Reportepremium = ViewBag.Reportepremium;
+
+    //Reporte 2
+    List<Sistema_GGYM.Models.Base_De_Datos.REGISTRO> ReporteHorarios = ViewBag.ReporteHorarios;
+    List<Sistema_GGYM.Models.Base_De_Datos.HORARIO> ReporteHelperHorario = ViewBag.ReporteHelperHorario;
+
+    //Reporte 3
+    List<Sistema_GGYM.Models.Base_De_Datos.PEDIDO> ReporteGanancias = ViewBag.ReporteGanancias;
 }
 
 <div class="content">
@@ -13,12 +26,12 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card-box">
 
-                    <h4 class="header-title m-t-0">Usuarios</h4>
+                    <h4 class="header-title m-t-0">Usuarios Comunes</h4>
 
                     <div class="widget-box-2">
                         <div class="widget-detail-2">
                             <span class="badge badge-custom pull-left m-t-20">32% <i class="zmdi zmdi-trending-up"></i> </span>
-                            <h2 class="m-b-0"> 9 </h2>
+                            <h2 class="m-b-0"> @Reportecomunes.Count </h2>
                             <p class="text-muted m-b-25">Registrados</p>
                         </div>
                         <div class="progress progress-bar-custom-alt progress-sm m-b-0">
@@ -35,12 +48,12 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card-box">
 
-                    <h4 class="header-title m-t-0">Productos</h4>
+                    <h4 class="header-title m-t-0">Usuarios Premium</h4>
 
                     <div class="widget-box-2">
                         <div class="widget-detail-2">
                             <span class="badge badge-success pull-left m-t-20">56% <i class="zmdi zmdi-trending-up"></i> </span>
-                            <h2 class="m-b-0"> 3 </h2>
+                            <h2 class="m-b-0"> @Reportepremium.Count </h2>
                             <p class="text-muted m-b-25">Registrados</p>
                         </div>
                         <div class="progress progress-bar-success-alt progress-sm m-b-0">
@@ -57,12 +70,12 @@
             <div class="col-lg-3 col-md-6">
                 <div class="card-box">
 
-                    <h4 class="header-title m-t-0">Membresias</h4>
+                    <h4 class="header-title m-t-0">Entrenadores</h4>
 
                     <div class="widget-box-2">
                         <div class="widget-detail-2">
                             <span class="badge badge-warning pull-left m-t-20">36% <i class="zmdi zmdi-trending-up"></i> </span>
-                            <h2 class="m-b-0"> 3 </h2>
+                            <h2 class="m-b-0"> @Reporteentrenadores.Count </h2>
                             <p class="text-muted m-b-25">Registrados</p>
                         </div>
                         <div class="progress progress-bar-warning-alt progress-sm m-b-0">
@@ -84,7 +97,7 @@
                     <div class="widget-box-2">
                         <div class="widget-detail-2">
                             <span class="badge badge-pink pull-left m-t-20">89% <i class="zmdi zmdi-trending-up"></i> </span>
-                            <h2 class="m-b-0"> 3 </h2>
+                            <h2 class="m-b-0"> @ReporteHelperHorario.Count </h2>
                             <p class="text-muted m-b-25">Registrados</p>
                         </div>
                         <div class="progress progress-bar-pink-alt progress-sm m-b-0">
@@ -100,38 +113,27 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-4">
-                <div class="card-box">
 
-                    <h4 class="header-title m-t-0">Membresias vendidas</h4>
-
-                    <div class="widget-chart text-center">
-                        <div id="morris-donut-example" style="height: 245px;"></div>
-                        <ul class="list-inline chart-detail-list m-b-0">
-                            <li>
-                                <h5 style="color: #ff8acc;"><i class="fa fa-circle m-r-5"></i>Series A</h5>
-                            </li>
-                            <li>
-                                <h5 style="color: #5b69bc;"><i class="fa fa-circle m-r-5"></i>Series B</h5>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
+            <div class="col-lg-6">
+                <!--CHART DE HORARIOS FRECUENTES-->
                 <div class="card-box">
                     <h4 class="header-title m-t-0">Horarios frecuentes</h4>
-                    <div id="morris-bar-example" style="height: 280px;"></div>
+                    <hr />
+                    <div id="reporte-horarios" class="ct-chart ct-golden-section" style="height: 350px;"></div>
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-6">
+                <!--CHART DE GANANCIAS-->
                 <div class="card-box">
-                    <h4 class="header-title m-t-0">Total de ventas</h4>
-                    <div id="morris-line-example" style="height: 280px;"></div>
+                    <h4 class="header-title m-t-0">Ganancias por ventas</h4>
+                    <hr />
+                    <div id="reporte-ganancias" class="ct-chart ct-golden-section" style="height: 350px;"></div>
                 </div>
             </div>
+
+
+
         </div>
     </div>
 
@@ -143,21 +145,128 @@
 <!--Lectura imagenes de perfil-->
 <script src="~/Source/js/ImagenDePerfil.js"></script>
 
-<!-- jQuery  -->
+<!--Jquery-->
 <script src="~/Source/User/js/jquery.min.js"></script>
-<script src="~/Source/User/js/bootstrap.min.js"></script>
-<script src="~/Source/User/js/detect.js"></script>
-<script src="~/Source/User/js/fastclick.js"></script>
-<script src="~/Source/User/js/jquery.slimscroll.js"></script>
-<script src="~/Source/User/js/jquery.blockUI.js"></script>
-<script src="~/Source/User/js/waves.js"></script>
-<script src="~/Source/User/js/jquery.nicescroll.js"></script>
-<script src="~/Source/User/js/jquery.scrollTo.min.js"></script>
-<script src="~/Source/User/plugins/jquery-knob/jquery.knob.js"></script>
 
-<!--Morris Chart-->
-<script src="~/Source/User/plugins/morris/morris.min.js"></script>
-<script src="~/Source/User/plugins/raphael/raphael-min.js"></script>
+<!--Chartist Chart-->
+<script src="~/Source/User/plugins/chartist/dist/chartist.min.js"></script>
+<script src="~/Source/User/plugins/chartist/dist/chartist-plugin-tooltip.min.js"></script>
 
-<!-- Dashboard init -->
-<script src="~/Source/User/pages/jquery.dashboard.js"></script>
+<!--Logica de creacion del chart-->
+<script type="text/javascript">
+
+
+    /****************************REPORTE DE HORARIOS FRECUENTES********************************/
+
+    @{
+        string label = "";
+        string series = "";
+
+        //primero recorro los horarios
+        foreach (var horario in ReporteHelperHorario)
+        {
+            //variable para contar cuantos estan registrados a dicho horarios
+            int cantidadregistro = 0;
+
+            //variable para los nombres
+            string nombres = "";
+
+            foreach (var nombreuser in Reporteentrenadores)
+            {
+                if (horario.ID_USUARIO == nombreuser.ID_USUARIO)
+                {
+                    //almacenando los nombres
+                    nombres = nombreuser.NOMBRE + " " + nombreuser.APELLIDO;
+                }
+            }
+
+            //verificar exitencia
+            int verificar = 0;
+
+            //segundo recorro los horarios registrados
+            foreach (var registro in ReporteHorarios)
+            {
+                //verifico si el id_horario de la Tabla horario es igual de de la tabla registro
+                if (horario.ID_HORARIO == registro.ID_HORARIO)
+                {
+                    //si son iguales, proceso a crear el label del horario con id 1 y contamos la cantidad de registros
+                    cantidadregistro++;
+                    verificar = 1;
+                }
+            }
+
+            if (verificar != 0)
+            {
+                series += cantidadregistro + ",";
+
+                //Llenando los labels
+                label += "'Horario " + horario.ID_HORARIO + " de " + nombres + "',";
+            }
+
+        }
+        string contenidolabel = "labels: [" + label + "],";
+        string contenidoseries = "series: [" + series + "]";
+    }
+
+
+    var data = {
+        @Html.Raw(contenidolabel)
+        @Html.Raw(contenidoseries)
+    };
+
+    var options = {
+        labelInterpolationFnc: function (value) {
+            return value[0]
+        }
+    };
+
+    var responsiveOptions = [
+        ['screen and (min-width: 640px)', {
+            chartPadding: 30,
+            labelOffset: 100,
+            labelDirection: 'explode',
+            labelInterpolationFnc: function (value) {
+                return value;
+            }
+        }],
+        ['screen and (min-width: 1024px)', {
+            labelOffset: 80,
+            chartPadding: 20
+        }]
+    ];
+
+    new Chartist.Pie('#reporte-horarios', data, options, responsiveOptions);
+
+
+    /****************************REPORTE DE GANANCIAS EN PEDIDOS********************************/
+
+    @{ 
+        string contenidolabel2 = "";
+        string contenidoseries2 = "";
+
+        foreach (var ganancias in ReporteGanancias)
+        {
+            //labels / fechas
+            contenidolabel2 += "'Venta " + ganancias.ID_PEDIDO + " " + ganancias.FECHA.Value.ToString("dd/MM/yyyy") + "',";
+
+            //series / peso
+            contenidoseries2 += ganancias.TOTAL + ",";
+        }
+
+
+    }
+
+
+    new Chartist.Line('#reporte-ganancias', {
+        labels: [@Html.Raw(contenidolabel2)],
+        series: [
+            [@Html.Raw(contenidoseries2)]
+        ]
+    }, {
+        low: 0,
+        showArea: true,
+        plugins: [
+            Chartist.plugins.tooltip()
+        ]
+    });
+</script>
