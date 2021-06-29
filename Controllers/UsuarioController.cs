@@ -12,6 +12,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
+using System.Globalization;
 
 namespace Sistema_GGYM.Controllers
 {
@@ -183,10 +184,13 @@ namespace Sistema_GGYM.Controllers
 
                             if (!usuario.ESTATURA.Equals(""))
                             {
+                                CultureInfo culture = new CultureInfo("en-US");
+
                                 //Se registra en la bd del imc para mas control
-                                double pesito = Convert.ToDouble(usuario.PESO);
-                                double estaturita = Convert.ToDouble(usuario.ESTATURA);
-                                string imcTemporal = (pesito/ Math.Pow(estaturita, 2)).ToString("0.0");
+                                decimal pesito = Convert.ToDecimal(usuario.PESO);
+                                decimal estaturita = Convert.ToDecimal(usuario.ESTATURA, culture);
+                                string imcTemporal = (pesito/ (estaturita * estaturita)).ToString();
+                                imcTemporal = imcTemporal.Substring(0, 5);
 
                                 imc.RegistrarIMC(usuario.ID_USUARIO, imcTemporal);
                             }
