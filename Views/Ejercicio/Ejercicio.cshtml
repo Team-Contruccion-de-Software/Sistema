@@ -82,15 +82,84 @@
                                                     //cuando lo hagas daniel, coloca un if segun el imc
                                                     //el imc ya lo obtengo
 
-                                                    <div class="col-sm-6 col-lg-6 col-md-6">
-                                                        <div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999;">
-                                                            <p class="u-text-black m-b-10" style="text-align: center">@video.TITULO</p>
 
-                                                            <!--cargando el iframe / la url solo es el id del video-->
-                                                            <iframe class="thumb-img" width="560" height="315" src="https://www.youtube.com/embed/@(video.URL)" frameborder="0"></iframe>
-                                                            <p class="text-muted" style="text-align: center">@video.DESCRIPCION</p>
-                                                        </div>
-                                                    </div>
+
+                                                    if (Convert.ToDouble(Imc.IMC1) < 18.5)
+                                                    {
+                                                        if (video.ID_TIPOVIDEO == 1)
+                                                        {
+                                                            <div class="col-sm-6 col-lg-6 col-md-6">
+                                                                <div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999;">
+                                                                    <p class="u-text-black m-b-10" style="text-align: center">@video.TITULO</p>
+
+                                                                    <!--cargando el iframe / la url solo es el id del video-->
+                                                                    <iframe class="thumb-img" width="560" height="315" src="https://www.youtube.com/embed/@(video.URL)" frameborder="0"></iframe>
+                                                                    <p class="text-muted" style="text-align: center">@video.DESCRIPCION</p>
+                                                                </div>
+                                                            </div>
+                                                        }
+
+                                                    }
+                                                    if (Convert.ToDouble(Imc.IMC1) >= 18.5 && Convert.ToDouble(Imc.IMC1) < 24.9)
+                                                    {
+                                                        if (video.ID_TIPOVIDEO == 2)
+                                                        {
+                                                            <div class="col-sm-6 col-lg-6 col-md-6">
+                                                                <div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999;">
+                                                                    <p class="u-text-black m-b-10" style="text-align: center">@video.TITULO</p>
+
+                                                                    <!--cargando el iframe / la url solo es el id del video-->
+                                                                    <iframe class="thumb-img" width="560" height="315" src="https://www.youtube.com/embed/@(video.URL)" frameborder="0"></iframe>
+                                                                    <p class="text-muted" style="text-align: center">@video.DESCRIPCION</p>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                    }
+                                                    if (Convert.ToDouble(Imc.IMC1) >= 25 && Convert.ToDouble(Imc.IMC1) < 29.9)
+                                                    {
+                                                        if (video.ID_TIPOVIDEO == 3)
+                                                        {
+                                                            <div class="col-sm-6 col-lg-6 col-md-6">
+                                                                <div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999;">
+                                                                    <p class="u-text-black m-b-10" style="text-align: center">@video.TITULO</p>
+
+                                                                    <!--cargando el iframe / la url solo es el id del video-->
+                                                                    <iframe class="thumb-img" width="560" height="315" src="https://www.youtube.com/embed/@(video.URL)" frameborder="0"></iframe>
+                                                                    <p class="text-muted" style="text-align: center">@video.DESCRIPCION</p>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                    }
+                                                    if (Convert.ToDouble(Imc.IMC1) >= 30 && Convert.ToDouble(Imc.IMC1) < 34.9)
+                                                    {
+                                                        if (video.ID_TIPOVIDEO == 4)
+                                                        {
+                                                            <div class="col-sm-6 col-lg-6 col-md-6">
+                                                                <div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999;">
+                                                                    <p class="u-text-black m-b-10" style="text-align: center">@video.TITULO</p>
+
+                                                                    <!--cargando el iframe / la url solo es el id del video-->
+                                                                    <iframe class="thumb-img" width="560" height="315" src="https://www.youtube.com/embed/@(video.URL)" frameborder="0"></iframe>
+                                                                    <p class="text-muted" style="text-align: center">@video.DESCRIPCION</p>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                    }
+                                                    if (Convert.ToDouble(Imc.IMC1) >= 35)
+                                                    {
+                                                        if (video.ID_TIPOVIDEO == 5)
+                                                        {
+                                                            <div class="col-sm-6 col-lg-6 col-md-6">
+                                                                <div class="gal-detail thumb" style="box-shadow: 2px 2px 5px #999;">
+                                                                    <p class="u-text-black m-b-10" style="text-align: center">@video.TITULO</p>
+
+                                                                    <!--cargando el iframe / la url solo es el id del video-->
+                                                                    <iframe class="thumb-img" width="560" height="315" src="https://www.youtube.com/embed/@(video.URL)" frameborder="0"></iframe>
+                                                                    <p class="text-muted" style="text-align: center">@video.DESCRIPCION</p>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                    }
 
                                                     //validando si el imc no es nulo
                                                     /*if (Imc != null)
