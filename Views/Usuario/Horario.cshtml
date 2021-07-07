@@ -18,34 +18,35 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-md-5">
                 <div class="card-box">
 
                     <h4 class="header-title m-t-0 m-b-30">Entrenadores</h4>
 
-                    <ul class="list-group m-b-0 user-list">
+                    <!--LISTA DE ENTRENADORES-->
 
-                        <!--LISTA DE ENTRENADORES-->
+                    <table id="datatable" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nombres</th>
+                                <th>Edad</th>
+                            </tr>
+                        </thead>
 
-                        @foreach (var usuario in Model)
-                        {
-                            if (usuario.ID_TIPOUSUARIO == 3)
+                        <tbody>
+
+                            @foreach (var usuario in Model)
                             {
-                                <li class="list-group-item">
-                                    <a href="#" class="user-list-item">
-                                        <div class="avatar">
-                                            <img src="~/Source/User/images/users/avatar-2.jpg" alt="">
-                                        </div>
-                                        <div class="user-desc">
-                                            <span class="name">@usuario.NOMBRE</span>
-                                            <span class="desc">@usuario.TIPO_USUARIO.DESCRIPCION</span>
-                                        </div>
-                                    </a>
-                                </li>
+                                if (usuario.ID_TIPOUSUARIO == 3)
+                                {
+                                    <tr>
+                                        <td>@usuario.NOMBRE @usuario.APELLIDO</td>
+                                        <td>@usuario.EDAD</td>
+                                    </tr>
+                                }
                             }
-                        }
-                    </ul>
-
+                        </tbody>
+                    </table>
                 </div>
 
 
@@ -101,7 +102,7 @@
 
             <!-- Filtro para que no aparescan en los que te registraste -->
             <!-- Se listaran los horarios por descripcion, encargado y hora de inicio y fin -->
-            <div class="col-lg-8 col-md-6">
+            <div class="col-md-7">
                 @foreach (var usuario in Model)
                 {
                     if (iduser.ID_USUARIO != usuario.ID_USUARIO)
